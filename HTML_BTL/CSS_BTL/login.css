@@ -1,5 +1,5 @@
 body{
-    background-image: url(D:\OU-IT\Web_Design_BTL\OU_Web_Design_BTL_Game\HTML_BTL\Images_Btl\Untitled27_20240813214958.png);
+    background-image: url(../Images_Btl/Untitled27_20240813214958.png);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
@@ -91,19 +91,30 @@ body{
 
             /* Css cho button */
 button{
-    display: block;
+    cursor:pointer;
+    display: flex;
+    justify-content: center;
     outline: none;
     border: none;
     width: 100%;
     max-width: 20rem;
     border-radius: 5px;
-    margin: 0 auto;
+    margin-left: auto;
     background-color: #0894b3;
     margin-top: 1.5rem;
     color: white;
-    padding: 0.7rem;
+    
     font-weight: bold;
+    text-decoration: none;
 }
+button > a{
+    text-decoration: none;
+    display: block;
+   
+    color:white;
+    padding: 0.7rem;
+}
+
 
             /* Css cho phần aside  */
 .asideItem{
@@ -117,6 +128,7 @@ button{
 .asideItem > a {
     color: white;
     text-decoration: none;
+    display: block;
 }
 
 /* Css cho phần trang trí */
