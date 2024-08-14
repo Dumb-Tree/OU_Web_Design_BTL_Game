@@ -1,5 +1,5 @@
 body{
-    background-image: url(../Images_Btl/Untitled27_20240813214958.png);
+    background-image: url(../img/Untitled27_20240813214958.png);
     background-size: cover;
     background-repeat: no-repeat;
     font-family: Arial, Helvetica, sans-serif;
@@ -7,8 +7,10 @@ body{
 }
 
 .login{
+    display: block;
     width: 26%;
-    margin: 0 auto;
+    margin: auto;
+    margin-top: 3.5rem;
     background-image: linear-gradient( black,#1e1f17,#224354,#37b6ef);
     border-radius: 10px;
 }
@@ -69,7 +71,6 @@ body{
 .autoLogin input[type="checkbox"] {
     /* Loại bỏ kiểu dáng mặc định của checkbox để áp dụng các thuộc tính CSS tùy chỉnh. */
     appearance: none; 
-
     width: 1rem;
     height: 1rem;
     border: 1px solid turquoise; 
@@ -90,31 +91,22 @@ body{
 
 
             /* Css cho button */
-button{
-    cursor:pointer;
-    display: flex;
-    justify-content: center;
+a.button{
+    display: block;
     outline: none;
     border: none;
     width: 100%;
+    text-decoration: none;
     max-width: 20rem;
     border-radius: 5px;
-    margin-left: auto;
+    margin: 0 auto;
     background-color: #0894b3;
     margin-top: 1.5rem;
     color: white;
-    
-    font-weight: bold;
-    text-decoration: none;
-}
-button > a{
-    text-decoration: none;
-    display: block;
-   
-    color:white;
     padding: 0.7rem;
+    text-align: center;
+    font-weight: bold;
 }
-
 
             /* Css cho phần aside  */
 .asideItem{
@@ -128,7 +120,9 @@ button > a{
 .asideItem > a {
     color: white;
     text-decoration: none;
-    display: block;
+}
+.asideItem > a:hover{
+    text-decoration: underline;
 }
 
 /* Css cho phần trang trí */
@@ -137,4 +131,5 @@ p.version{
     margin-top: 5.5rem;
     text-align: left;
     padding: 0.5rem;
+    padding-bottom: 1rem;
 }
