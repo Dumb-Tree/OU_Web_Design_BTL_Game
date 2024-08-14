@@ -1,0 +1,69 @@
+body{
+    background-color: #0F9ED5;
+    margin:0;
+}
+.flex{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/*CSS FOR header*/
+header{
+    background-color:#83CBEB;
+}
+header>img{
+    padding:0.5rem;
+}
+header>img:last-child{
+    margin-right:1rem;
+}
+header>a{
+    font-size:3rem;
+    text-align: center;
+    justify-content: center;
+}
+header>a:last-child{
+    font-size:1.3rem;
+    text-align:center;
+}
+header>img:last-child:hover{
+    background-color:rgb(174, 218, 236)
+}
+input[type=text]{
+    background-color: rgb(227, 255, 255);
+    border-radius:1rem;
+}
+/* CSS for Nav*/
+nav{
+    width:70%;
+    margin: 0 auto;
+    background-color:deepskyblue;
+}
+nav>ul.Catergory>li{
+    list-style-type: none;
+    text-decoration:none;
+    display:inline-block;
+    margin-right: 2rem;;
+
+}
+nav>ul.Catergory>li>a>img{
+    width:0.8rem;
+}
+/* Cursor pointer dùng để định con trỏ sẽ trở thành icon gì khi hơ lên button */
+button{
+    background-color:transparent;
+    cursor:pointer;
+    border:none;
+    padding:0;
+    margin:0;
+    font-size:1.2rem;
+}
+/*CSS FOR MAIN*/
+main{
+    width:70%;
+    margin: 0 auto;
+    background-color:white;
+}
+main>a{
+    font-size:5rem;
+}
