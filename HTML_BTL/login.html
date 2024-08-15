@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
     <link rel="stylesheet" href="CSS_BTL/login.css">
+    <script src="JS_BTL/JS_Login.js"></script>
     <title>Login</title>
 </head>
 
 <body>
     <div class="login">
         <div class="logo">
-            <img src="../img/revoltglogo.png" alt="logo">
+            <img src="Images_Btl/revoltglogo.png" alt="logo">
         </div>
         <p>Thỏa mãn hết mình với đam mê của bạn</p>
+       
         <div class="loginTable">
+            <form id="loginInfo">
             <div class="loginTableItem">
-                <div class="loginField">
+                <div class="loginField"> 
                     <label for="Username"><i class="ri-user-line"></i></label>
                     <input type="text" id="Username" placeholder="Tên đăng nhập">
                 </div>
@@ -26,7 +29,7 @@
             <div class="loginTableItem">
                 <div class="loginField">
                     <label for="Password"><i class="ri-key-fill"></i></label>
-                    <input type="text" id="Password" placeholder="Mật khẩu">
+                    <input type="password" id="Password" placeholder="Mật khẩu">
                 </div>
             </div>
         </div>
@@ -34,9 +37,9 @@
             <input id="autoLoginCheck" type="checkbox">
             <label for="autoLoginCheck">Tự động đăng nhập</label>
         </div>
-        
-        <a href="#" class="button">ĐĂNG NHẬP</a>
-        
+        <a href="test4.html">
+        <button id="submit" type="submit">ĐĂNG NHẬP</button></a>
+         </form>
         <div class="aside">
             <div class="asideItem">
                 <a href="#">Chưa có tài khoản?</a>
