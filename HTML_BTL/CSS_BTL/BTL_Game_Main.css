@@ -31,8 +31,7 @@ body {
     margin-left: auto;
 }
 li > .logo{
-    width: 3rem;
-    height: 3rem;
+    width: 5rem;
 }
 .menu > ul > li > label{
     display: block;
