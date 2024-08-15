@@ -9,6 +9,6 @@ window.onload = function(){
         const PasswordValue = Password.value;
         localStorage.setItem('Username',UsernameValue);
         localStorage.setItem('Password',PasswordValue);
-        window.location.href="test4.html";
+        window.location.href="BTL_Game_Main.html";
     })
 }
