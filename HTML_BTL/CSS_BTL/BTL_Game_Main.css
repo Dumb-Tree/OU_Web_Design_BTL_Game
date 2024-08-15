@@ -19,10 +19,11 @@ body {
 .menu > ul{
     list-style-type: none;
     display: flex;
-    align-items: center;
+    align-items:center;
     margin-top: 0;
     padding-left: 0;
     background-color: #252730;
+
 }
 
 .menu > ul > li{
@@ -31,9 +32,15 @@ body {
 .menu > ul >li:nth-child(4){
     margin-left: auto;
 }
+.menu > ul >li:nth-child(2){
+    padding-left:1rem;
+    border-left: 5px solid #191b20;
+    padding-top:0.5rem;
+}
 .logo{
     width: 200px;
     vertical-align: middle;
+    padding-right:1rem;
 }
 .menu > ul > li > a{
     text-decoration: none;
@@ -41,9 +48,9 @@ body {
     display: block;
     padding: 0 1rem;
 }
-.menu > ul > li:first-child{
+/* .menu > ul > li:first-child{
     border-right: 1px solid white;
-}
+} */
 .menu > ul > li > label{
     display: block;
     text-align: left;
