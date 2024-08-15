@@ -1,0 +1,32 @@
+* img {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+body {
+    background-color: gray;
+    color: white;
+}
+
+/* Css cho phần nav */
+.menu {
+    justify-content: center;
+}
+.menu>.icon>i {
+    font-size: 4rem;
+}
+
+.user {
+    align-items: center;
+}
+
+.user>div.userIMG {
+    width: 8%;
+}
+
+.user>.userInfor>p {
+    margin: 0;
+}
