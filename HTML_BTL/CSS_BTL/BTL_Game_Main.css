@@ -1,4 +1,7 @@
-
+.flex {
+    display: flex;
+    align-items: center;
+}
 
 body {
     background-color: #191b20;
@@ -7,59 +10,87 @@ body {
 }
 
 /* Css cho phần nav */
-.logo{
-    width: 10rem;
-}
-.logo > img{
-    width: 100%;
-}
-.menu{
-    list-style-type: none;
-    display: flex;
-    align-items:center;
-    margin-top: 0;
-    padding-left: 0;
+nav>ul {
+    padding: 0;
+    margin: 0;
+    align-items: center;
     background-color: #252730;
 }
-.menu > li:nth-child(4){
-    margin-left: auto;
-    margin-right: 1rem;
+
+nav>ul>li {
+    list-style-type: none;
 }
-.menu > li > a{
+
+nav>ul>li>a {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 10px;
     text-decoration: none;
     color: white;
-    padding: 1rem;
-    font-size: 1.3rem;
 }
-.menu > li > a >p{
+
+nav>ul>li>a>p {
     margin: 0;
 }
 
+.logo {
+    width: 10rem;
+}
 
+.logo>img {
+    width: 100%;
+}
+
+.user {
+    align-items: center;
+}
+
+.userInfor>p {
+    margin: 0;
+    color: #b1b1b5;
+}
+
+.userIMG {
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 3rem;
+    height: 3rem;
+    padding: 0;
+    overflow: hidden;
+}
+
+.userIMG>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
 /* Css cho nav user */
-.user{
+.user {
     align-items: center;
     display: flex;
 
 }
-.userInfor > p{
+
+.userInfor>p {
     margin: 0;
     color: #b1b1b5;
     font-size: 1.3rem;
 }
-.userIMG{
+
+.userIMG {
     border: 1px solid black;
     border-radius: 10px;
     width: 3rem;
-    height: 3rem; /* Đặt chiều cao tương ứng với chiều rộng */
-    padding: 0; /* Đảm bảo không có padding */
+    height: 3rem;
+    /* Đặt chiều cao tương ứng với chiều rộng */
+    padding: 0;
+    /* Đảm bảo không có padding */
     overflow: hidden;
 }
-.userIMG > img{
+
+.userIMG>img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -72,10 +103,12 @@ body {
     width: 80%;
     margin: 0 auto;
 }
+
 .New>h1 {
     color: white;
     margin: 1rem;
 }
+
 .largeNew {
     width: 47%;
     box-sizing: border-box;
@@ -89,45 +122,13 @@ body {
     border-bottom: 1px solid white;
     padding-bottom: 2rem;
 }
-.largeNewImg > img{
+
+.largeNewImg>img {
     width: 100%;
 }
+
 .largeNewImg>img {
     border-radius: 10px;
-}
-/* Tạo khung dữ liệu cho phần title */
-.largeNew > .largeNewTitle{
-    width: 35rem;
-    height: 6.5rem;
-    overflow: hidden;
-    padding-left: 0.5rem;
-}
-.largeNew > .largeNewTitle > h2{
-    color: white;
-    font-weight: bold;
-    text-wrap: wrap;
-}
-/* Tạo khung dữ liêu cho phần p */
-.largeNew > .largeNewP{
-    width: 35.5rem;
-    height: 5.5rem;
-    overflow: hidden;
-}
-.largeNew > .largeNewP > p{
-    color:white;
-    font-weight: lighter;
-    text-wrap: wrap;
-}
-
-/* Tạo khung dữ liệu cho tilte small new */
-.smallNew > .smallNewTitle{
-    width: 16rem;
-    height: 13rem;
-    overflow: hidden;
-}
-.smallNew > .smallNewTitle > h2{
-    color: white;
-    text-wrap: wrap;
 }
 .largeNew>p {
     color: white;
@@ -135,27 +136,71 @@ body {
 .largeNew>a {
     color: red;
 }
+
+/* Tạo khung dữ liệu cho phần title */
+.largeNew>.largeNewTitle {
+    width: 35rem;
+    height: 6.5rem;
+    overflow: hidden;
+    padding-left: 0.5rem;
+}
+
+.largeNew>.largeNewTitle>h2 {
+    color: white;
+    font-weight: bold;
+    text-wrap: wrap;
+}
+
+/* Tạo khung dữ liêu cho phần p */
+.largeNew>.largeNewP {
+    width: 35.5rem;
+    height: 5.5rem;
+    overflow: hidden;
+}
+
+.largeNew>.largeNewP>p {
+    color: white;
+    font-weight: lighter;
+    text-wrap: wrap;
+}
+
+/* Tạo khung dữ liệu cho tilte small new */
+.smallNew>.smallNewTitle {
+    width: 16rem;
+    height: 13rem;
+    overflow: hidden;
+}
+.smallNew>.smallNewTitle>h2 {
+    color: white;
+    text-wrap: wrap;
+}
+
+
 .smallNews {
     display: flex;
     justify-content: space-around;
 }
-.smallNewImg > img{
+.smallNewImg>img {
     width: 100%;
 }
+
 .smallNew>p {
     color: white;
 }
+
 .smallNew {
     border-radius: 10px;
     width: 22%;
     margin: 0.1%;
 }
+
 .smallNew>h2 {
     color: white;
     text-wrap: wrap;
     font-weight: bold;
 }
+
 .smallNew>a {
-    
+
     color: red;
 }
