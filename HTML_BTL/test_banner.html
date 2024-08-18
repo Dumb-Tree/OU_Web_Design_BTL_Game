@@ -6,37 +6,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-       
-        
+
+
     </script>
     <style>
-        .banner {
+        .bannerName {
             overflow: hidden;
-            /* Ẩn bất kỳ phần tử con nào tràn ra ngoài */
             position: relative;
             /* Đặt vị trí tương đối để .Den có thể tham chiếu */
-            width: 90rem;
-            /* Đảm bảo kích thước phù hợp với .container */
+            width: 20%;
             height: auto;
             /* Đảm bảo chiều cao tự động điều chỉnh */
+            border-radius: 10px;
         }
 
         .Den {
             position: absolute;
-            border: 1px solid red;
-            width: 90rem;
+            width: 100%;
             padding: 2rem;
             height: 13.9rem;
             background-color: black;
             z-index: 90;
-            animation: doiNen 5s infinite;
+            animation: doiNen 5s linear infinite;
         }
 
         .container {
-            border: 1px solid red;
-            width: 90rem;
+            width: 100%;
             padding: 2rem;
+            display: flex;
+            align-items: center;
             background-color: grey;
+        }
+
+        .container>p {
+            color: white;
+            z-index: 100;
         }
 
         @keyframes doiNen {
@@ -56,41 +60,20 @@
         }
 
         .image {
-            width: 30%;
+            width: 10%;
         }
     </style>
 </head>
 
 <body>
-    <div class="banner">
-        <div class="Den"></div>
-        <div class="container">
-            <div class="image">
-                <img src="Images_Btl/OIP.jpeg" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="Den"></div>
-        <div class="container">
-            <div class="image">
-                <img src="Images_Btl/OIP.jpeg" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="Den"></div>
-        <div class="container">
-            <div class="image">
-                <img src="Images_Btl/OIP.jpeg" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="banner">
-        <div class="Den"></div>
-        <div class="container">
-            <div class="image">
-                <img src="Images_Btl/OIP.jpeg" alt="">
+    <div>
+        <div class="bannerName">
+            <div class="Den"></div>
+            <div class="container">
+                <div class="image">
+                    <img src="Images_Btl/wukongsmallicon.webp" alt="">
+                </div>
+                <p>Black Smith Wukong</p>
             </div>
         </div>
     </div>

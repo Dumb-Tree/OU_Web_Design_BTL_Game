@@ -10,5 +10,5 @@ window.onload = function () {
             current = 0;
         }
         bannerlist.style.transform = `translateX(${current}px)`
-    }, 1000)
+    }, 4000)
 }
