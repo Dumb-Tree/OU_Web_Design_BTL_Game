@@ -233,6 +233,7 @@ nav>ul>li>a>p {
 
 .slideshow>.bannerlist {
     display: flex;
+    transition: linear 0.3s;
 }
 
 .slideshow>.bannerlist>div>img {
@@ -264,7 +265,7 @@ nav>ul>li>a>p {
     height:100%;
     background-color: #28282c;
     z-index: 90;
-    animation: doiNen 4s linear infinite;
+    animation: doiNen 4.3s linear infinite;
 }
 
 .container {
