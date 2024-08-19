@@ -33,30 +33,16 @@
         </div>
     </div>
     <div class="Games flex">
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Genshin.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
-        <div>
-            <img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/>
-        </div>
+        <ul class="flex">
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+            <li><img src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit.jpg"/></li>
+        </ul>
     </div>
     <style>
         .flex{
@@ -64,14 +50,28 @@
         }
         div{
             width:100%;
-            padding: 0.5rem;
             overflow:hidden;
         }
         div>img{
             width:100%;
             height:100%;  
             border-radius:5px;
-            
+        }
+        div.Games>ul{
+            list-style-type:none;
+        }
+        div.Games>ul>li>img{
+            width:100%;
+            height:100%; 
+            border-radius:5px;
+        }
+        div.Games>ul>li{
+            width:100%;
+            padding:0.5rem;
+        }
+        div.Games>ul>li:first-child{
+            width:100%;
+            padding-left: 0;
         }
     </style>
 </body>

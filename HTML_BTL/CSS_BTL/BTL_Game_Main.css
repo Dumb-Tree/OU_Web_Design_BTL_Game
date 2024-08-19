@@ -299,3 +299,20 @@ nav>ul>li>a>p {
 .image {
     width: 20%;
 }
+/* CSS cho mục game*/
+div.Games>ul{
+    list-style-type:none;
+}
+div.Games>ul>li>img{
+    width:100%;
+    height:100%; 
+    border-radius:5px;
+}
+div.Games>ul>li{
+    width:100%;
+    padding:0.5rem;
+}
+div.Games>ul>li:first-child{
+    width:100%;
+    padding-left: 0;
+}
