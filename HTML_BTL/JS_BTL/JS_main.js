@@ -11,4 +11,7 @@ window.onload = function () {
         }
         bannerlist.style.transform = `translateX(${current}px)`
     }, 4000)
+    var bannerbar = document.querySelectorAll(`.Den`)
+    for(let bn of bannerbar)
+        bn.style.animationDelay = "4s";
 }
