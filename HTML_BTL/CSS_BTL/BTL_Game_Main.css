@@ -304,7 +304,6 @@ div.Den{
 div.Games>ul{
     list-style-type:none;
     padding:0;
-
 }
 div.Games>ul>li>img{
     position:relative;
@@ -323,13 +322,11 @@ div.Games>ul>li:first-child{
     padding-left:0;
 }
 div.Games>ul>li:hover >img{
-    position:relative;
     animation: moveup 0.2s ease-in-out 1;
     animation-fill-mode: both;
 }
 
-div.Games>ul>li:not(:hover) >img{
-    position:relative;
+div.Games>ul>li:not(:hover) >img{ /* Anim đổi ngược lại khi không hover chuột lên game*/
     animation: movedown 0.5s ease-in-out 1;
     animation-fill-mode: both;
 }
@@ -349,7 +346,7 @@ div.Games>ul>li:not(:hover) >img{
         bottom:0;
     }
 }
-p.gameDes{
+p.gameDes{ /* Đang test tên game*/
     z-index:99;
     position:absolute;
     color:red;
