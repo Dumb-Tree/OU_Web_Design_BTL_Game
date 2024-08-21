@@ -259,13 +259,13 @@ nav>ul>li>a>p {
     margin: 2rem 1.3rem 2rem 0;
 }
 
-.Den {
+div.Den{
     position: absolute;
     width: 100%;
     height:100%;
     background-color: #28282c;
     z-index: 90;
-    animation: doiNen 4.3s linear infinite;
+    animation: doiNen 4s linear infinite;
 }
 
 .container {
@@ -303,8 +303,10 @@ nav>ul>li>a>p {
 /* CSS cho mục game*/
 div.Games>ul{
     list-style-type:none;
+    padding:0;
 }
 div.Games>ul>li>img{
+    position:relative;
     width:100%;
     height:100%; 
     border-radius:5px;
@@ -312,8 +314,41 @@ div.Games>ul>li>img{
 div.Games>ul>li{
     width:100%;
     padding:0.5rem;
+    padding-bottom:0;
+    overflow:hidden;
 }
 div.Games>ul>li:first-child{
     width:100%;
-    padding-left: 0;
+    padding-left:0;
+}
+div.Games>ul>li:hover >img{
+    animation: moveup 0.2s ease-in-out 1;
+    animation-fill-mode: both;
+}
+
+div.Games>ul>li:not(:hover) >img{ /* Anim đổi ngược lại khi không hover chuột lên game*/
+    animation: movedown 0.5s ease-in-out 1;
+    animation-fill-mode: both;
+}
+@keyframes moveup{
+    from{
+        bottom:0;
+    }
+    to{
+        bottom:5rem;
+    }
+}
+@keyframes movedown{
+    from{
+        bottom:5rem;
+    }
+    to{
+        bottom:0;
+    }
+}
+p.gameDes{ /* Đang test tên game*/
+    z-index:99;
+    position:absolute;
+    color:red;
+    top:150%;
 }
