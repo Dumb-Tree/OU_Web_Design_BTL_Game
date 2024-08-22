@@ -15,17 +15,18 @@ window.onload = function () {
 
     var d = document.getElementById('Denbar');
     var count=0;        
-    setInterval(function(){
-            d.style.top= 9+'rem';
-            count =-1;        
+    //Set
+    setInterval(function(){ // sau mỗi 16 giây, thanh trượt về vị trí ban đầu 
+            d.style.top= 9.1+'rem';
+            count =0;        
             console.log("reset "+count);
-        },16000)
-    setInterval(function(){
+        },15961)
+    setInterval(function(){// sau mỗi 4 giây, thanh trượt di chuyển xuống
         count = ++count;
         console.log(count);
-        if(count < 2)
-         d.style.top = count*8.8+9+'rem';
+        if (count < 2)
+         d.style.top = count*8.92+8.9+'rem';
         else
-        d.style.top= count*8.7+9+'rem';
-    },4001);
+        d.style.top = count*8.79+8.9+'rem';
+    },3990);
 }

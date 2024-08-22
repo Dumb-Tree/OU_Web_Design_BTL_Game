@@ -263,13 +263,13 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    top:9rem;
+    top:9.1rem;
     border-radius:10px; 
     z-index: 1;
     width:20%;
-    height:14.5%;
+    height:14.4%;
     background-color: #404044;
-    overflow:hidden !important;
+    overflow:hidden;
     animation: doiNen2 4s linear infinite;
 }
 
@@ -297,7 +297,7 @@ div.Den{
         left: 78%;
     }
 }
-@keyframes doiNen2{
+@keyframes doiNen2{ /* Dung width thay vì dùng left để khỏi chỉnh left right*/
     from{
         width:0%
     }
