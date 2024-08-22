@@ -11,7 +11,21 @@ window.onload = function () {
         }
         bannerlist.style.transform = `translateX(${current}px)`
     }, 4000)
-    // var bannerbar = document.querySelectorAll(`.Den`)
-    // for(let bn of bannerbar)
-    //     bn.style.animationDelay = "4s";
+
+
+    var d = document.getElementById('Denbar');
+    var count=0;        
+    setInterval(function(){
+            d.style.top= 9+'rem';
+            count =-1;        
+            console.log("reset "+count);
+        },16000)
+    setInterval(function(){
+        count = ++count;
+        console.log(count);
+        if(count < 2)
+         d.style.top = count*8.8+9+'rem';
+        else
+        d.style.top= count*8.7+9+'rem';
+    },4001);
 }

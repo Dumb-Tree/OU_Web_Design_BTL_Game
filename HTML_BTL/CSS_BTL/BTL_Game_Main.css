@@ -239,11 +239,13 @@ nav>ul>li>a>p {
 .slideshow>.bannerlist>div>img {
     display: block;
     width: 100%;
+    z-index: 10;
 }
 
 .Banner {
     display: flex;
     align-items: center;
+    
 }
 
 .bannerNames{
@@ -261,19 +263,23 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    width: 100%;
-    height:100%;
-    background-color: #28282c;
-    z-index: 90;
-    animation: doiNen 4s linear infinite;
+    top:9rem;
+    border-radius:10px; 
+    z-index: 1;
+    width:20%;
+    height:14.5%;
+    background-color: #404044;
+    overflow:hidden !important;
+    animation: doiNen2 4s linear infinite;
 }
 
 .container {
     width: 100%;
+    z-index: 1;
     padding: 1rem;
     display: flex;
     align-items: center;
-    background-color: #404044;
+    background-color: #28282c;
 }
 
 .container>p {
@@ -284,11 +290,19 @@ div.Den{
 
 @keyframes doiNen {
     from {
-        left: 0%;
+        left:59%;
     }
 
     to {
-        left: 100%;
+        left: 78%;
+    }
+}
+@keyframes doiNen2{
+    from{
+        width:0%
+    }
+    to{
+        width:18%;
     }
 }
 .image>img {
