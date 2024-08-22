@@ -338,7 +338,7 @@ div.Games>ul>li:not(:hover) >img{ /* Anim đổi ngược lại khi không hover
         bottom:5rem;
     }
 }
-@keyframes movedown{
+@keyframes movedown{ 
     from{
         bottom:5rem;
     }
