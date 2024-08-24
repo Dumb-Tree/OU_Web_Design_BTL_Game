@@ -269,8 +269,7 @@ div.Den{
     width:20%;
     height:14.4%;
     background-color: #404044;
-    overflow:hidden;
-    animation: doiNen2 4s linear infinite;
+    animation: doiNen2 4s linear 0.01s infinite;
 }
 
 .container {
@@ -330,17 +329,24 @@ div.Games>ul>li{
     padding:0.5rem;
     padding-bottom:0;
     overflow:hidden;
+    position:relative;
+}
+img.hoverimg{
+    display:none;
 }
 div.Games>ul>li:first-child{
     width:100%;
     padding-left:0;
 }
-div.Games>ul>li:hover >img{
+div.Games>ul>li:hover >img.hoverimg{
+    position:absolute;
+    display:block;
     animation: moveup 0.2s ease-in-out 1;
     animation-fill-mode: both;
+    background:rgba(0,0,0,0.5)
 }
 
-div.Games>ul>li:not(:hover) >img{ /* Anim đổi ngược lại khi không hover chuột lên game*/
+div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
     animation: movedown 0.5s ease-in-out 1;
     animation-fill-mode: both;
 }
@@ -349,7 +355,7 @@ div.Games>ul>li:not(:hover) >img{ /* Anim đổi ngược lại khi không hover
         bottom:0;
     }
     to{
-        bottom:5rem;
+        bottom:2rem;
     }
 }
 @keyframes movedown{ 

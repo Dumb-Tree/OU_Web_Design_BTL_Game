@@ -17,10 +17,10 @@ window.onload = function () {
     var count=0;        
     //Set
     setInterval(function(){ // sau mỗi 16 giây, thanh trượt về vị trí ban đầu 
-            d.style.top= 9.1+'rem';
+            d.style.top= 9.15+'rem';
             count =0;        
             console.log("reset "+count);
-        },15961)
+        },15997)
     setInterval(function(){// sau mỗi 4 giây, thanh trượt di chuyển xuống
         count = ++count;
         console.log(count);
@@ -28,5 +28,5 @@ window.onload = function () {
          d.style.top = count*8.92+8.9+'rem';
         else
         d.style.top = count*8.79+8.9+'rem';
-    },3990);
+    },3999);
 }
