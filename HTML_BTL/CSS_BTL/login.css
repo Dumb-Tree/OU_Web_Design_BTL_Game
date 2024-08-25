@@ -96,7 +96,6 @@ a>button{
     outline: none;
     border: none;
     width: 100%;
-    text-decoration: none;
     max-width: 20rem;
     border-radius: 5px;
     margin: 0 auto;
@@ -106,6 +105,9 @@ a>button{
     padding: 0.7rem;
     text-align: center;
     font-weight: bold;
+}
+a{
+    text-decoration: none;
 }
 
             /* Css cho phần aside  */
