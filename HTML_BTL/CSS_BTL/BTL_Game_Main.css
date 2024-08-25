@@ -338,23 +338,37 @@ div.Games>ul>li:first-child{
     width:100%;
     padding-left:0;
 }
+div.Games>ul>li:hover{
+    animation: leanback 0.2s ease-in-out 1;
+    animation-fill-mode: both;
+}
 div.Games>ul>li:hover >img.hoverimg{
     position:absolute;
-    display:block;
     animation: moveup 0.2s ease-in-out 1;
     animation-fill-mode: both;
-    background:rgba(0,0,0,0.5)
+    background:rgba(0,0,0,0.5);
+    display:block;
 }
 
 div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
     animation: movedown 0.5s ease-in-out 1;
     animation-fill-mode: both;
 }
+@keyframes leanback{
+    from{
+        transform:rotateX(0deg)
+    }
+    to{
+        transform:rotateX(30deg)
+    }
+}
 @keyframes moveup{
     from{
+        display:none;
         bottom:0;
     }
     to{
+        display:block;
         bottom:2rem;
     }
 }
