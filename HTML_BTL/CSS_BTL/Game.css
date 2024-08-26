@@ -100,33 +100,84 @@ nav>ul>li>a>p {
     height: 100%;
     object-fit: cover;
 }
-/*CSS cho phần game*/
+/*CSS cho mục game*/
 main{
-    width:75%;
-    background-color:red;
+    background-color:#191b20;
 }
 .gameArea{
-    width:50%;
-    background-color:blue;
+    margin-top:0.75rem;
+    width:75%;
 }
 .gameArea>img{
     width:100%;
 }
+/* Like / Dislike*/
 button{
     cursor: pointer;
     outline: 0;
     color: #AAA;
-  
-  }
-  
-  .btn:focus {
+    width:4rem;
+    border-radius:3px;
+    left:5rem;
+}
+.btn:focus {
     outline: none;
-  }
-  
-  .green{
+}
+.green{
     color: green;
-  }
-  
-  .red{
+}  
+.red{
     color: red;
-  }
+}
+.rating{
+    width:75%;
+}
+/* CSS cho leaderboard*/
+.leaderboard{
+    margin-left:1rem;
+    width:20%;
+    background-color:green;
+}
+.leaderboard>h1{
+    text-align:center;
+}
+ul.boardlist{
+    list-style-type: none;
+    text-decoration: none;
+}
+ul.boardlist>li>img{
+    width:4rem;
+    padding-right:0.5rem;
+}
+ul.boardlist>li{
+    padding-bottom:1rem;
+}
+.details{
+    width:75%;
+}
+/* CSS cho footer*/
+footer{
+    margin-top:2rem;
+    width:100%;
+    align-items: center;
+    text-align: center;
+    background-color: #252730;
+}
+.socialmedia{
+    padding:1rem;
+}
+.socialmedia>a{
+    padding:0.4rem;
+    font-size:1.5rem;
+    width:2%;
+    text-align:center;
+    text-decoration: none;
+    color:#6b6b6f;
+}
+.socialmedia>a:hover{
+    color:white;
+}
+.socialmedia>a.contact{
+    font-size:1.5rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

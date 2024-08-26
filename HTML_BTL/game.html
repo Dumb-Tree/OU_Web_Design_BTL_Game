@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS_BTL/Game.css"/>
+    <link rel="stylesheet" href="../HTML_BTL/CSS_BTL/Game.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-    <script src="JS_BTL/JS_Game.js"></script>
+    <script src="../HTML_BTL/JS_BTL/JS_Game.js"></script>
     <title>Document</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
                 </div>
             </li>
             <li>
-                <a href=""><img src="Images_Btl/house-32.png" alt="">
+                <a href="../HTML_BTL/BTL_Game_Main.html"><img src="Images_Btl/house-32.png" alt="">
                     <p>Trang chủ</p>
                 </a>
             </li>
@@ -43,11 +43,44 @@
         </ul>
         </nav>
         <main>
-            <div class="gameArea">
+        <div class="flex">
+            <section class="gameArea">
                 <img src="Images_Btl/banner1.avif">
-                <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" aria-hidden="true"></i></button>
-                <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg" aria-hidden="true"></i></button>
-            </div>
+            </section>                
+            <section class="leaderboard">
+                <h1>LEADERBOARD</h1>
+                <ul class="boardlist">
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User1<br />score:1900</span></li>
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User2<br />score:1856</span></li>
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User3<br />score:1774</span></li>
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User4<br />score:1743</span></li>
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User5<br />score:1698</span></li>
+                    <li class="flex"><img src="Images_Btl/Untitled.png"><span>User5<br />score:1698</span></li>
+                </ul>
+            </section>
+        </div>
+        <section class="details">
+        <div class="rating">
+            <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" ></i></button>
+            <button class="btn" id="red"><i class="fa fa-thumbs-down fa-lg"></i></button>
+        </div>
+        <div class="gamedes">
+            <span>
+                Black Myth: Wukong is an action role-playing game, with soulslike elements. It is a single-player game played from a third-person perspective. It is inspired by the classical Chinese novel Journey to the West.
+            </span>
+        </div>
+        </section>
         </main>
+        <footer>
+            <div class="socialmedia">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="contact">Contact us</a>
+            </div>
+            <div>
+                <span>Copyright &copy 2024 Nuclear Bear Studio </span>
+            </div>
+        </footer>
 </body>
 </html>
