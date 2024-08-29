@@ -312,9 +312,6 @@ div.Den{
 .image {
     width: 20%;
 }
-<<<<<<< HEAD
-
-=======
 /* CSS cho mục game*/
 div.Games>ul{
     list-style-type:none;
@@ -389,7 +386,6 @@ p.gameDes{ /* Đang test tên game*/
     color:red;
     top:150%;
 }
->>>>>>> abd9e0703e261e1938cc563390fa6aef1774b275
 /* CSS cho phan footer*/
 footer{
     margin-top:2rem;
