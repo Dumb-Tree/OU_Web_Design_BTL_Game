@@ -312,7 +312,84 @@ div.Den{
 .image {
     width: 20%;
 }
+<<<<<<< HEAD
 
+=======
+/* CSS cho mục game*/
+div.Games>ul{
+    list-style-type:none;
+    padding:0;
+}
+div.Games>ul>li>img{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+div.Games>ul>li{
+    width:100%;
+    padding:0.5rem;
+    padding-bottom:0;
+    overflow:hidden;
+    position:relative;
+}
+img.hoverimg{
+    display:none;
+    transition:opacity 1s, visibility 1s;
+    opacity:0;
+    visibility: hidden;
+}
+div.Games>ul>li:first-child{
+    width:100%;
+    padding-left:0;
+}
+div.Games>ul>li:hover >img.hoverimg{
+    position:absolute;
+    opacity:1;
+    visibility: visible;
+    animation: moveup 0.1s linear 1;
+    animation-fill-mode: both;
+    background:rgba(0,0,0,0.5);
+    display:block;
+}
+
+div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
+    opacity: 0;
+    visibility:hidden;
+}
+@keyframes leanback{
+    from{
+        transform:rotateX(0deg)
+    }
+    to{
+        transform:rotateX(30deg)
+    }
+}
+@keyframes moveup{
+    from{
+        display:none;
+        bottom:0;
+    }
+    to{
+        display:block;
+        bottom:1rem;
+    }
+}
+@keyframes movedown{ 
+    from{
+        bottom:5rem;
+    }
+    to{
+        bottom:0;
+    }
+}
+p.gameDes{ /* Đang test tên game*/
+    z-index:99;
+    position:absolute;
+    color:red;
+    top:150%;
+}
+>>>>>>> abd9e0703e261e1938cc563390fa6aef1774b275
 /* CSS cho phan footer*/
 footer{
     margin-top:2rem;
