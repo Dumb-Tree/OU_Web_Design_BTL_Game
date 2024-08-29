@@ -1,63 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<style>
-	.flip-card {
-  background-color: transparent;
-  width: 300px;
-  height: 200px;
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  transform-origin: top; /* Điểm xoay nằm ở cạnh trên */
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateX(30deg); /* Lật thẻ 1 góc 30 độ theo chiều X từ trên xuống */
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
-
-.flip-card-back {
-  background-color: #2980b9;
-  color: white;
-  transform: rotateX(180deg); /* Đảm bảo mặt sau không hiển thị */
-}
-
-	</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .hotGameList{
+      display: flex;
+      justify-content: space-between;
+    }
+    .hotGame{
+      perspective: 2500px;
+      box-sizing: border-box;
+      margin: 10px;
+      flex: 1;
+      flex-wrap: wrap;
+      height: 25rem;
+    }
+    .hotGame:hover > img{
+      transform: rotateX(22.5deg);
+      box-shadow: 0 20px 30px rgba(0, 0, 0, 1);      
+    }
+    .hotGame > img{
+      transition: transform 0.6s;
+      width: 100%;
+    }
+    .hotGame > img:last-child{
+      display: none;
+    }
+    .hotGame > h1{
+      margin: 0;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
-	<div class="flip-card">
-		<div class="flip-card-inner">
-		  <div class="flip-card-front">
-			Front Side
-		  </div>
-		  <div class="flip-card-back">
-			Back Side
-		  </div>
-		</div>
-	  </div>
-	  
+    <div class="hotGameList">
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+      <div class="hotGame">
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
+        <h1>Minecraft</h1>
+        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
+      </div>
+    </div>
 </body>
 </html>
