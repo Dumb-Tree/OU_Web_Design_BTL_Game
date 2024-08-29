@@ -334,26 +334,27 @@ div.Games>ul>li{
 }
 img.hoverimg{
     display:none;
+    transition:opacity 1s, visibility 1s;
+    opacity:0;
+    visibility: hidden;
 }
 div.Games>ul>li:first-child{
     width:100%;
     padding-left:0;
 }
-div.Games>ul>li:hover{
-    animation: leanback 0.2s ease-in-out 1;
-    animation-fill-mode: both;
-}
 div.Games>ul>li:hover >img.hoverimg{
     position:absolute;
-    animation: moveup 0.2s ease-in-out 1;
+    opacity:1;
+    visibility: visible;
+    animation: moveup 0.1s linear 1;
     animation-fill-mode: both;
     background:rgba(0,0,0,0.5);
     display:block;
 }
 
 div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
-    animation: movedown 0.5s ease-in-out 1;
-    animation-fill-mode: both;
+    opacity: 0;
+    visibility:hidden;
 }
 @keyframes leanback{
     from{
@@ -370,7 +371,7 @@ div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi kh�
     }
     to{
         display:block;
-        bottom:2rem;
+        bottom:1rem;
     }
 }
 @keyframes movedown{ 
