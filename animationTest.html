@@ -1,37 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    body{
-      perspective: 2500px;
+    .hotgames {
+      display: flex;
+      margin-top: 5rem;
     }
-    .box {
-  width: 200px;
-  height: 200px;
-  background-color: #3498db;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  border-radius: 10px;
-  transition: transform 1s;
-  transform-style: preserve-3d;
-}
 
-.box:hover {
-  transform: rotateX(30deg  );
-}
+    .hotgame {
+      flex: 1;
+      box-sizing: border-box;
+      height: 25vh;
+      margin: 1rem;
+      perspective: 2500px;
+      position: relative;
 
+    }
+
+    .hotgame img {
+      width: 100%;
+    }
+
+    .hotgame>.anhDau {
+      transition: transform 0.4s;
+    }
+
+    .hotgame>.tenGame {
+      position: absolute;
+      left: 0;
+      bottom: -10rem;
+      transition: transform 0.4s 0.1s;
+
+    }
+
+    .hotgame>.anhCuoi {
+      top: 1rem;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+      transition: transform 0.6s;
+    }
+
+    .hotgame:hover .anhDau {
+      transform: rotateX(30deg);
+      filter: brightness(0.3);
+      /* Giảm độ sáng để giữ màu */
+      box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.9);
+      /* Bóng đen cho ảnh đầu */
+    }
+
+    .hotgame:hover .tenGame {
+      transform: translateY(-1.5rem);
+    }
+
+    .hotgame:hover .anhCuoi {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
+
+    .hotgame:not(:hover) .anhCuoi {
+      transform: translateY(0);
+      /* Trượt xuống lại vị trí ban đầu */
+      opacity: 0;
+      transition: transform 0.6s, opacity 0.6s ease;
+      /* Đảm bảo chuyển tiếp mượt mà */
+    }
   </style>
+
 </head>
+
 <body>
-  <div class="box">
-    Hello, World!
+  <div class="hotgames">
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft.jpg" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/Into_The_Pit.jpg" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/fnaf_Logo.webp" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/Into_The_Pit_Model.webp" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
   </div>
-  
 </body>
+
 </html>
