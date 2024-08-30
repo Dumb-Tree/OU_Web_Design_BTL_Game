@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1200px;
+  position: relative;
+  margin: auto;
+}
+.flex{
+    display:flex;
+}
+ul{
+    list-style-type: none;
+    overflow:hidden;
+}
+ul>li{
+    width:100%;
+    height:100%;
+    padding:0.5rem;
+    overflow:hidden;
+}
+ul>li>img{
+    width:100%;
+}
+body{
+    background-color:#191b20;
+}
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: relative;
+  width: auto;
+  padding: 1rem;
+  left:65%;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Caption text */
+.text {
+  color: #000000;
+  font-size: 15px;
+  padding-top: 8px;
+  position: relative;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+.btns{
+    width:80%;
+    margin-left:12rem;
+}
+.btns>span{
+    font-size:1.5rem;
+    color:white;
+}
+</style>
+</head>
+<body>
+<div class="btns">
+    <span>Discover new games!</span>
+    <a class="prev" onclick="plusSlides(-1)"><</a>
+    <a class="next" onclick="plusSlides(1)">></a>
+</div>
+<div class="slideshow-container">
+<div class="mySlides fade">
+    
+<ul class="flex">
+    <li>
+        <img src="HTML_BTL/Images_Btl/Game_Images/Echo/Echo.png">
+          <div class="text">Echo</div>
+    </li>
+    <li>
+        <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" >
+        <div class="text">FNAF SB</div>
+    </li>
+    <li>
+        <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        <div class="text">WereCleaner</div>
+    </li>
+    <li>
+        <img src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png">
+        <div class="text">Minecraft</div>
+    </li>
+    <li>
+        <img src="HTML_BTL/Images_Btl/Game_Images/Genshin_Impact/Genshin.jpg">
+        <div class="text">Genshin Impact</div>
+    </li>
+</ul>
+</div>
+
+<div class="mySlides fade">
+    <ul class="flex">
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg">
+            <div class="text">Genshin Impact</div>
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" >
+            <div class="text">Genshin Impact</div>
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" >
+        </li>
+</div>
+
+<div class="mySlides fade">
+    <ul class="flex">
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        </li>
+        <li>
+            <img src="HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" >
+        </li>
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+</html> 
