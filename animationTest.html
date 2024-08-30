@@ -1,71 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .hotGameList{
+    .hotgames {
       display: flex;
-      justify-content: space-between;
+      margin-top: 5rem;
     }
-    .hotGame{
-      perspective: 2500px;
-      box-sizing: border-box;
-      margin: 10px;
+
+    .hotgame {
       flex: 1;
-      flex-wrap: wrap;
-      height: 25rem;
+      box-sizing: border-box;
+      height: 25vh;
+      margin: 1rem;
+      perspective: 2500px;
+      position: relative;
+
     }
-    .hotGame:hover > img{
-      transform: rotateX(22.5deg);
-      box-shadow: 0 20px 30px rgba(0, 0, 0, 1);      
-    }
-    .hotGame > img{
-      transition: transform 0.6s;
+
+    .hotgame img {
       width: 100%;
     }
-    .hotGame > img:last-child{
-      display: none;
+
+    .hotgame>.anhDau {
+      transition: transform 0.4s;
     }
-    .hotGame > h1{
-      margin: 0;
-      text-align: center;
+
+    .hotgame>.tenGame {
+      position: absolute;
+      left: 0;
+      bottom: -10rem;
+      transition: transform 0.4s 0.1s;
+
+    }
+
+    .hotgame>.anhCuoi {
+      top: 1rem;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+      transition: transform 0.6s;
+    }
+
+    .hotgame:hover .anhDau {
+      transform: rotateX(30deg);
+      filter: brightness(0.3);
+      /* Giảm độ sáng để giữ màu */
+      box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.9);
+      /* Bóng đen cho ảnh đầu */
+    }
+
+    .hotgame:hover .tenGame {
+      transform: translateY(-1.5rem);
+    }
+
+    .hotgame:hover .anhCuoi {
+      visibility: visible;
+      opacity: 1;
+      transform: translateY(-3rem);
+    }
+
+    .hotgame:not(:hover) .anhCuoi {
+      transform: translateY(0);
+      /* Trượt xuống lại vị trí ban đầu */
+      opacity: 0;
+      transition: transform 0.6s, opacity 0.6s ease;
+      /* Đảm bảo chuyển tiếp mượt mà */
     }
   </style>
+
 </head>
+
 <body>
-    <div class="hotGameList">
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
-      <div class="hotGame">
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft.png" alt="">
-        <h1>Minecraft</h1>
-        <img src="HTML_BTL/Images_Btl/Game_Card_Images/Minecraft/Minecraft_Model.png" alt="">
-      </div>
+  <div class="hotgames">
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft.jpg" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
     </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/Into_The_Pit.jpg" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/fnaf_Logo.webp" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Into_The_Pit/Into_The_Pit_Model.webp" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+    <div class="hotgame">
+      <img class="anhDau" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="">
+      <img class="tenGame" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/minecraft_logo.png" alt="">
+      <img class="anhCuoi" src="HTML_BTL/Images_Btl/Game_Images/Minecraft/Minecraft_Model.png" alt="">
+    </div>
+
+  </div>
 </body>
+
 </html>
