@@ -405,74 +405,7 @@ div.Den{
       font-size:1.5rem;
       color:white;
   }
-/* CSS cho mục game*/
-div.Games>ul{
-    list-style-type:none;
-    padding:0;
-}
-div.Games>ul>li>img{
-    position:relative;
-    width:100%;
-    height:100%;
-    overflow: hidden;
-}
-div.Games>ul>li{
-    width:100%;
-    padding:0.5rem;
-    padding-bottom:0;
-    overflow:hidden;
-    position:relative;
-}
-img.hoverimg{
-    display:none;
-    transition:opacity 1s, visibility 1s;
-    opacity:0;
-    visibility: hidden;
-}
-div.Games>ul>li:first-child{
-    width:100%;
-    padding-left:0;
-}
-div.Games>ul>li:hover >img.hoverimg{
-    position:absolute;
-    opacity:1;
-    visibility: visible;
-    animation: moveup 0.1s linear 1;
-    animation-fill-mode: both;
-    background:rgba(0,0,0,0.5);
-    display:block;
-}
 
-div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
-    opacity: 0;
-    visibility:hidden;
-}
-@keyframes leanback{
-    from{
-        transform:rotateX(0deg)
-    }
-    to{
-        transform:rotateX(30deg)
-    }
-}
-@keyframes moveup{
-    from{
-        display:none;
-        bottom:0;
-    }
-    to{
-        display:block;
-        bottom:1rem;
-    }
-}
-@keyframes movedown{ 
-    from{
-        bottom:5rem;
-    }
-    to{
-        bottom:0;
-    }
-}
 /* CSS cho phan footer*/
 footer {
     margin-top: 2rem;
@@ -504,7 +437,81 @@ footer {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
+
+
+/* Css cho phần hotgame */
 .hotgames {
-display: flex;
-margin-top: 5rem;
-}
+    z-index: 100;
+    display: flex;
+    margin-top: 2.5rem;
+    margin-bottom: 5rem;
+  }
+
+  .hotgame {
+    flex: 1;
+    box-sizing: border-box;
+    height: 39vh;
+    margin: 1rem;
+    /* Tạo hiệu ứng 3d */
+    perspective: 2500px;
+    position: relative;
+
+  }
+  .hotgame img {
+    width: 100%;
+  }
+
+  .hotgame>.background {
+    transition: transform 0.6s;
+  }
+  .hotgame>.tenGame {
+    position: absolute;
+    left: 0;
+    bottom: -4.2rem;
+    opacity: 1;
+    /* Tạo thời gian cho tên game di chuyển lên */
+    transition: transform 0.5s 0.1s;
+  }
+  .hotgame>.modal {
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    /* Tạo thời gian cho modal di chuyển lên */
+    transition: transform 0.6s;
+  }
+
+  /* Hover */
+  .hotgame:hover .background {
+    /* Tạo hiệu ứng lật thẻ */
+    transform: rotateX(30deg);
+    filter: brightness(0.2);
+    /* Giảm độ sáng để giữ màu */
+    box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.9);
+  }
+
+  .hotgame:hover .tenGame {
+    opacity: 1;
+    transform: translateY(-4rem);
+  }
+  .hotgame:hover .modal {
+    opacity: 1;
+    transform: translateY(-4rem);
+  }
+
+  /* Thoát hover */
+  .hotgame:not(:hover) .tenGame
+  {
+    /* Về lại vị trí cũ */
+    transform: translateY(0); 
+    opacity: 0;
+    /* Chỉnh tốc độ của opacity */
+    transition: transform 0.6s, opacity 0.6s ease;
+    
+  } 
+  .hotgame:not(:hover) .modal {
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s ease;
+  }
