@@ -262,11 +262,11 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    top:9.1rem;
+    top:8.5rem;
     border-radius:10px; 
     z-index: 1;
     width:20%;
-    height:14.4%;
+    height:14.8%;
     background-color: #404044;
     animation: doiNen2 4s linear 0.01s infinite;
 }
