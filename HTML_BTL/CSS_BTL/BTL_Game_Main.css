@@ -213,6 +213,7 @@ nav>ul>li>a>p {
     color: red;
 }
 
+
 /* Css cho phần banner */
 .slideshow {
     margin-top: 2rem;
@@ -313,7 +314,10 @@ div.Den{
     width: 20%;
 }
 
-  /* Slideshow container */
+
+
+
+/* Css cho phần sale game */
   .slideshow-container {
     max-width: 1300px;
     position: relative;
@@ -391,8 +395,11 @@ div.Den{
       opacity: 1
     }
   }
-  
-  /* Responsive */
+
+
+
+
+/* Responsive */
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
   }
@@ -405,6 +412,7 @@ div.Den{
       font-size:1.5rem;
       color:white;
   }
+
 
 /* CSS cho phan footer*/
 footer {
