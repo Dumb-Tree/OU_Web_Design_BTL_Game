@@ -51,5 +51,4 @@ window.onload = function () {
       }
       x[slideIndex[no]-1].style.display = "block";  
     }
-    addEventListener()
 }

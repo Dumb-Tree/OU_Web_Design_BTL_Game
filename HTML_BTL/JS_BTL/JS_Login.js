@@ -23,6 +23,10 @@ window.onload = function(){
             alert("Tên người dùng quá ngắn!");
             return;
         }
+        else if(UsernameValue.includes(' ') === true || PasswordValue.includes(' ') === true){
+            alert("Tên và mật khẩu người dùng không được để dấu cách");
+            return;
+        }
         window.location.href="BTL_Game_Main.html";
     })
 }
