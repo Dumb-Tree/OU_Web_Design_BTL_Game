@@ -21,7 +21,6 @@ window.onload = function () {
     setInterval(function(){ // sau mỗi 16 giây, thanh trượt về vị trí ban đầu 
             d.style.top= 8.5+'rem';
             count =0;        
-            console.log("reset "+count);
         },15997)
     setInterval(function(){// sau mỗi 4 giây, thanh trượt di chuyển xuống
         count = ++count;
