@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="HTML_BTL/JS_Game.js"></script>
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #333;
+        }
+        .header{
+            padding-bottom: 5px;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .grid{
+            display:inline-grid; /* Chỉ để chiếm đủ chỗ cần thiết*/
+            grid-template-columns: repeat(4,50px); /* Tạo 1 bảng grid với 4 cột và 11 dòng | repeat(số cột, khoảng cách giữa các cột*/
+            padding:20px;
+            gap:5px; /* cho khoảng cách 5px giữa mỗi cell*/
+            border: 1px solid #ccc;
+            background: #222;
+        }
+        .cell{
+            height:50px;
+        }
+        .enemy, .player{
+            width:100%;
+            height:100%;
+        }
+        .enemy{
+            background-color:red;
+            border-radius:50%;
+        }
+        .player{
+            background-image: url("HTML_BTL/Images_Btl/Game_Images/The_Werecleaner/Werewolf_Model.webp");
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        Score: <strong class="score">0</strong>
+    </div>
+    <div class="grid">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+</body>
+</html>

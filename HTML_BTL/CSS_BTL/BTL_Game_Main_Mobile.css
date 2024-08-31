@@ -8,9 +8,18 @@ body {
     background-color: #191b20;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    height:100%;
+    width:190vw;
 }
-
+.main{
+    width:100%;
+}
 /* Css cho phần nav */
+nav{
+    margin:0;
+    padding:0;
+    width:210vw;
+}
 nav>ul {
     padding: 0;
     margin: 0;
@@ -24,7 +33,7 @@ nav>ul>li {
 
 nav>ul>li:nth-child(4) {
     margin-left: auto;
-    margin-right: 1rem;
+    margin-right:0;
 
 }
 
@@ -146,7 +155,7 @@ nav>ul>li>a>p {
 
 /* Tạo khung dữ liệu cho phần title */
 .largeNew>.largeNewTitle {
-    width: 35rem;
+    width: 100%;
     height: 6.5rem;
     overflow: hidden;
     padding-left: 0.5rem;
@@ -160,7 +169,7 @@ nav>ul>li>a>p {
 
 /* Tạo khung dữ liêu cho phần p */
 .largeNew>.largeNewP {
-    width: 35.5rem;
+    width: 100%;
     height: 5.5rem;
     overflow: hidden;
 }
@@ -173,9 +182,9 @@ nav>ul>li>a>p {
 
 /* Tạo khung dữ liệu cho tilte small new */
 .smallNew>.smallNewTitle {
-    width: 16rem;
+    width: 100%;
     height: 13rem;
-    overflow: hidden;
+    overflow:scroll;
 }
 
 .smallNew>.smallNewTitle>h2 {
@@ -216,12 +225,12 @@ nav>ul>li>a>p {
 /* Css cho phần banner */
 .slideshow {
     margin-top: 2rem;
-    width: 80%;
-    height: 80vh;
+    margin-left:4rem;
+    width: 4000%;
+    height: 45%;
     border-radius: 30px;
     overflow: hidden;
-    margin-bottom: 2rem;
-    margin-right: 1rem;
+    margin-bottom:0;
 
 }
 
@@ -244,7 +253,7 @@ nav>ul>li>a>p {
 .Banner {
     display: flex;
     align-items: center;
-    
+    height: auto;
 }
 
 .bannerNames{
@@ -262,13 +271,14 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    top:9.1rem;
+    top:7.1rem;
     border-radius:10px; 
     z-index: 1;
     width:20%;
-    height:14.4%;
+    height:10%;
     background-color: #404044;
     animation: doiNen2 4s linear 0.01s infinite;
+    display:none;
 }
 
 .container {
@@ -278,6 +288,7 @@ div.Den{
     display: flex;
     align-items: center;
     background-color: #28282c;
+    display:none;
 }
 
 .container>p {
@@ -285,39 +296,30 @@ div.Den{
     z-index: 100;
     margin-left: 1rem;
 }
-
-@keyframes doiNen {
-    from {
-        left:59%;
-    }
-
-    to {
-        left: 78%;
-    }
-}
 @keyframes doiNen2{ /* Dung width thay vì dùng left để khỏi chỉnh left right*/
     from{
         width:0%
     }
     to{
-        width:18%;
+        width:16.5%;
     }
 }
 .image>img {
     position: relative;
     z-index: 100;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .image {
-    width: 20%;
+    width: 40%;
+    box-sizing: border-box;
 }
 
   /* Slideshow container */
   .slideshow-container {
-    max-width: 1300px;
+    width:100%;
     position: relative;
-    margin: auto;
   }
   .flex{
       display:flex;
@@ -339,9 +341,6 @@ div.Den{
       width:100%;
       vertical-align: middle;
   }
-  ul.gamelist>li:hover{
-    opacity: .8;
-  }
   /* next and previous button */
   .prev, .next {
     cursor: pointer;
@@ -361,8 +360,15 @@ div.Den{
     border-radius: 3px 0 0 3px;
   }
   .btns{
-    position:absolute;
-    right:6.6%;
+    width:18%;
+    position:relative;
+    margin-left:auto;
+    margin-right:0;
+  }
+  .btns>a{
+    margin-right:0;
+    margin-left:auto;
+    font-size:2rem;
   }
   .prev:hover, .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
@@ -370,12 +376,10 @@ div.Den{
   
   .text {
     color: #ffffff;
-    font-size: 1rem;
-    padding-top: 8px;
+    font-size: 0.9rem;
     position: relative;
-    bottom: 8px;
-    width: 100%;
-    text-align: center;
+    margin-top:10px;
+    text-align:left;
   }
   /* Fading animation */
   .fade {
@@ -398,7 +402,7 @@ div.Den{
   }
   .listTitle{
       margin-top: 1rem;
-      width:80%;
+      width:90%;
       margin-left:8rem;
   }
   .listTitle>span{
@@ -423,29 +427,9 @@ div.Games>ul>li{
     overflow:hidden;
     position:relative;
 }
-img.hoverimg{
-    display:none;
-    transition:opacity 1s, visibility 1s;
-    opacity:0;
-    visibility: hidden;
-}
 div.Games>ul>li:first-child{
     width:100%;
     padding-left:0;
-}
-div.Games>ul>li:hover >img.hoverimg{
-    position:absolute;
-    opacity:1;
-    visibility: visible;
-    animation: moveup 0.1s linear 1;
-    animation-fill-mode: both;
-    background:rgba(0,0,0,0.5);
-    display:block;
-}
-
-div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi không hover chuột lên game*/
-    opacity: 0;
-    visibility:hidden;
 }
 @keyframes leanback{
     from{
@@ -455,31 +439,15 @@ div.Games>ul>li:not(:hover) >img.hoverimg{ /* Anim đổi ngược lại khi kh�
         transform:rotateX(30deg)
     }
 }
-@keyframes moveup{
-    from{
-        display:none;
-        bottom:0;
-    }
-    to{
-        display:block;
-        bottom:1rem;
-    }
-}
-@keyframes movedown{ 
-    from{
-        bottom:5rem;
-    }
-    to{
-        bottom:0;
-    }
-}
 /* CSS cho phan footer*/
 footer {
     margin-top: 2rem;
-    width: 100%;
+    padding:0;
     align-items: center;
     text-align: center;
     background-color: #252730;
+    position:absolute;    
+    width: 210vw;
 }
 
 .socialmedia {
@@ -494,11 +462,6 @@ footer {
     text-decoration: none;
     color: #6b6b6f;
 }
-
-.socialmedia>a:hover {
-    color: white;
-}
-
 .socialmedia>a.contact {
     font-size: 1.5rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
