@@ -213,6 +213,7 @@ nav>ul>li>a>p {
     color: red;
 }
 
+
 /* Css cho phần banner */
 .slideshow {
     margin-top: 2rem;
@@ -262,11 +263,11 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    top:8.5rem;
+    top:9.1rem;
     border-radius:10px; 
     z-index: 1;
     width:20%;
-    height:14.8%;
+    height:14.4%;
     background-color: #404044;
     animation: doiNen2 4s linear 0.01s infinite;
 }
@@ -313,7 +314,10 @@ div.Den{
     width: 20%;
 }
 
-  /* Slideshow container */
+
+
+
+/* Css cho phần sale game */
   .slideshow-container {
     max-width: 1300px;
     position: relative;
@@ -391,8 +395,11 @@ div.Den{
       opacity: 1
     }
   }
-  
-  /* Responsive */
+
+
+
+
+/* Responsive */
   @media only screen and (max-width: 300px) {
     .prev, .next,.text {font-size: 11px}
   }
@@ -400,18 +407,13 @@ div.Den{
       margin-top: 1rem;
       width:80%;
       margin-left:8rem;
+  }
+  .listTitle>span{
       font-size:1.5rem;
-      font-weight: bold;
       color:white;
   }
-  .hotTitle{
-    margin-top: 1rem;
-    width:80%;
-    margin-left:1rem;
-    font-size:2rem;
-    font-weight: bold;
-    color:white;
-}
+
+
 /* CSS cho phan footer*/
 footer {
     margin-top: 2rem;
