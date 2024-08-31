@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .slide {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .thumbnail {
+            position: absolute;
+            display: flex;
+            width: 30vw;
+            height: 42vh;
+            right: 0;
+            top: 10rem;
+            /* Chiều rộng chiếm 20% chiều rộng màn hình */
+            /* Chiều cao chiếm 30% chiều cao màn hình */
+            overflow: hidden;
+            /* Ẩn các hình ảnh nằm ngoài vùng hiển thị */
+        }
+
+        .thumbnail>div {
+            /* Không cho phần tử co lại */
+            flex-shrink: 0;
+            box-sizing: border-box;
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+            width: calc(50% - 1rem);
+        }
+        .thumbnail > div:first-child {
+            margin-right: 2rem; /* Khoảng cách giữa hai phần tử div đầu tiên */
+        }
+
+        .thumbnail>div>img {
+            width: 100%;
+            /* Cho ảnh được bung hết chiều dài */
+            height: 100%;
+            /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
+            object-fit: cover;
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide">
+        <div class="thumbnail">
+            <div>
+                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_lingyang-699f1f98.png"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_weilinai-fb41e537.png"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_jianxin-7ae51570.png"
+                    alt="">
+            </div>
+            <div>
+                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_anke-968ed264.png" alt="">
+            </div>
+            <div>
+                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_kakaluo-19b02a23.png"
+                    alt="">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
