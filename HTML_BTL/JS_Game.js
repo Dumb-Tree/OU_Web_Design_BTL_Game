@@ -17,7 +17,7 @@ window.onload= function(){
       player.parentElement.nextElementSibling.appendChild(player); // Tìm cell chứa người chơi => chuyển qua cell tiếp theo => thêm / di chuyển người dùng vào vị trí đó
     }
     else if(e.key === "ArrowLeft" && playerarea.includes(player.parentElement.previousElementSibling) || e.key === "a" && playerarea.includes(player.parentElement.previousElementSibling)){ //Khi người chơi bấm phím d hoặc mũi tên phải
-      player.parentElement.previousElementSibling.appendChild(player); // Tìm cell chứa người chơi => chuyển qua cell tiếp theo => thêm / di chuyển người dùng vào vị trí đó
+      player.parentElement.previousElementSibling.appendChild(player);
     }
   });
   function reset(){ //Reset lại game
