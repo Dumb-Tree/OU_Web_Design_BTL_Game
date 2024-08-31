@@ -312,6 +312,99 @@ div.Den{
 .image {
     width: 20%;
 }
+
+  /* Slideshow container */
+  .slideshow-container {
+    max-width: 1300px;
+    position: relative;
+    margin: auto;
+  }
+  .flex{
+      display:flex;
+  }
+  ul.gamelist{
+      list-style-type: none;
+  }
+  ul.gamelist>li{
+      width:100%;
+      height:100%;
+      padding:0.5rem;
+      overflow:hidden;
+      cursor:pointer;
+  }
+  .gameSlides1,.gameSlides2 {
+    display: none
+  }
+  ul.gamelist>li>img{
+      width:100%;
+      vertical-align: middle;
+  }
+  ul.gamelist>li:hover{
+    opacity: .8;
+  }
+  /* next and previous button */
+  .prev, .next {
+    cursor: pointer;
+    width: auto;
+    padding: 1rem;
+    left:65.5%;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+  
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  .btns{
+    position:absolute;
+    right:6.6%;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .text {
+    color: #ffffff;
+    font-size: 1rem;
+    padding-top: 8px;
+    position: relative;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+  }
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  
+  @keyframes fade {
+    from {
+      opacity: .4
+    } 
+    to {
+      opacity: 1
+    }
+  }
+  
+  /* Responsive */
+  @media only screen and (max-width: 300px) {
+    .prev, .next,.text {font-size: 11px}
+  }
+  .listTitle{
+      margin-top: 1rem;
+      width:80%;
+      margin-left:8rem;
+  }
+  .listTitle>span{
+      font-size:1.5rem;
+      color:white;
+  }
 /* CSS cho mục game*/
 div.Games>ul{
     list-style-type:none;
@@ -387,28 +480,37 @@ p.gameDes{ /* Đang test tên game*/
     top:150%;
 }
 /* CSS cho phan footer*/
-footer{
-    margin-top:2rem;
-    width:100%;
+footer {
+    margin-top: 2rem;
+    width: 100%;
     align-items: center;
     text-align: center;
     background-color: #252730;
 }
-.socialmedia{
-    padding:1rem;
+
+.socialmedia {
+    padding: 1rem;
 }
-.socialmedia>a{
-    padding:0.4rem;
-    font-size:1.5rem;
-    width:2%;
-    text-align:center;
+
+.socialmedia>a {
+    padding: 0.4rem;
+    font-size: 1.5rem;
+    width: 2%;
+    text-align: center;
     text-decoration: none;
-    color:#6b6b6f;
+    color: #6b6b6f;
 }
-.socialmedia>a:hover{
-    color:white;
+
+.socialmedia>a:hover {
+    color: white;
 }
-.socialmedia>a.contact{
-    font-size:1.5rem;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+.socialmedia>a.contact {
+    font-size: 1.5rem;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.hotgames {
+display: flex;
+margin-top: 5rem;
 }
