@@ -6,6 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JS_BTL/JS_main.js"></script>
     <link rel="stylesheet" href="CSS_BTL/BTL_Game_Main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script>
+        let slideIndex = [1,1];
+        let slideId = ["gameSlides1", "gameSlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+        
+        function plusSlides(n, no) {
+          showSlides(slideIndex[no] += n, no);
+        }
+        
+        function showSlides(n, no) {
+          let i;
+          let x = document.getElementsByClassName(slideId[no]);
+          if (n > x.length) {slideIndex[no] = 1}    
+          if (n < 1) {slideIndex[no] = x.length}
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          x[slideIndex[no]-1].style.display = "block";  
+        }
+    </script>
     <title>Menu</title>
 </head>
 
@@ -18,7 +40,7 @@
                 </div>
             </li>
             <li>
-                <a href=""><img src="Images_Btl/house-32.png" alt="">
+                <a href="BTL_Game_Main.html"><img src="Images_Btl/house-32.png" alt="">
                     <p>Trang chủ</p>
                 </a>
             </li>
@@ -60,50 +82,215 @@
                 </div>
             </div>
             <div class="bannerNames">
+                <div id="Denbar" class="Den"></div>
                 <div class="bannerName">
-                    <div class="Den"></div>
                     <div class="container">
+
                         <div class="image">
-                            <img src="Images_Btl/wukongsmallicon.webp" alt="">
+                            <img src="Images_Btl/wukongsmallicon.webp" alt="Black Myth Wukong">
                         </div>
                         <p>Black Smith Wukong</p>
                     </div>
                 </div>
                 <div class="bannerName">
-                    <div class="Den"></div>
                     <div class="container">
                         <div class="image">
-                            <img src="Images_Btl/wukongsmallicon.webp" alt="">
+                            <img src="Images_Btl/Fall-Guys-Logo-PNG-Images.png" alt="Fall guys">
                         </div>
-                        <p>Black Smith Wukong</p>
+                        <p>Fall Guys</p>
                     </div>
                 </div>
                 <div class="bannerName">
-                    <div class="Den"></div>
                     <div class="container">
                         <div class="image">
-                            <img src="Images_Btl/wukongsmallicon.webp" alt="">
+                            <img src="Images_Btl/Zenless_Zone_Zero_curved_box_logo.svg" alt="Zenless Zone Zero">
                         </div>
-                        <p>Black Smith Wukong</p>
+                        <p>Zenless Zone Zero</p>
                     </div>
                 </div>
                 <div class="bannerName">
-                    <div class="Den"></div>
                     <div class="container">
                         <div class="image">
-                            <img src="Images_Btl/wukongsmallicon.webp" alt="">
+                            <img src="Images_Btl/Fortnite_F_lettermark_logo.png" alt="Fortnite">
                         </div>
-                        <p>Black Smith Wukong</p>
+                        <p>Fortnite</p>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
     <main>
-        
+        <section>
+            <div class="listTitle flex">
+                <span>Discover new games!</span>
+                <div class="btns">
+                <a class="prev" onclick="plusSlides(-1,0)"><</a>
+                <a class="next" onclick="plusSlides(1,0)">></a>
+              </div>
+            </div>
+            <div class="slideshow-container">
+            <div class="gameSlides1 fade">
+                
+            <ul class="gamelist flex">
+                <li>
+                    <img src="Images_Btl/Game_Images/Echo/Echo.png" alt="game image">
+                      <div class="text">Echo</div>
+                </li>
+                <li>
+                    <img src="Images_Btl/Game_Images/fnaf_SB/fnaf_SB.jpeg" alt="game image">
+                    <div class="text">FNAF SB</div>
+                </li>
+                <li>
+                    <img src="Images_Btl/Game_Images/The_Werecleaner/WereCleaner.jpg" alt="game image">
+                    <div class="text">The WereCleaner</div>
+                </li>
+                <li>
+                    <img src="Images_Btl/Game_Images/Minecraft/Minecraft.png" alt="game image">
+                    <div class="text">Minecraft</div>
+                </li>
+                <li>
+                    <img src="Images_Btl/Game_Images/Genshin_Impact/Genshin.jpg" alt="game image">
+                    <div class="text">Genshin Impact</div>
+                </li>
+            </ul>
+            </div>
+            
+            <div class="gameSlides1 fade">
+                <ul class="gamelist flex">
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_2/Concord.jpg" alt="game image">
+                        <div class="text">Concord</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_2/Overwatch2.jpg" alt="game image" >
+                        <div class="text">Overwatch 2</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_2/ArenaOfValor.jpg" alt="game image" >
+                        <div class="text">Arena of Valor</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_2/Deltarune.png" alt="game image" >
+                        <div class="text">Deltarune</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_2/wuthering-waves-uw6vy.jpg" alt="game image">
+                        <div class="text">Wuthering Waves</div>
+                    </li>
+            </div>
+            
+            <div class="gameSlides1 fade">
+                <ul class="gamelist flex">
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_3/TSR.png" alt="game image">
+                        <div class="text">The Smoke Room</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_3/Omori.png" alt="game image">
+                        <div class="text">Omori</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_3/PGR.png" alt="game image">
+                        <div class="text">Punishing Gray Raven</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_3/Arknights.jpg" alt="game image">
+                        <div class="text">Arknights</div>
+                    </li>
+                    <li>
+                        <img src="Images_Btl/Game_Images/List_1_3/limbus.jpg" alt="game image">
+                        <div class="text">Limbus Company</div>
+                    </li>
+            </div>
+            </div>
+            <section>
+            <div class="listTitle flex">
+              <span>Our Monthy Reccomendations!</span>
+              <div class="btns">
+              <a class="prev" onclick="plusSlides(-1,1)"><</a>
+              <a class="next" onclick="plusSlides(1,1)">></a>
+              </div>
+            </div>
+            <div class="slideshow-container">
+            <div class="gameSlides2 fade">
+              
+            <ul class="gamelist flex">
+              <li>
+                  <img src="Images_Btl/Game_Images/List_2_1/funger.jpg" alt="game image">
+                    <div class="text">Fear & Hunger 2: Termina</div>
+              </li>
+              <li>
+                  <img src="Images_Btl/Game_Images/List_2_1/Arches.png" alt="game image">
+                  <div class="text">Arches</div>
+              </li>
+              <li>
+                  <img src="Images_Btl/Game_Images/List_2_1/fez.png" alt="game image">
+                  <div class="text">Fez</div>
+              </li>
+              <li>
+                  <img src="Images_Btl/Game_Images/List_2_1/Adastra.PNG" alt="game image">
+                  <div class="text">Adastra</div>
+              </li>
+              <li>
+                  <img src="Images_Btl/Game_Images//List_2_1/beatsaber.jpg" alt="game image">
+                  <div class="text">Beat Saber</div>
+              </li>
+            </ul>
+            </div>
+            
+            <div class="gameSlides2 fade">
+                <ul class="gamelist flex">
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_2/Among_Us_cover_art.jpg" alt="game image">
+                      <div class="text">Among Us</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_2/Oxygen_Not_Included_cover_art.jpg" alt="game image">
+                      <div class="text">Oxygen Not Included</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_2/HD-wallpaper-stardew-valley-colors-game-games-jogos-pixel-prybz.jpg" alt="game image">
+                      <div class="text">Stardew Valley</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_2/Morenatsu.jpg" alt="game image">
+                      <div class="text">Morenatsu</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_2/Housamo.png" alt="game image">
+                      <div class="text">Tokyo Afterschool Summoners</div>
+                  </li>
+            </div>
+            
+            <div class="gameSlides2 fade">
+              <ul class="gamelist flex">
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_3/ghost-of-tsushima-1080x2160-12072.jpg" >
+                      <div class="text">Ghost of Tsushima</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_3/cookierun.jpg" >
+                      <div class="text">After class</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_3/DST.png" >
+                      <div class="text">Don't Starve Together</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_3/LOR.jpeg" >
+                      <div class="text">Library of Ruina</div>
+                  </li>
+                  <li>
+                      <img src="Images_Btl/Game_Images/List2_3/300px-VRChat_cover.jpg" >
+                      <div class="text">Vr Chat</div>
+                  </li>
+                  
+            </div>
+            </div>
+        </section>
         <section>
             <div class="New">
-                <h1>New</h1>
+                <h1>NEWS!</h1>
                 <div class="largeNews">
                     <div class="largeNew">
                         <div class="largeNewImg">
@@ -197,6 +384,16 @@
             </div>
         </section>
     </main>
+    <footer>
+        <div class="socialmedia">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+        <div>
+            <span>Copyright &copy 2024 Nuclear Bear Studio </span>
+        </div>
+    </footer>
 </body>
 
 </html>
