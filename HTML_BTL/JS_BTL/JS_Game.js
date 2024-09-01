@@ -3,10 +3,9 @@ window.onload= function(){
   const enemyarea = cells.slice(0,40); // Định nghĩa vùng của chướng ngại vật
   const playerarea = cells.slice(40);
   const scoreDisplay = document.querySelector(".score");
-
+  const startscreen = document.querySelector(".startScreen");
   let dropCount, speed, score; //định nghĩa biến
   reset();
-
   document.addEventListener("keydown", e => {      // nhận phím bấm
       if(!dropCount){
         startGame();
@@ -25,6 +24,7 @@ window.onload= function(){
     speed = 1000;
     score = 0;
     scoreDisplay.innerHTML = "0";
+    startscreen.classList.toggle("show");
 
     cells.forEach(cell => cell.innerHTML = "");
     playerarea[0].innerHTML = '<div class="player"></div>';
