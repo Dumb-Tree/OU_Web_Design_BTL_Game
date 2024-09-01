@@ -50,4 +50,12 @@ window.onload = function () {
       }
       x[slideIndex[no]-1].style.display = "block";  
     }
+                //submenu
+                document.addEventListener("DOMContentLoaded", e => {
+                let menu = document.querySelector(".playermenu");
+                let optionIcon = document.querySelector(".option");
+                optionIcon.addEventListener("click", e=>{
+                    menu.classList.toggle("show");
+                });
+            });
 }

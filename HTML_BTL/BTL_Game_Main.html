@@ -6,18 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="JS_BTL/JS_main.js"></script>
     <link rel="stylesheet" href="CSS_BTL/BTL_Game_Main.css">
-    <link rel="stylesheet" href="CSS_BTL/BTL_Game_Main_Mobile.css" media="screen and (max-width:769px)"/>
+    <!-- <link rel="stylesheet" href="CSS_BTL/BTL_Game_Main_Mobile.css" media="screen and (max-width:769px)"/> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script>
+            //submenu
+            document.addEventListener("DOMContentLoaded", e => { //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+                let menu = document.querySelector(".playermenu");
+                let optionIcon = document.querySelector(".option");
+                optionIcon.addEventListener("click", e=>{
+                    menu.classList.toggle("show");
+                });
+            });
         let slideIndex = [1,1];
         let slideId = ["gameSlides1", "gameSlides2"]
-        showSlides(1, 0);
-        showSlides(1, 1);
-        
+
         function plusSlides(n, no) {
           showSlides(slideIndex[no] += n, no);
         }
-        
         function showSlides(n, no) {
           let i;
           let x = document.getElementsByClassName(slideId[no]);
@@ -29,6 +34,39 @@
           x[slideIndex[no]-1].style.display = "block";  
         }
     </script>
+    <style>
+        .playermenu{
+            display:none;
+            position:absolute;
+            background:rgba(36,36,36, 1);
+            border: 2px solid rgb(113, 187, 230);
+            right:0.5rem;
+            z-index:9999;
+        }
+        .menu{
+            list-style-type: none;
+            padding:0;
+            
+        }
+        .menu>li{
+            padding-top:0.5rem;
+            padding:0.4rem;
+            width:10rem;
+        }
+        .menu>li>a{
+            text-decoration: none;
+            color:white;
+        }
+        .menu>li:hover{
+            background-color:rgb(39, 105, 175);
+        }
+        .show{
+            display:block;
+        }
+        .option{
+            cursor:pointer;
+        }
+    </style>
     <title>Menu</title>
 </head>
 <body>
@@ -59,11 +97,17 @@
                 </div>
             </li>
             <li>
-                <div>
+                <div class="option">
                     <img src="Images_Btl/group-32.png" alt="">
                 </div>
             </li>
         </ul>
+        <div class="playermenu">
+            <ul class="menu">
+                <li><a href="">Cài đặt</a></li>
+                <li><a href="main_code/login.html">Đăng xuất</a></li>
+            </ul>
+        </div>
         <div class="Banner">
             <div class="slideshow">
                 <div class="bannerlist">
