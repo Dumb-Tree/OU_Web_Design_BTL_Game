@@ -1,7 +1,7 @@
 window.onload= function(){
   const cells = Array.from(document.querySelectorAll(".cell"));
   const enemyarea = cells.slice(0,40); // Định nghĩa vùng của chướng ngại vật
-  const playerarea = cells.slice(40);
+  const playercell = cells.slice(40);
   const scoreDisplay = document.querySelector(".score");
   const startscreen = document.querySelector(".startScreen");
   let dropCount, speed, score; //định nghĩa biến
@@ -12,13 +12,28 @@ window.onload= function(){
       }
     const player = document.querySelector(".player");
 
-    if(e.key === "ArrowRight" && playerarea.includes(player.parentElement.nextElementSibling)|| e.key === "d" && playerarea.includes(player.parentElement.nextElementSibling)){ //Khi người chơi bấm phím d hoặc mũi tên phải và nằm trong vị trí cho phép đi
+    if(e.key === "ArrowRight" && playercell.includes(player.parentElement.nextElementSibling)|| e.key === "d" && playercell.includes(player.parentElement.nextElementSibling)){ //Khi người chơi bấm phím d hoặc mũi tên phải và nằm trong vị trí cho phép đi
       player.parentElement.nextElementSibling.appendChild(player); // Tìm cell chứa người chơi => chuyển qua cell tiếp theo => thêm / di chuyển người dùng vào vị trí đó
     }
-    else if(e.key === "ArrowLeft" && playerarea.includes(player.parentElement.previousElementSibling) || e.key === "a" && playerarea.includes(player.parentElement.previousElementSibling)){ //Khi người chơi bấm phím d hoặc mũi tên phải
+    else if(e.key === "ArrowLeft" && playercell.includes(player.parentElement.previousElementSibling) || e.key === "a" && playercell.includes(player.parentElement.previousElementSibling)){ //Khi người chơi bấm phím d hoặc mũi tên phải
       player.parentElement.previousElementSibling.appendChild(player);
     }
   });
+  // document.addEventListener("DOMContentLoaded", e=>{
+  //   const moveLeft = document.querySelector(".moveLeft");
+  //   const moveRight = document.querySelector(".moveRight");
+  //   const player = document.querySelector(".player");
+  //   moveLeft.addEventListener("click", e => {
+  //     if(playercell.includes(player.parentElement.previousElementSibling)){
+  //       player.parentElement.previousElementSibling.appendChild(player);
+  //     }
+  //   });
+  //   moveRight.addEventListener("click", e => {
+  //     if(playercell.includes(player.parentElement.nextElementSibling)){
+  //       player.parentElement.nextElementSibling.appendChild(player);
+  //     }
+  //   });  
+  // });
   function reset(){ //Reset lại game
     dropCount = 0;
     speed = 1000;
@@ -27,7 +42,7 @@ window.onload= function(){
     startscreen.classList.toggle("show");
 
     cells.forEach(cell => cell.innerHTML = "");
-    playerarea[0].innerHTML = '<div class="player"></div>';
+    playercell[0].innerHTML = '<div class="player"></div>';
   }
   function startGame(){
     reset();
@@ -45,7 +60,7 @@ window.onload= function(){
       }
       nextCell.appendChild(enemy);
       //Đụng độ
-      if(playerarea.includes(nextCell)){
+      if(playercell.includes(nextCell)){
         if(nextCell.querySelector(".player")){
           collide = true;
         } else{
