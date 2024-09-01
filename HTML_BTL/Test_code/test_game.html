@@ -18,7 +18,7 @@
             display:none;
             position:absolute;
             width:16.9%;
-            height:88.8%;
+            height:88vh;
             text-align: center;
             line-height:650px;
             background:rgba(0, 0, 0,.8);
@@ -53,13 +53,19 @@
             background-image: url("../Images_Btl/Game_Images/The_Werecleaner/Werewolf_Model.webp");
             background-size: contain;
         }
+        .movement>input{
+            padding:1rem;
+            width:5%;
+            background-color:white;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
     <div class="header">
         Score: <strong class="score">0</strong>
-        <div class="startScreen">Press any button to play!</div>
     </div>
+    <div class="startScreen">Press any button to play!</div>
     <div class="grid">
         <div class="cell"></div>
         <div class="cell"></div>
@@ -105,5 +111,10 @@
         <div class="cell"></div>
         <div class="cell"></div>
         <div class="cell"></div>
+    </div>
+    <div class="movement">
+    <input class="moveLeft" type="button" value="LEFT">
+    <input class="moveRight" type="button" value="RIGHT">
+</div>
 </body>
 </html>
