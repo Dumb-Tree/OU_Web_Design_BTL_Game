@@ -263,11 +263,11 @@ nav>ul>li>a>p {
 
 div.Den{
     position: absolute;
-    top:9.1rem;
+    top:8.46rem;
     border-radius:10px; 
     z-index: 1;
     width:20%;
-    height:14.4%;
+    height:14.95%;
     background-color: #404044;
     animation: doiNen2 4s linear 0.01s infinite;
 }
@@ -319,7 +319,7 @@ div.Den{
 
 /* Css cho phần sale game */
   .slideshow-container {
-    max-width: 1300px;
+    max-width: 1550px;
     position: relative;
     margin: auto;
   }
@@ -375,7 +375,7 @@ div.Den{
   .text {
     color: #ffffff;
     font-size: 1rem;
-    padding-top: 8px;
+    padding-top: 15px;
     position: relative;
     bottom: 8px;
     width: 100%;
@@ -406,7 +406,7 @@ div.Den{
   .listTitle{
       margin-top: 1rem;
       width:80%;
-      margin-left:8rem;
+      margin-left:3rem;
   }
   .listTitle>span{
       font-size:1.5rem;
@@ -444,11 +444,11 @@ footer {
     font-size: 1.5rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-
-
-
-
 /* Css cho phần hotgame */
+.hotTitle{
+    margin-left:2rem;
+    font-size: 2rem;
+}
 .hotgames {
     z-index: 100;
     display: flex;
