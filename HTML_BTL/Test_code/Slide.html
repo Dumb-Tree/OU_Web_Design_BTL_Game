@@ -4,57 +4,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
     <title>Document</title>
     <style>
-        .slide {
+        body {
+            margin: 0;
+        }
+
+        .slide>.carousel {
             position: relative;
-            width: 100%;
-            height: 100%;
-            
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
         }
 
-        .thumbnail {
+        .carousel>.item {
             position: absolute;
-            display: flex;
-            width: 30vw;
-            height: 42vh;
+            top: 0;
+            left: 0;
             right: 0;
-            top: 10rem;
-            /* Chiều rộng chiếm 20% chiều rộng màn hình */
-            /* Chiều cao chiếm 30% chiều cao màn hình */
-            overflow: hidden;
-            /* Ẩn các hình ảnh nằm ngoài vùng hiển thị */
+            bottom: 0;
         }
 
-        .thumbnail>div {
-            /* Không cho phần tử co lại */
-            flex-shrink: 0;
-            box-sizing: border-box;
-            width: 50%;
-            border: 1px solid black;
-            border-radius: 10px;
-            overflow: hidden;
-            width: calc(50% - 1rem);
-        }
-        .thumbnail > div:first-child {
-            margin-right: 2rem; /* Khoảng cách giữa hai phần tử div đầu tiên */
-            
-        }
-
-        .thumbnail>div>img {
+        .carousel>.item>.background {
             width: 100%;
-            /* Cho ảnh được bung hết chiều dài */
             height: 100%;
-            /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
             object-fit: cover;
-            transform: scale(1.5);
         }
+
+
+        .carousel>.item>.content {
+            font-family: "Poppins";
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            box-sizing: border-box  ;
+            width: 45rem;
+            top: 50%;
+            left: 50%;
+            color: white;
+            mix-blend-mode: hard-light;
+            transform: translateX(-125%);
+        }
+
+        .carousel >.item >.content button{
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 1.5rem 5.5rem;
+            border-radius: 10px;
+            border: none;
+        }
+        .carousel >.item >.content button:last-child{
+            background-color: transparent;
+        }
+
     </style>
 </head>
 
 <body>
     <div class="slide">
-        <div class="thumbnail">
+
+        <div class="carousel">
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/img1.avif" alt="">
+                <div class="content">
+                    <img class="logo" src="" alt="">
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/img2.avif" alt="">
+                <div class="content">
+                    <img class="logo" src="" alt="">
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/img3.avif" alt="">
+                <div class="content">
+                    <img class="logo" src="" alt="">
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/img4.avif" alt="">
+                <div class="content">
+                    <img class="logo" src="" alt="">
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/img5.avif" alt="">
+                <div class="content">
+                    <img class="logo" src="" alt="">
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+        <!-- <div class="thumbnail">
             <div>
                 <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_lingyang-699f1f98.png"
                     alt="">
@@ -74,7 +165,42 @@
                 <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_kakaluo-19b02a23.png"
                     alt="">
             </div>
-        </div>
+        </div> -->
+        <!-- .thumbnail {
+            position: absolute;
+            display: flex;
+            width: 30vw;
+            height: 42vh;
+            right: 0;
+            top: 13rem;
+            overflow: hiđen;
+        }
+
+        .thumbnail>div {
+            /* Không cho phần tử co lại */
+            flex-shrink: 0;
+            box-sizing: border-box;
+            width: 50%;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hiđen;
+            width: calc(50% - 1rem);
+        }
+
+        .thumbnail>div:first-child {
+            margin-right: 2rem;
+            /* Khoảng cách giữa hai phần tử div đầu tiên */
+
+        }
+
+        .thumbnail>div>img {
+            width: 100%;
+            /* Cho ảnh được bung hết chiều dài */
+            height: 100%;
+            /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
+            object-fit: cover;
+            transform: scale(1.5);
+        } -->
     </div>
 </body>
 
