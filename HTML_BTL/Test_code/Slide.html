@@ -5,20 +5,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 
     <title>Document</title>
     <style>
+        /* Css cho phần nav */
+        .flex {
+            display: flex;
+            align-items: center;
+        }
+
+        nav>ul {
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            background-color: #252730;
+        }
+
+        nav>ul>li {
+            list-style-type: none;
+        }
+
+        nav>ul>li:nth-child(4) {
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        nav>ul>li>a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav>ul>li>a>p {
+            margin: 0;
+        }
+
+        .logo {
+            width: 10rem;
+        }
+
+        .logo>img {
+            width: 100%;
+        }
+
+        .user {
+            align-items: center;
+        }
+
+        .userInfor>p {
+            margin: 0;
+            color: #b1b1b5;
+        }
+
+        .userIMG {
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 3rem;
+            height: 3rem;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .userIMG>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Css cho nav user */
+        .user {
+            align-items: center;
+            display: flex;
+
+        }
+
+        .userInfor>p {
+            margin: 0;
+            color: #b1b1b5;
+            font-size: 1.3rem;
+        }
+
+        .userIMG {
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 3rem;
+            height: 3rem;
+            /* Đặt chiều cao tương ứng với chiều rộng */
+            padding: 0;
+            /* Đảm bảo không có padding */
+            overflow: hidden;
+        }
+
+        .userIMG>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         body {
             margin: 0;
         }
 
-        .slide>.carousel {
+
+        /* Carousel */
+        .slide {
             position: relative;
-            width: 100vw;
-            height: 100vh;
+            width: 90vw;
+            /* Chiều rộng 80% của viewport width */
+            height: 80vh;
+            /* Chiều cao 80% của viewport height */
+            margin: 2rem 0.7rem 2rem auto;
+        }
+
+        .slide>.carousel {
+            position: absolute;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            border-radius: 10px;
         }
 
         .carousel>.item {
@@ -32,148 +143,75 @@
         .carousel>.item>.background {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: fill;
+            filter: brightness(0.7);
         }
 
 
         .carousel>.item>.content {
             font-family: "Poppins";
             font-weight: bold;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             position: absolute;
-            box-sizing: border-box  ;
-            width: 45rem;
-            top: 50%;
-            left: 50%;
+            box-sizing: border-box;
+            width: 40%;
+            top: 45%;
+            left: 3%;
             color: white;
             mix-blend-mode: hard-light;
-            transform: translateX(-125%);
+            text-shadow: 1px 4px 3px black;
         }
 
-        .carousel >.item >.content button{
+        .carousel>.item>.content>div {
+            width: 30%;
+        }
+
+        .carousel>.item>.content>div>img {
+            width: 100%;
+            ;
+
+        }
+
+
+        .carousel>.item>.content button {
             font-size: 1.2rem;
             font-weight: bold;
-            padding: 1.5rem 5.5rem;
+            padding: 1.3rem 4.5rem;
             border-radius: 10px;
             border: none;
         }
-        .carousel >.item >.content button:last-child{
+
+        .carousel>.item>.content button:last-child {
             background-color: transparent;
+            color: white;
+            font-weight: bold;
         }
 
-    </style>
-</head>
+        .carousel>.item>.content button:hover {
+            cursor: pointer;
+        }
 
-<body>
-    <div class="slide">
+        .carousel>.item>.content button:last-child:hover {
+            background-color: white;
+            opacity: 50%;
+            color: black;
+        }
 
-        <div class="carousel">
-
-            <div class="item">
-                <img class="background" src="../Images_Btl/SlideBanner/img1.avif" alt="">
-                <div class="content">
-                    <img class="logo" src="" alt="">
-                    <h2 class="available">AVAILABLE</h2>
-                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
-                    </p>
-                    <p class="price">đ1,299,000</p>
-                    <button class="buyNow">Buy Now</button>
-                    <button class="wishlist">Add to Wishlist</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <img class="background" src="../Images_Btl/SlideBanner/img2.avif" alt="">
-                <div class="content">
-                    <img class="logo" src="" alt="">
-                    <h2 class="available">AVAILABLE</h2>
-                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
-                    </p>
-                    <p class="price">đ1,299,000</p>
-                    <button class="buyNow">Buy Now</button>
-                    <button class="wishlist">Add to Wishlist</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <img class="background" src="../Images_Btl/SlideBanner/img3.avif" alt="">
-                <div class="content">
-                    <img class="logo" src="" alt="">
-                    <h2 class="available">AVAILABLE</h2>
-                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
-                    </p>
-                    <p class="price">đ1,299,000</p>
-                    <button class="buyNow">Buy Now</button>
-                    <button class="wishlist">Add to Wishlist</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <img class="background" src="../Images_Btl/SlideBanner/img4.avif" alt="">
-                <div class="content">
-                    <img class="logo" src="" alt="">
-                    <h2 class="available">AVAILABLE</h2>
-                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
-                    </p>
-                    <p class="price">đ1,299,000</p>
-                    <button class="buyNow">Buy Now</button>
-                    <button class="wishlist">Add to Wishlist</button>
-                </div>
-            </div>
-
-            <div class="item">
-                <img class="background" src="../Images_Btl/SlideBanner/img5.avif" alt="">
-                <div class="content">
-                    <img class="logo" src="" alt="">
-                    <h2 class="available">AVAILABLE</h2>
-                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese mythology
-                    </p>
-                    <p class="price">đ1,299,000</p>
-                    <button class="buyNow">Buy Now</button>
-                    <button class="wishlist">Add to Wishlist</button>
-                </div>
-            </div>
-
-
-        </div>
-
-
-
-
-
-
-
-
-
-        <!-- <div class="thumbnail">
-            <div>
-                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_lingyang-699f1f98.png"
-                    alt="">
-            </div>
-            <div>
-                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_weilinai-fb41e537.png"
-                    alt="">
-            </div>
-            <div>
-                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_jianxin-7ae51570.png"
-                    alt="">
-            </div>
-            <div>
-                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_anke-968ed264.png" alt="">
-            </div>
-            <div>
-                <img src="https://wutheringwaves.kurogames.com/website-preface/assets/super_kakaluo-19b02a23.png"
-                    alt="">
-            </div>
-        </div> -->
-        <!-- .thumbnail {
+        /* Thumbnail */
+        .thumbnail {
             position: absolute;
             display: flex;
-            width: 30vw;
-            height: 42vh;
-            right: 0;
-            top: 13rem;
-            overflow: hiđen;
+            width: 40%;
+            right: 1%;
+            bottom: 10%;
+            overflow: hidden;
+            /* Màu trắng mờ với độ trong suốt */
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border: 1px white;
+            /* Hiệu ứng mờ nền */
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         .thumbnail>div {
@@ -181,27 +219,126 @@
             flex-shrink: 0;
             box-sizing: border-box;
             width: 50%;
-            border: 1px solid black;
             border-radius: 10px;
             overflow: hiđen;
             width: calc(50% - 1rem);
+            padding: 2%;
         }
 
         .thumbnail>div:first-child {
             margin-right: 2rem;
             /* Khoảng cách giữa hai phần tử div đầu tiên */
-
         }
 
         .thumbnail>div>img {
+            border-radius: 10px;
             width: 100%;
             /* Cho ảnh được bung hết chiều dài */
             height: 100%;
             /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
-            object-fit: cover;
-            transform: scale(1.5);
-        } -->
+            object-fit: fill;
+        }
+
+
+        /* Điều hướng trong carousel */
+        .slide>.dieuHuong {
+            position: absolute;
+            bottom: 2%;
+            left: 60%;
+        }
+
+        .slide>.dieuHuong>button {
+            border-radius: 50%;
+            border: none;
+            font-size: 2rem;
+            background-color: gray;
+            color: white;
+        }
+
+        .slide>.dieuHuong>button:hover {
+            background-color: #eee;
+            color: #555;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="flex">
+            <li>
+                <div class="logo">
+                    <img src="../Images_Btl/revoltglogo.png" alt="">
+                </div>
+            </li>
+            <li>
+                <a href="BTL_Game_Main.html"><img src="../Images_Btl/house-32.png" alt="">
+                    <p>Trang chủ</p>
+                </a>
+            </li>
+            <li>
+                <a href=""><img src="../Images_Btl/joystick-32.png" alt="">
+                    <p>Trò chơi</p>
+                </a>
+            </li>
+            <li class="user flex">
+                <div class="userIMG">
+                    <img src="../Images_Btl/Untitled.png" alt="Avt">
+                </div>
+                <div class="userInfor">
+                    <p id="Username"></p>
+                    <p>Thành viên</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="../Images_Btl/group-32.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+
+    <div class="slide">
+
+        <div class="carousel">
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/gun.avif" alt="">
+                <div class="content">
+                    <div>
+                        <!-- <img class="logo" src="../Images_Btl/SlideBanner/gun-removebg-preview.png" alt="">s -->
+                    </div>
+                    <h2 class="available">AVAILABLE</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
+                        mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="thumbnail">
+            <div><img src="../Images_Btl/SlideBanner/gun.avif" alt=""></div>
+            <div><img src="../Images_Btl/SlideBanner/mons.avif" alt=""></div>
+            <div><img src="../Images_Btl/SlideBanner/star.avif" alt=""></div>
+            <div><img src="../Images_Btl/SlideBanner/war.avif" alt=""></div>
+            <div><img src="../Images_Btl/SlideBanner/wukong.avif" alt=""></div>
+        </div>
+
+        <div class="dieuHuong">
+            <button>&#8636;</button>
+            <button>&#8641;</button>
+        </div>
+
+        
     </div>
+
+
+
 </body>
 
 </html>
