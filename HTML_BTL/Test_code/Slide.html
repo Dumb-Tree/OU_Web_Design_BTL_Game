@@ -138,7 +138,14 @@
             left: 0;
             right: 0;
             bottom: 0;
+            display: none;
         }
+
+        /* Chỉ hiện phần tử đầu tiên */
+        .carousel>.item:nth-child(1) {
+            display: initial;
+        }
+
 
         .carousel>.item>.background {
             object-fit: contain;
@@ -148,23 +155,7 @@
             height: auto;
             bottom: 10%;
             right: 20%;
-            animation: showIMG 0.4s linear forwards;
         }
-
-        @keyframes showIMG {
-            from {
-                width: 20%;
-                height: auto;
-                bottom: 10%;
-                right: 20%;
-            }
-            to {
-                width: 100%; 
-                bottom: -20%;
-                right: 0;
-            }
-        }
-
 
         .carousel>.item>.content {
             font-family: "Poppins";
@@ -175,22 +166,10 @@
             width: 40%;
             height: 100%;
             top: 20%;
-            left: 20%;
             color: white;
             mix-blend-mode: hard-light;
             text-shadow: 1px 4px 3px black;
             opacity: 0;
-            animation: showContent 0.4s 0.4s linear forwards !important;
-        }
-        @keyframes showContent {
-            from{
-                
-            }
-            to{
-                left: 3%;
-                opacity: 1;
-            }
-            
         }
 
         .carousel>.item>.content>.logo {
@@ -199,15 +178,11 @@
             top: 0%;
             display: flex;
             align-items: flex-end;
-            
         }
-        
-
 
         .carousel>.item>.content>.logo>img {
             width: 100%;
         }
-
 
         .carousel>.item>.content>.available {
             margin-bottom: 0;
@@ -244,7 +219,6 @@
             color: black;
         }
 
-
         /* Thumbnail */
         .thumbnail {
             z-index: 100;
@@ -264,12 +238,13 @@
         }
 
         .thumbnail>div {
+            z-index: 100;
             /* Không cho phần tử co lại */
             flex-shrink: 0;
             box-sizing: border-box;
             width: 50%;
             border-radius: 10px;
-            overflow: hiđen;
+            overflow: hidden;
             width: calc(50% - 1rem);
             padding: 2%;
         }
@@ -287,8 +262,6 @@
             /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
             object-fit: fill;
         }
-
-
 
         /* Điều hướng trong carousel */
         .slide>.dieuHuong {
@@ -311,6 +284,43 @@
             color: #555;
             cursor: pointer;
         }
+
+        /* Animation */
+        .carousel>.item:nth-child(1)>.background {
+            animation: showIMG 0.4s linear forwards;
+        }
+
+        @keyframes showIMG {
+            from {
+                width: 20%;
+                height: auto;
+                bottom: 10%;
+                right: 20%;
+            }
+
+            to {
+                width: 100%;
+                bottom: -20%;
+                right: 0;
+            }
+        }
+
+        .carousel>.item:nth-child(1)>.content {
+
+            animation: showContent 0.4s 0.4s linear forwards;
+        }
+
+        @keyframes showContent {
+            from {
+                left: 20%;
+                opacity: 0;
+            }
+
+            to {
+                left: 3%;
+                opacity: 1;
+            }
+        }
     </style>
 
     <script>
@@ -329,14 +339,25 @@
             var item0Thumbnail = listItemThumbnail[0];
             thumbnail.removeChild(listItemThumbnail[0]);
             thumbnail.appendChild(item0Thumbnail);
-
-
-
-
-
         }
-        window.onload = function () {
 
+        function previous() {
+            // Thay đổi phần banner
+            var carousel = document.querySelector(".carousel"); // Lấy phần tử carousel
+            var listItem = document.querySelectorAll(".carousel >.item");
+            var itemLast = listItem[listItem.length - 1];
+            carousel.removeChild(itemLast); // Xóa item cuối khỏi carousel
+            carousel.insertBefore(itemLast, listItem[0]); // Thêm item đầu tiên vào dầu carousel
+
+            // Thay đổi phần thumbnail
+            var thumbnail = document.querySelector(".thumbnail")
+            var listItemThumbnail = document.querySelectorAll(".thumbnail > div")
+            var itemLastThumbnail = listItemThumbnail[listItemThumbnail.length - 1];
+            thumbnail.removeChild(itemLastThumbnail);
+            thumbnail.insertBefore(itemLastThumbnail, listItemThumbnail[0]);
+        }
+
+        window.onload = function () {
         }
 
     </script>
@@ -471,7 +492,7 @@
         </div>
 
         <div class="dieuHuong">
-            <button onclick="next()">&#8636;</button>
+            <button onclick="previous()">&#8636;</button>
             <button onclick="next()">&#8641;</button>
         </div>
 
