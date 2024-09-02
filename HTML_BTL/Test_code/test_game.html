@@ -60,6 +60,16 @@
             border-radius: 5px;
         }
     </style>
+    <script>
+         //submenu
+         document.addEventListener("DOMContentLoaded", e => { //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+            let menu = document.querySelector(".playermenu");
+            let userInfor = document.querySelector(".userIMG");
+            userInfor.addEventListener("click", e=>{
+                menu.classList.toggle("show");
+            });
+        });
+    </script>
 </head>
 <body>
     <div class="header">
@@ -112,9 +122,5 @@
         <div class="cell"></div>
         <div class="cell"></div>
     </div>
-    <div class="movement">
-    <input class="moveLeft" type="button" value="LEFT">
-    <input class="moveRight" type="button" value="RIGHT">
-</div>
 </body>
 </html>
