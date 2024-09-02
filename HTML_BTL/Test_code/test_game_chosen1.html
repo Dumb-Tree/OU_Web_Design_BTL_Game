@@ -230,6 +230,17 @@ ul.boardList>li{
     font-weight: bold;
     font-size:1.5rem;
 }
+.restartgame{
+    display:none;
+    position:absolute;
+    background-color:rgb(213, 188, 156);
+    font-size:1.2rem;
+    color:black;
+    top:39%;
+    left:32.5%;
+    width:15%;
+    border-radius: 20px;
+}
 .show{
     display:block;
 }
@@ -381,8 +392,8 @@ footer {
     right:0rem;
 }
     </style>
-    <script src="../JS_BTL/JS_Game.js"></script>
-    <script>
+    <script src="../JS_BTL/JS_Game1.js"></script>
+    <script>/*
     document.addEventListener("DOMContentLoaded", e => { 
         let likebtn = document.getElementById("green");
         let dislikebtn = document.getElementById("red");
@@ -407,9 +418,9 @@ footer {
                 menu.classList.toggle("show");
             });
         });
-        
+ */
     </script>
-    <title>Document</title>
+    <title>TEST</title>
 </head>
 <body>
         <nav>
@@ -478,6 +489,9 @@ footer {
                 Score: <strong class="score">0</strong>
             </div>
             <div class="startScreen">Press any button to play!</div>
+            <div class="restartgame">
+                <p class="scoreresult"> Your score was: </p>
+            </div>
             <div class="grid">
                 <div class="cell"></div>
                 <div class="cell"></div>
@@ -527,7 +541,7 @@ footer {
     </div>
     <section class="gameIntro">
         <div class="gameName">
-             <h1>Slime rain</h1>
+             <h1>Slime Rain</h1>
             <span>1,634,533 play times</span>
         </div>
             <div class="ratings">

@@ -1,14 +1,17 @@
 window.onload= function(){
+  
   const cells = Array.from(document.querySelectorAll(".cell"));
   const enemyarea = cells.slice(0,40); // Định nghĩa vùng của chướng ngại vật
   const playercell = cells.slice(40);
   const scoreDisplay = document.querySelector(".score");
   const startscreen = document.querySelector(".startScreen");
+  const restartscrn = document.querySelector(".restartgame");
   let dropCount, speed, score; //định nghĩa biến
   reset();
   document.addEventListener("keydown", e => {      // nhận phím bấm
       if(!dropCount){
         startGame();
+        restartscrn.classList.remove("show");
       }
     const player = document.querySelector(".player");
 
@@ -19,21 +22,6 @@ window.onload= function(){
       player.parentElement.previousElementSibling.appendChild(player);
     }
   });
-  // document.addEventListener("DOMContentLoaded", e=>{
-  //   const moveLeft = document.querySelector(".moveLeft");
-  //   const moveRight = document.querySelector(".moveRight");
-  //   const player = document.querySelector(".player");
-  //   moveLeft.addEventListener("click", e => {
-  //     if(playercell.includes(player.parentElement.previousElementSibling)){
-  //       player.parentElement.previousElementSibling.appendChild(player);
-  //     }
-  //   });
-  //   moveRight.addEventListener("click", e => {
-  //     if(playercell.includes(player.parentElement.nextElementSibling)){
-  //       player.parentElement.nextElementSibling.appendChild(player);
-  //     }
-  //   });  
-  // });
   function reset(){ //Reset lại game
     dropCount = 0;
     speed = 1000;
@@ -80,7 +68,8 @@ window.onload= function(){
     }
 
     if(collide){
-      alert('Your score: ' + score + ". Close this window to play again!");
+      restartscrn.innerHTML=`<p> Your score was: ${score}</p>`;
+      restartscrn.classList.add("show");
       reset();
     }
     else{
@@ -88,4 +77,29 @@ window.onload= function(){
       setTimeout(enemymove, speed);
     }
   }
+  document.addEventListener("DOMContentLoaded", e => { 
+    let likebtn = document.getElementById("green");
+    let dislikebtn = document.getElementById("red");
+    likebtn.addEventListener("click", e=>{
+        if(dislikebtn.classList.contains("red")){
+            dislikebtn.classList.toggle("red");
+        }
+        likebtn.classList.toggle("green");
+    });
+    dislikebtn.addEventListener("click", e=>{
+        if(likebtn.classList.contains("green")){
+            likebtn.classList.toggle("green");
+        }
+        dislikebtn.classList.toggle("red");
+    });
+});
+     //submenu
+     document.addEventListener("DOMContentLoaded", e => { //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+        let menu = document.querySelector(".playermenu");
+        let userInfor = document.querySelector(".userIMG");
+        userInfor.addEventListener("click", e=>{
+            menu.classList.toggle("show");
+        });
+    });
+    
 }

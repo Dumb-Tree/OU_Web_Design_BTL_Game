@@ -184,7 +184,6 @@ nav>ul>li>a>p {
 .smallNew>.smallNewTitle {
     width: 100%;
     height: 13rem;
-    overflow:scroll;
 }
 
 .smallNew>.smallNewTitle>h2 {
@@ -213,7 +212,6 @@ nav>ul>li>a>p {
 
 .smallNew>h2 {
     color: white;
-    text-wrap: wrap;
     font-weight: bold;
 }
 
@@ -350,7 +348,6 @@ div.Den{
     color: rgb(255, 255, 255);
     font-weight: bold;
     font-size: 18px;
-    transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
   }
@@ -360,9 +357,9 @@ div.Den{
     border-radius: 3px 0 0 3px;
   }
   .btns{
-    width:18%;
+    width:30%;
     position:relative;
-    margin-left:auto;
+    margin-left:10%;
     margin-right:0;
   }
   .btns>a{
@@ -370,16 +367,15 @@ div.Den{
     margin-left:auto;
     font-size:2rem;
   }
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
   .text {
     color: #ffffff;
     font-size: 0.9rem;
     position: relative;
-    padding:15px;
+    padding-top:10px;
     text-align:left;
+    white-space:nowrap; /*Bất kì dãy khoảng trắng nào cũng sẽ bị đưa về là 1 và ngăn chữ tràn xuống dòng 2*/
+    overflow:hidden;
+    text-overflow: ellipsis; /* biến dòng chữ tràn ra thành "..."*/
   }
   /* Fading animation */
   .fade {
@@ -397,7 +393,7 @@ div.Den{
   }
   
   /* Responsive */
-  @media only screen and (max-width: 300px) {
+  @media only screen and (max-width: 319px) {
     .prev, .next,.text {font-size: 11px}
   }
   .listTitle{
@@ -468,8 +464,77 @@ footer {
 }
 
 .hotgames {
-display: flex;
-margin-top: 5rem;
-}
+    z-index: 100;
+    display: flex;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+  }
 
+  .hotgame {
+    flex: 1;
+    box-sizing: border-box;
+    height: 25%;
+    margin: 1rem;
+    /* Tạo hiệu ứng 3d */
+    perspective: 2500px;
+    position: relative;
+
+  }
+  .hotgame img {
+    width: 100%;
+  }
+
+  .hotgame>.background {
+    transition: transform 0.6s;
+  }
+  .hotgame>.tenGame {
+    position: absolute;
+    left: 0;
+    bottom: -2.2rem;
+    opacity: 1;
+    /* Tạo thời gian cho tên game di chuyển lên */
+    transition: transform 0.5s 0.1s;
+  }
+  .hotgame>.modal {
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    /* Tạo thời gian cho modal di chuyển lên */
+    transition: transform 0.6s;
+  }
+
+  /* Hover */
+  .hotgame:hover .background {
+    /* Tạo hiệu ứng lật thẻ */
+    transform: rotateX(30deg);
+    filter: brightness(0.2);
+    /* Giảm độ sáng để giữ màu */
+    box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.9);
+  }
+
+  .hotgame:hover .tenGame {
+    opacity: 1;
+    transform: translateY(-4rem);
+  }
+  .hotgame:hover .modal {
+    opacity: 1;
+    transform: translateY(-2rem);
+  }
+
+  /* Thoát hover */
+  .hotgame:not(:hover) .tenGame
+  {
+    /* Về lại vị trí cũ */
+    transform: translateY(0); 
+    opacity: 0;
+    /* Chỉnh tốc độ của opacity */
+    transition: transform 0.6s, opacity 0.6s ease;
+    
+  } 
+  .hotgame:not(:hover) .modal {
+    transform: translateY(0);
+    opacity: 0;
+    transition: transform 0.6s, opacity 0.6s ease;
+  }
 
