@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,319 +9,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
-    <title>Document</title>
-    <style>
-        /* Css cho phần nav */
-        .flex {
-            display: flex;
-            align-items: center;
-        }
-
-        nav>ul {
-            padding: 0;
-            margin: 0;
-            align-items: center;
-            background-color: #252730;
-        }
-
-        nav>ul>li {
-            list-style-type: none;
-        }
-
-        nav>ul>li:nth-child(4) {
-            margin-left: auto;
-            margin-right: 1rem;
-        }
-
-        nav>ul>li>a {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 10px;
-            text-decoration: none;
-            color: white;
-        }
-
-        nav>ul>li>a>p {
-            margin: 0;
-        }
-
-        .logo {
-            width: 10rem;
-        }
-
-        .logo>img {
-            width: 100%;
-        }
-
-        .user {
-            align-items: center;
-        }
-
-        .userInfor>p {
-            margin: 0;
-            color: #b1b1b5;
-        }
-
-        .userIMG {
-            border: 1px solid black;
-            border-radius: 10px;
-            width: 3rem;
-            height: 3rem;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        .userIMG>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* Css cho nav user */
-        .user {
-            align-items: center;
-            display: flex;
-
-        }
-
-        .userInfor>p {
-            margin: 0;
-            color: #b1b1b5;
-            font-size: 1.3rem;
-        }
-
-        .userIMG {
-            border: 1px solid black;
-            border-radius: 10px;
-            width: 3rem;
-            height: 3rem;
-            /* Đặt chiều cao tương ứng với chiều rộng */
-            padding: 0;
-            /* Đảm bảo không có padding */
-            overflow: hidden;
-        }
-
-        .userIMG>img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        body {
-            margin: 0;
-        }
-
-
-        /* Carousel */
-        .slide {
-            position: relative;
-            width: 90vw;
-            /* Chiều rộng 80% của viewport width */
-            height: 80vh;
-            /* Chiều cao 80% của viewport height */
-            margin: 2rem 0.7rem 2rem auto;
-        }
-
-        .slide>.carousel {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            border-radius: 10px;
-        }
-
-        .carousel>.item {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: none;
-        }
-
-        /* Chỉ hiện phần tử đầu tiên */
-        .carousel>.item:nth-child(1) {
-            display: initial;
-        }
-
-
-        .carousel>.item>.background {
-            object-fit: contain;
-            filter: brightness(0.7);
-            position: absolute;
-            width: 20%;
-            height: auto;
-            bottom: 10%;
-            right: 20%;
-        }
-
-        .carousel>.item>.content {
-            font-family: "Poppins";
-            font-weight: bold;
-            font-size: 1rem;
-            position: absolute;
-            box-sizing: border-box;
-            width: 40%;
-            height: 100%;
-            top: 20%;
-            color: white;
-            mix-blend-mode: hard-light;
-            text-shadow: 1px 4px 3px black;
-            opacity: 0;
-        }
-
-        .carousel>.item>.content>.logo {
-            width: 50%;
-            height: 25%;
-            top: 0%;
-            display: flex;
-            align-items: flex-end;
-        }
-
-        .carousel>.item>.content>.logo>img {
-            width: 100%;
-        }
-
-        .carousel>.item>.content>.available {
-            margin-bottom: 0;
-        }
-
-        .carousel>.item>.content>.description {
-            width: 100%;
-            height: 15%;
-            overflow: hidden;
-        }
-
-        .carousel>.item>.content button {
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 1.3rem 4.5rem;
-            border-radius: 10px;
-            border: none;
-            z-index: 100;
-        }
-
-        .carousel>.item>.content button:last-child {
-            background-color: transparent;
-            color: white;
-            font-weight: bold;
-        }
-
-        .carousel>.item>.content button:hover {
-            cursor: pointer;
-        }
-
-        .carousel>.item>.content button:last-child:hover {
-            background-color: white;
-            opacity: 50%;
-            color: black;
-        }
-
-        /* Thumbnail */
-        .thumbnail {
-            z-index: 100;
-            position: absolute;
-            display: flex;
-            width: 40%;
-            right: 1%;
-            bottom: 10%;
-            overflow: hidden;
-            /* Màu trắng mờ với độ trong suốt */
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            border: 1px white;
-            /* Hiệu ứng mờ nền */
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .thumbnail>div {
-            z-index: 100;
-            /* Không cho phần tử co lại */
-            flex-shrink: 0;
-            box-sizing: border-box;
-            width: 50%;
-            border-radius: 10px;
-            overflow: hidden;
-            width: calc(50% - 1rem);
-            padding: 2%;
-        }
-
-        .thumbnail>div:first-child {
-            margin-right: 2rem;
-            /* Khoảng cách giữa hai phần tử div đầu tiên */
-        }
-
-        .thumbnail>div>img {
-            border-radius: 10px;
-            width: 100%;
-            /* Cho ảnh được bung hết chiều dài */
-            height: 100%;
-            /* Phóng to ảnh sao cho ảnh chiếm hết vùng container */
-            object-fit: fill;
-        }
-
-        /* Điều hướng trong carousel */
-        .slide>.dieuHuong {
-            z-index: 100;
-            position: absolute;
-            bottom: 2%;
-            left: 60%;
-        }
-
-        .slide>.dieuHuong>button {
-            border-radius: 50%;
-            border: none;
-            font-size: 2rem;
-            background-color: gray;
-            color: white;
-        }
-
-        .slide>.dieuHuong>button:hover {
-            background-color: #eee;
-            color: #555;
-            cursor: pointer;
-        }
-
-        /* Animation */
-        .carousel>.item:nth-child(1)>.background {
-            animation: showIMG 0.4s linear forwards;
-        }
-
-        @keyframes showIMG {
-            from {
-                width: 20%;
-                height: auto;
-                bottom: 10%;
-                right: 20%;
-            }
-
-            to {
-                width: 100%;
-                bottom: -20%;
-                right: 0;
-            }
-        }
-
-        .carousel>.item:nth-child(1)>.content {
-
-            animation: showContent 0.4s 0.4s linear forwards;
-        }
-
-        @keyframes showContent {
-            from {
-                left: 20%;
-                opacity: 0;
-            }
-
-            to {
-                left: 3%;
-                opacity: 1;
-            }
-        }
-    </style>
-
+    <link rel="stylesheet" href="../CSS_BTL/Game_side.css">
+    <title>Trò chơi</title>
     <script>
         function next() {
 
@@ -359,10 +47,8 @@
 
         window.onload = function () {
         }
-
     </script>
 </head>
-
 <body>
     <nav>
         <ul class="flex">
@@ -397,9 +83,67 @@
             </li>
         </ul>
     </nav>
+    <div class="side">
+        <div class="sideBar">
+            <ul>
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
 
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
 
-    <div class="slide">
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                    </div>
+                    <span>Steam</span>
+                </li>
+                
+            </ul>
+        </div>
 
         <div class="carousel">
             <div class="item">
@@ -495,12 +239,6 @@
             <button onclick="previous()">&#8636;</button>
             <button onclick="next()">&#8641;</button>
         </div>
-
-
     </div>
-
-
-
 </body>
-
 </html>
