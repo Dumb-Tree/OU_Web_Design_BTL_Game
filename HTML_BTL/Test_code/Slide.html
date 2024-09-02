@@ -151,27 +151,39 @@
         .carousel>.item>.content {
             font-family: "Poppins";
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1rem;
             position: absolute;
             box-sizing: border-box;
             width: 40%;
-            top: 45%;
+            height: 100%;
+            top: 20%;
             left: 3%;
             color: white;
             mix-blend-mode: hard-light;
             text-shadow: 1px 4px 3px black;
         }
 
-        .carousel>.item>.content>div {
-            width: 30%;
+        .carousel>.item>.content>.logo{
+            width: 50%;
+            height: 25%;
+            top: 0%;
+            display: flex;
+            align-items: flex-end;
         }
 
-        .carousel>.item>.content>div>img {
+        .carousel>.item>.content>.logo>img{
             width: 100%;
-            ;
-
         }
 
+        .carousel>.item>.content>.available{
+            margin-bottom: 0;
+        }
+
+        .carousel>.item>.content>.description{
+            width: 100%;
+            height: 15%;
+            overflow: hidden;
+        }
 
         .carousel>.item>.content button {
             font-size: 1.2rem;
@@ -179,6 +191,7 @@
             padding: 1.3rem 4.5rem;
             border-radius: 10px;
             border: none;
+            z-index: 100;
         }
 
         .carousel>.item>.content button:last-child {
@@ -197,8 +210,14 @@
             color: black;
         }
 
+
+        .carousel>.item:nth-child(1){
+            z-index: 1;
+        }
+
         /* Thumbnail */
         .thumbnail {
+            z-index: 100;
             position: absolute;
             display: flex;
             width: 40%;
@@ -242,6 +261,7 @@
 
         /* Điều hướng trong carousel */
         .slide>.dieuHuong {
+            z-index: 100;
             position: absolute;
             bottom: 2%;
             left: 60%;
@@ -306,10 +326,74 @@
             <div class="item">
                 <img class="background" src="../Images_Btl/SlideBanner/gun.avif" alt="">
                 <div class="content">
-                    <div>
-                        <!-- <img class="logo" src="../Images_Btl/SlideBanner/gun-removebg-preview.png" alt="">s -->
+                    <div class="logo">
+                        <img src="../Images_Btl/SlideBanner/gun-removebg-preview.png" alt="">
                     </div>
-                    <h2 class="available">AVAILABLE</h2>
+                    <h2 class="available">AVAILABLE NOW</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
+                        mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/mons.avif" alt="">
+                <div class="content">
+                    <div class="logo">
+                        <img src="../Images_Btl/SlideBanner/mons-removebg-preview.png" alt="">
+                    </div>
+                    <h2 class="available">AVAILABLE NOW</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
+                        mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/star.avif" alt="">
+                <div class="content">
+                    <div class="logo">
+                        <img src="../Images_Btl/SlideBanner/star-removebg-preview.png" alt="">
+                    </div>
+                    <h2 class="available">AVAILABLE NOW</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
+                        mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/war.avif" alt="">
+                <div class="content">
+                    <div class="logo">
+                        <img src="../Images_Btl/SlideBanner/war-removebg-preview.png" alt="">
+                    </div>
+                    <h2 class="available">AVAILABLE NOW</h2>
+                    <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
+                        mythology
+                    </p>
+                    <p class="price">đ1,299,000</p>
+                    <button class="buyNow">Buy Now</button>
+                    <button class="wishlist">Add to Wishlist</button>
+                </div>
+            </div>
+
+            <div class="item">
+                <img class="background" src="../Images_Btl/SlideBanner/wukong.avif" alt="">
+                <div class="content">
+                    <div class="logo">
+                        <img src="../Images_Btl/SlideBanner/wukong-removebg-preview_test.png" alt="">
+                    </div>
+                    <h2 class="available">AVAILABLE NOW</h2>
                     <p class="description">Set out as the Destined One in this action RPG rooted in Chinese
                         mythology
                     </p>
