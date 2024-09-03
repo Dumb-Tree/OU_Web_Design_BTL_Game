@@ -4,10 +4,11 @@
     align-items: center;
 }
 
-body {
+body{
     background-color: #191b20;
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 /* Css cho phần nav */
