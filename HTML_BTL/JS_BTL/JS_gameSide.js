@@ -33,6 +33,8 @@ function previous() {
 
 window.onload = function()
 {
-    const Username = localStorage.getItem('Username')
+    //Điền vào tên user
+    const Username = localStorage.getItem('Username');
     document.getElementById('Username').textContent  = Username;
+    document.getElementById('Username2').textContent  = Username;
 }

@@ -31,7 +31,7 @@ body{
     width: 100%;
 }
 
-            /* Css cho phần đăng nhập */
+            /* Responsive CSS cho: phần đăng nhập */
 
 .loginTableItem{  /* Dùng để đưa loginField vào giữa */
     display: flex;
@@ -58,7 +58,7 @@ body{
     border: none;
 }
 
-            /* CSs cho phần tự động đăng nhập */
+            /* Responsive CSS cho: phần tự động đăng nhập */
 .autoLogin{
     padding-left: 0;
     display: flex;
@@ -89,7 +89,7 @@ body{
 }
 
 
-            /* Css cho button */
+            /* Responsive CSS cho: button */
 a>button{
     display: block;
     outline: none;
@@ -107,7 +107,7 @@ a>button{
     font-weight: bold;
 }
 
-            /* Css cho phần aside  */
+            /* Responsive CSS cho: phần aside  */
 .asideItem{
    display: flex;
    justify-content: center;
@@ -124,7 +124,7 @@ a>button{
     text-decoration: underline;
 }
 
-/* Css cho phần trang trí */
+/* Responsive CSS cho: phần trang trí */
 
 p.version{
     margin-top: 5.5rem;

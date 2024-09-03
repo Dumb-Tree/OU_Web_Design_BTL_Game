@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <style>
         .flex{
             display:flex;
@@ -107,6 +107,9 @@ nav>ul>li>a>p {
     height: 100%;
     object-fit: cover;
 }
+.friendbtn{
+    cursor:pointer;
+}
 /* CSS cho cài đặt người dùng*/
 .playermenu{
     display:none;
@@ -132,9 +135,6 @@ nav>ul>li>a>p {
 }
 .menu>li:hover{
     background-color:rgb(39, 105, 175);
-}
-.show{
-    display:block;
 }
 .userIMG{
     cursor:pointer;
@@ -206,6 +206,74 @@ ul.boardList>li{
 }
 .details{
     width:75%;
+}
+/*CSS cho bạn bè*/
+.friendList{
+    opacity:0;
+    transition: opacity 0.5s;
+    position:absolute;
+    right:0;
+    top:11%;
+    width:25%;
+    margin:0;
+    background:rgb(42, 45, 53);
+    animation:friendlisthide 0.5s linear;
+}
+.showfriend{
+    opacity:1 !important;
+    transition: opacity 0.5s;
+    animation:friendlistshow 0.5s ease-out !important;
+}
+.friends{
+    padding:0;
+    list-style-type: none;
+    text-decoration: none;
+}
+.friendList>h1{
+    text-align:center;
+}
+.friends>li>img{
+    width:5.5rem;
+    padding-right:1rem;
+    padding-left:0.5rem;
+    border-radius:50%;
+}
+.friends>li{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    border-bottom: 1px solid #ffff;
+}
+.friends>li:hover{
+    background-color:rgb(64, 81, 111);
+}
+.friends>li>span{
+    margin-top:1rem;
+}
+.friends>li>span>i{
+    padding:0.4rem;
+}
+.friends>li>span>i:hover{
+    color:rgb(79, 181, 221);
+    cursor:pointer;
+}
+.friends>li:last-child{
+    border:none;
+}
+@keyframes friendlistshow{
+    from{
+        top:0;
+    }
+    to{
+        top:11%;
+    }
+}
+@keyframes friendlisthide{
+    from{
+        top:11%;
+    }
+    to{
+        top:5%;
+    }
 }
 /* CSS cho game*/
 
@@ -393,7 +461,16 @@ footer {
 }
     </style>
     <script src="../JS_BTL/JS_Game1.js"></script>
-    <script>/*
+    <script>
+        document.addEventListener("DOMContentLoaded", e => { 
+        const friendbtn = document.querySelector(".friendbtn");
+        const friendlist = document.querySelector(".friendList");
+        friendbtn.addEventListener("click", e=>{
+            friendlist.classList.toggle("showfriend");
+        });
+    });
+    </script>
+    <script>
     document.addEventListener("DOMContentLoaded", e => { 
         let likebtn = document.getElementById("green");
         let dislikebtn = document.getElementById("red");
@@ -418,7 +495,7 @@ footer {
                 menu.classList.toggle("show");
             });
         });
- */
+
     </script>
     <title>TEST</title>
 </head>
@@ -450,7 +527,7 @@ footer {
                     </div>
                 </li>
                 <li>
-                    <div>
+                    <div class="friendbtn">
                         <img src="../Images_Btl/group-32.png" alt="">
                     </div>
                 </li>
@@ -482,6 +559,31 @@ footer {
                     <li class="flex"><img src="../Images_Btl/LeaderBoard_User/User8.jpg"><span>PanaNguyen<br />Score:536</span></li>
                     <li class="flex"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span>LeotheShrimp<br />Score:502</span></li>
                     <li class="flex"><img src="../Images_Btl/LeaderBoard_User/User10.jpg"><span>MailerJean<br />Score:491</span></li>
+                </ul>
+            </section>
+            <section class="friendList">
+                <h1>My Friends</h1>
+                <ul class="friends">
+                    <li class="friend flex" style="color:rgb(255, 255, 255);"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span class="friendname">&#128994;Chardonnay_Rial<br />Đang chơi: Liên Minh Huyền Thoại<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex" style="color:rgb(255, 255, 255);"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span class="friendname">&#128308;Caneld<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex" style="color:rgb(255, 255, 255);"><img src="../Images_Btl/LeaderBoard_User/User5.jpg"><span class="friendname">&#128994;Megacchi<br />Đang chơi: Limbus Company<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex" style="color:rgb(255, 255, 255);"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span class="friendname">&#128994;LeotheShrimp<br />Đang chơi: Genshin Impact<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex" style="color:rgb(255, 255, 255);"><img src="../Images_Btl/LeaderBoard_User/User4.jpg"><span class="friendname">&#128308;CelineCoqueblin<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
                 </ul>
             </section>
         <div class="gameContainer">

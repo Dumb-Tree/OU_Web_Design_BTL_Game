@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS_BTL/Game_side.css">
+    <link rel="stylesheet" href="../CSS_BTL/Mobile_Game_side.css" media="screen and (max-width:768px)" />
     <title>Trò chơi</title>
     <script src="../JS_BTL/JS_gameSide.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        //Submenu
+        document.addEventListener("DOMContentLoaded", function(){ //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+            let menu = document.querySelector(".playermenu");
+            let userInfor = document.querySelector(".userIMG");
+            userInfor.addEventListener("click", function(){
+                menu.classList.toggle("show");
+            });
+        });
+        //friendlist
+        document.addEventListener("DOMContentLoaded", e => { 
+            const friendbtn = document.querySelector(".friendbtn");
+            const friendlist = document.querySelector(".friendList");
+            friendbtn.addEventListener("click", e=>{
+                friendlist.classList.toggle("showfriend");
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -43,20 +64,74 @@
             </li>
             <li>
                 <div>
-                    <img src="../Images_Btl/group-32.png" alt="">
+                    <img class="friendbtn" src="../Images_Btl/group-32.png" alt="">
                 </div>
             </li>
         </ul>
     </nav>
-
+    <div class="playerMenuContainer">
+        <div class="playermenu">
+            <div class="userPic">
+                <img src="../Images_Btl/Untitled.png">
+                    <div class="username">
+                        <span id="Username2">User</span>
+                    </div>
+                </div>            
+                <ul class="menu">
+                <li><a href="">Cài đặt</a></li>
+                <li><a href="../main_code/login.html">Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class=friendlist-container>
+        <section class="friendList">
+            <h1>Bạn Bè Của Tôi</h1>
+            <ul class="friends">
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span class="friendname">&#128994;Chardonnay_Rial<br />Đang chơi: Liên Minh Huyền Thoại<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span class="friendname">&#128308;_Caneld_<br />Offline<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User5.jpg"><span class="friendname">&#128994;Megacchi<br />Đang chơi: Limbus Company<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span class="friendname">&#128994;LeotheShrimp<br />Đang chơi: Genshin Impact<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User4.jpg"><span class="friendname">&#128308;CelineCoqueblin<br />Offline<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+            </ul>
+        </section>
+    </div>
     <div class="side">
         <div class="sideBar">
             <ul>
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/fire.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Đang hot</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Epic_Games_logo.svg.png">
+                    </div>
+                    <span>Epic</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Battle.net_2021_Icon.webp">
+                    </div>
+                    <span>Battle</span>
                 </li>
 
                 <li>
@@ -68,46 +143,24 @@
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/Electronic-Arts-Logo.svg.png">
                     </div>
-                    <span>Steam</span>
+                    <span>EA</span>
                 </li>
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/Ubisoft-Symbol.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Ubisoft</span>
                 </li>
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/thumbsup.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Thích</span>
                 </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-                
             </ul>
         </div>
 
@@ -496,6 +549,16 @@
             </div>
         </div>
     </div>
-
+    <footer>
+        <div class="socialmedia">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="contact" href="mailto:AtomicBearStudio@gmail.com">Liên hệ chúng tôi</a>
+        </div>
+        <div>
+            <span lang="en">Copyright &copy 2024 Nuclear Bear Studio </span>
+        </div>
+    </footer>
 </body>
 </html>

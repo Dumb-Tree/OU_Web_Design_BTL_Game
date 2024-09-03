@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS_BTL/Game_1.css">
     <link rel="stylesheet" href="../CSS_BTL/Mobile_Game1.css" media="screen and (max-width:768px)" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <script src="../JS_BTL/JS_Game1.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", e => { 
@@ -32,7 +32,14 @@
                     menu.classList.toggle("show");
                 });
             });
-            
+                //friendlist
+            document.addEventListener("DOMContentLoaded", e => { 
+                const friendbtn = document.querySelector(".friendbtn");
+                const friendlist = document.querySelector(".friendList");
+                friendbtn.addEventListener("click", e=>{
+                    friendlist.classList.toggle("showfriend");
+                });
+            });
     </script>
     <title>Slime rain - Atomic Bear Studio</title>
 </head>
@@ -65,7 +72,7 @@
                 </li>
                 <li>
                     <div>
-                        <img src="../Images_Btl/group-32.png" alt="">
+                        <img class="friendbtn" src="../Images_Btl/group-32.png" alt="">
                     </div>
                 </li>
             </ul>
@@ -76,17 +83,17 @@
                 <div class="userPic">
                     <img src="../Images_Btl/Untitled.png">
                         <div class="username">
-                            <span id="Username">User</span>
+                            <span id="Username2">User</span>
                         </div>
                     </div>            
                     <ul class="menu">
                     <li><a href="">Cài đặt</a></li>
-                    <li><a href="main_code/login.html">Đăng xuất</a></li>
+                    <li><a href="../main_code/login.html">Đăng xuất</a></li>
                 </ul>
             </div>
         </div>
             <section class="leaderboard">
-                <h1>LEADERBOARD</h1>
+                <h1>BẢNG XẾP HẠNG</h1>
                 <ul class="boardList">
                     <li class="flex" style="color:gold;"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span>Chardonnay_Rial<br />Score:763</span></li>
                     <li class="flex" style="color:silver;"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span>_Caneld_<br />Score:754</span></li>
@@ -100,6 +107,33 @@
                     <li class="flex"><img src="../Images_Btl/LeaderBoard_User/User10.jpg"><span>MailerJean<br />Score:491</span></li>
                 </ul>
             </section>
+            <div class=friendlist-container>
+            <section class="friendList">
+                <h1>Bạn Bè Của Tôi</h1>
+                <ul class="friends">
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span class="friendname">&#128994;Chardonnay_Rial<br />Đang chơi: Liên Minh Huyền Thoại<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span class="friendname">&#128308;_Caneld_<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User5.jpg"><span class="friendname">&#128994;Megacchi<br />Đang chơi: Limbus Company<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span class="friendname">&#128994;LeotheShrimp<br />Đang chơi: Genshin Impact<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User4.jpg"><span class="friendname">&#128308;CelineCoqueblin<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                </ul>
+            </section>
+        </div>
         <div class="gameContainer">
             <div class="header">
                 Score: <strong class="score">0</strong>
@@ -158,7 +192,7 @@
     <section class="gameIntro">
         <div class="gameName">
              <h1>Slime Rain</h1>
-            <span>1,634,533 play times</span>
+            <span>1,634,533 lượt chơi</span>
         </div>
             <div class="ratings">
                 <button class="btn" id="green"><i class="fa fa-thumbs-up fa-lg" ></i></button>
@@ -168,14 +202,14 @@
     <section class="instructions">
         <div class="instruction">
             <strong>INSTRUCTIONS:</strong> <br />
-            &leftarrow; /  &rightarrow; : move left and right<br />
-            A / D : move left and right 
+            &leftarrow; /  &rightarrow; : di chuyển trái / phải<br />
+            A / D : di chuyển trái / phải
         </div>
     </section>
     <section class="description">
         <div class="gameDescription">
-            <h3>Game details</h3>
-            <span>Oh no! It seems like Dr Ott's slime-purifying experiment has failed and now slimes are falling everywhere from the sky! don't let them hit you or you might get seriously hurt! Caneld! use your wolf reflexes and swiftly dodge the incoming slimes.</span>
+            <h3>Chi tiết game:</h3>
+            <span>Một sự kiện bất thường đang xảy ra khắp khu rừng, slime chết chóc đang rơi từ trên trời và trấn thương các sinh vật. Hãy dùng phản xạ của bạn để không trở thành nạn nhân tiếp theo của chúng.</span>
         </div>
     </section>
     <section class="suggestGames">
@@ -198,13 +232,13 @@
 </main>
 <footer>
     <div class="socialmedia">
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
-        <a href="#" class="fa fa-youtube"></a>
-        <a class="contact" href="mailto:AtomicBearStudio@gmail.com">Contact us</a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a class="contact" href="mailto:AtomicBearStudio@gmail.com">Liên hệ chúng tôi</a>
     </div>
     <div>
-        <span>Copyright &copy 2024 Nuclear Bear Studio </span>
+        <span lang="en">Copyright &copy 2024 Nuclear Bear Studio </span>
     </div>
 </footer>
 </body>

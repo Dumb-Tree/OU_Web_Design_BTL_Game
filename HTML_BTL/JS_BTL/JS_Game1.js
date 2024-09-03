@@ -1,5 +1,9 @@
 window.onload= function(){
-  
+  //Điền vào tên user
+  const Username = localStorage.getItem('Username');
+  document.getElementById('Username').textContent  = Username;
+  document.getElementById('Username2').textContent  = Username;
+  //Các elem của game
   const cells = Array.from(document.querySelectorAll(".cell"));
   const enemyarea = cells.slice(0,40); // Định nghĩa vùng của chướng ngại vật
   const playercell = cells.slice(40);
@@ -101,5 +105,4 @@ window.onload= function(){
             menu.classList.toggle("show");
         });
     });
-    
 }

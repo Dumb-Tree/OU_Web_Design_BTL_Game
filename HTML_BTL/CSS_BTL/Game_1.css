@@ -109,7 +109,7 @@ nav>ul>li>a>p {
     background:rgba(36,36,36, 1);
     border: 2px solid rgb(113, 187, 230);
     right:5rem;
-    z-index:9999;
+    z-index:10000;
 }
 .menu{
     list-style-type: none;
@@ -156,6 +156,11 @@ nav>ul>li>a>p {
     background-color:rgba(10, 11, 13,.7);
     border-radius: 25px;
 }
+.friendbtn{
+    cursor:pointer;
+    padding:0.5rem;
+}
+/*CSS cho bảng xếp hạng*/
 .leaderboard{
     animation:leaderboardmove 1s ease-out;
     position:absolute;
@@ -201,6 +206,78 @@ ul.boardList>li{
 }
 .details{
     width:75%;
+}
+/*CSS cho bạn bè*/
+.friendList{
+    opacity:0;
+    transition: opacity 0.5s;
+    position:absolute;
+    right:0;
+    top:11%;
+    width:25%;
+    margin:0;
+    background:rgb(42, 45, 53);
+    animation:friendlisthide 0.5s linear;
+}
+.showfriend{
+    opacity:1 !important;
+    transition: opacity 0.5s;
+    animation:friendlistshow 0.5s ease-out !important;
+}
+.friends{
+    padding:0;
+    list-style-type: none;
+    text-decoration: none;
+    background-color:#202328;
+}
+.friend{
+    color:white;
+}
+.friendList>h1{
+    text-align:center;
+}
+.friends>li>img{
+    width:5.5rem;
+    padding-right:1rem;
+    padding-left:0.5rem;
+    border-radius:50%;
+}
+.friends>li{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    border-bottom: 1px solid #3c403f;
+}
+.friends>li:hover{
+    background-color:rgb(64, 81, 111);
+}
+.friends>li>span{
+    margin-top:1rem;
+}
+.friends>li>span>i{
+    padding:0.4rem;
+}
+.friends>li>span>i:hover{
+    color:rgb(79, 181, 221);
+    cursor:pointer;
+}
+.friends>li:last-child{
+    border:none;
+}
+@keyframes friendlistshow{
+    from{
+        top:0;
+    }
+    to{
+        top:11%;
+    }
+}
+@keyframes friendlisthide{
+    from{
+        top:11%;
+    }
+    to{
+        top:5%;
+    }
 }
 /* CSS cho game*/
 
@@ -366,12 +443,16 @@ footer {
 }
 
 .socialmedia>a {
-    padding: 0.4rem;
+    padding: 1.5rem;
     font-size: 1.5rem;
     width: 2%;
     text-align: center;
     text-decoration: none;
     color: #6b6b6f;
+}
+.socialmedia>a:last-child {
+    margin-top:2.5rem;
+    padding:0;
 }
 
 .socialmedia>a:hover {

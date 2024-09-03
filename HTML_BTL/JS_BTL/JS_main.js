@@ -1,6 +1,7 @@
 window.onload = function () {
     const Username = localStorage.getItem('Username')
     document.getElementById('Username').textContent  = Username;
+    document.getElementById('Username2').textContent  = Username;
     var bannerlist = document.querySelector('.bannerlist')
     var img = document.querySelectorAll('.bannerlist img')
     var slAnh = img.length

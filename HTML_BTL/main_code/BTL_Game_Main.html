@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
     <script src="../JS_BTL/JS_main.js"></script>
     <link rel="stylesheet" href="../CSS_BTL/BTL_Game_Main.css">
     <link rel="stylesheet" href="../CSS_BTL/Mobile_BTL_Game_Main_.css" media="screen and (max-width:769px)" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <script>
         let slideIndex = [1, 1];
         let slideId = ["gameSlides1", "gameSlides2"];
@@ -25,6 +25,22 @@
             }
             x[slideIndex[no] - 1].style.display = "block";
         }
+            //Submenu
+            document.addEventListener("DOMContentLoaded", function(){ //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+                let menu = document.querySelector(".playermenu");
+                let userInfor = document.querySelector(".userIMG");
+                userInfor.addEventListener("click", function(){
+                    menu.classList.toggle("show");
+                });
+            });
+            //friendlist
+            document.addEventListener("DOMContentLoaded", e => { 
+                const friendbtn = document.querySelector(".friendbtn");
+                const friendlist = document.querySelector(".friendList");
+                friendbtn.addEventListener("click", e=>{
+                    friendlist.classList.toggle("showfriend");
+                });
+            });
     </script>
     <title>Menu</title>
 </head>
@@ -57,10 +73,51 @@
             </li>
             <li>
                 <div>
-                    <img src="../Images_Btl/group-32.png" alt="">
+                    <img class="friendbtn" src="../Images_Btl/group-32.png" alt="">
                 </div>
             </li>
         </ul>
+        <div class="playerMenuContainer">
+            <div class="playermenu">
+                <div class="userPic">
+                    <img src="../Images_Btl/Untitled.png">
+                        <div class="username">
+                            <span id="Username2"></span>
+                        </div>
+                    </div>            
+                    <ul class="menu">
+                    <li><a href="">Cài đặt</a></li>
+                    <li><a href="../main_code/login.html">Đăng xuất</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class=friendlist-container>
+            <section class="friendList">
+                <h1>Bạn Bè Của Tôi</h1>
+                <ul class="friends">
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span class="friendname">&#128994;Chardonnay_Rial<br />Đang chơi: Liên Minh Huyền Thoại<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span class="friendname">&#128308;_Caneld_<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User5.jpg"><span class="friendname">&#128994;Megacchi<br />Đang chơi: Limbus Company<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span class="friendname">&#128994;LeotheShrimp<br />Đang chơi: Genshin Impact<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                    <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User4.jpg"><span class="friendname">&#128308;CelineCoqueblin<br />Offline<br />
+                        <i class="fa-regular fa-comments"></i>
+                        <i class="fa-regular fa-face-smile"></i>
+                    </li>
+                </ul>
+            </section>
+        </div>       
         <div class="Banner">
             <div class="slideshow">
                 <div class="bannerlist">
@@ -116,11 +173,11 @@
             </div>
         </div>
     </nav>
-
+    
     <main>
         <!-- HotGame -->
         <section>
-            <div class="hotTitle"> Hot Games Right Now!</div>
+            <div class="hotTitle"> Game Đang Hot!</div>
             <div class="hotgames">
                 <div class="hotgame">
                     <img class="background" src="../Images_Btl/Game_Images/Dragon/background.avif" alt="">
@@ -157,7 +214,7 @@
         <!-- Game Sale -->
         <section>
             <div class="listTitle flex">
-                <span>Discover new games!</span>
+                <span>Tìm Game Mới!</span>
                 <div class="btns">
                     <a class="prev" onclick="plusSlides(-1,0)">&leftarrow;
                     </a>
@@ -239,7 +296,7 @@
                 </div>
             </div>
             <div class="listTitle flex">
-                <span>Our Monthy Reccomendations!</span>
+                <span>Game Nên Thử!</span>
                 <div class="btns">
                     <a class="prev" onclick="plusSlides(-1,1)">&leftarrow;
                     </a>
@@ -338,17 +395,12 @@
                         <p>08/13/24</p>
                         <div class="largeNewTitle">
                             <h2>
-                                Play the 42nd MAXIMUS CUP online event and you could earn an in-game collaborative
-                                theme!
+                                Chơi sự kiện online MAXIMUS CUP lần thứ 42 và nhận quà thưởng trong game theo chủ đề game collab!
                             </h2>
                         </div>
                         <div class="largeNewP">
                             <p>
-                                - It's time to freshen up your style and get ready for the splatacular Tetris® 99
-                                42nd
-                                MAXIMUS CUP
-                                online
-                                event! This time, you'll have the opportunity to...
+                                Đã đến lúc làm mới style và chuẩn bị cho sự kiện Tetris® 99 MAXIMUS CUP lần thứ 42! Lần này, bạn còn có thể...
                             </p>
                         </div>
                         <a href="">Read more</a>
@@ -361,14 +413,12 @@
                         <p>08/13/24</p>
                         <div class="largeNewTitle">
                             <h2>
-                                Chosen legends arrive in Fire Emblem Heroes
+                                Những huyền thoại được chọn đã về Fire Emblem Heroes
                             </h2>
                         </div>
                         <div class="largeNewP">
                             <p>
-                                - Special versions of the top-ranking Heroes selected in the Choose Your Legends:
-                                Round
-                                8 event are here as part of a 5★ summoning focus! Plus...
+                              Phiên bản đặc biệt của những anh hùng hạng top được chọn trong sự kiện "Chọn huyền thoại của bạn": sự kiện vòng 8 cũng quay lại trong vòng triệu hồi 5★! và thêm vào đó...
                             </p>
                         </div>
                         <a href="">Read more</a>
@@ -381,8 +431,8 @@
                         </div>
                         <p>08/12/24</p>
                         <div class="smallNewTitle">
-                            <h2>Explore an underwater world, swim with friends, and find your flow in Endless Ocean
-                                Luminous
+                            <h2>Khám phá thế giới dưới biển, bơi cùng bạn bè và tìm dòng chảy của mình trong Endless Ocean Luminous
+
                             </h2>
                         </div>
                         <a href="">Read more</a>
@@ -393,7 +443,7 @@
                         </div>
                         <p>08/12/24</p>
                         <div class="smallNewTitle">
-                            <h2>Bass the time with a bit of fishing in these games!
+                            <h2>hãy "trôi" thời gian với một chút câu cá trong những game này!
                             </h2>
                         </div>
                         <a href="">Read more</a>
@@ -404,7 +454,7 @@
                         </div>
                         <p>08/12/24</p>
                         <div class="smallNewTitle">
-                            <h2>And the latest Splatfest winner is…
+                            <h2>Và người chiến thắng Splatfest gần đây nhất là…
                             </h2>
                         </div>
                         <a href="">Read more</a>
@@ -415,7 +465,7 @@
                         </div>
                         <p>08/12/24</p>
                         <div class="smallNewTitle">
-                            <h2>The Legend of Zelda™: Echoes of Wisdom comes out Sept. 26—here’s your latest look!
+                            <h2>The Legend of Zelda™: Âm vang của tri thức. 26/9 — Có gì để coi?!
                             </h2>
                         </div>
                         <a href="">Read more</a>
@@ -426,16 +476,17 @@
         </section>
     </main>
     
-    <footer>
-        <div class="socialmedia">
-            <a href="#" class="fa fa-facebook"></a>
-            <a href="#" class="fa fa-twitter"></a>
-            <a href="#" class="fa fa-youtube"></a>
-        </div>
-        <div>
-            <span>Copyright &copy 2024 Nuclear Bear Studio </span>
-        </div>
-    </footer>
+<footer>
+    <div class="socialmedia">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a class="contact" href="mailto:AtomicBearStudio@gmail.com">Liên hệ chúng tôi</a>
+    </div>
+    <div>
+        <span lang="en">Copyright &copy 2024 Nuclear Bear Studio </span>
+    </div>
+</footer>
 </body>
 
 </html>
