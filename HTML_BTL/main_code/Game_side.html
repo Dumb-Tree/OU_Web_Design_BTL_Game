@@ -1,18 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="../CSS_BTL/Game_side.css">
+    <link rel="stylesheet" href="../CSS_BTL/Mobile_Game_side.css" media="screen and (max-width:768px)" />
     <title>Trò chơi</title>
     <script src="../JS_BTL/JS_gameSide.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        //Submenu
+        document.addEventListener("DOMContentLoaded", function(){ //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+            let menu = document.querySelector(".playermenu");
+            let userInfor = document.querySelector(".userIMG");
+            userInfor.addEventListener("click", function(){
+                menu.classList.toggle("show");
+            });
+        });
+        //friendlist
+        document.addEventListener("DOMContentLoaded", e => { 
+            const friendbtn = document.querySelector(".friendbtn");
+            const friendlist = document.querySelector(".friendList");
+            friendbtn.addEventListener("click", e=>{
+                friendlist.classList.toggle("showfriend");
+            });
+        });
+    </script>
 </head>
 <body>
     <nav>
@@ -43,20 +64,74 @@
             </li>
             <li>
                 <div>
-                    <img src="../Images_Btl/group-32.png" alt="">
+                    <img class="friendbtn" src="../Images_Btl/group-32.png" alt="">
                 </div>
             </li>
         </ul>
     </nav>
-
+    <div class="playerMenuContainer">
+        <div class="playermenu">
+            <div class="userPic">
+                <img src="../Images_Btl/Untitled.png">
+                    <div class="username">
+                        <span id="Username2">User</span>
+                    </div>
+                </div>            
+                <ul class="menu">
+                <li><a href="">Cài đặt</a></li>
+                <li><a href="../main_code/login.html">Đăng xuất</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class=friendlist-container>
+        <section class="friendList">
+            <h1>Bạn Bè Của Tôi</h1>
+            <ul class="friends">
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User1.jpg"><span class="friendname">&#128994;Chardonnay_Rial<br />Đang chơi: Liên Minh Huyền Thoại<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User2.jpg"><span class="friendname">&#128308;_Caneld_<br />Offline<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User5.jpg"><span class="friendname">&#128994;Megacchi<br />Đang chơi: Limbus Company<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User9.jpg"><span class="friendname">&#128994;LeotheShrimp<br />Đang chơi: Genshin Impact<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+                <li class="friend flex"><img src="../Images_Btl/LeaderBoard_User/User4.jpg"><span class="friendname">&#128308;CelineCoqueblin<br />Offline<br />
+                    <i class="fa-regular fa-comments"></i>
+                    <i class="fa-regular fa-face-smile"></i>
+                </li>
+            </ul>
+        </section>
+    </div>
     <div class="side">
         <div class="sideBar">
             <ul>
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/fire.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Đang hot</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Epic_Games_logo.svg.png">
+                    </div>
+                    <span>Epic</span>
+                </li>
+
+                <li>
+                    <div>
+                        <img src="../Images_Btl/Sidebar/Battle.net_2021_Icon.webp">
+                    </div>
+                    <span>Battle</span>
                 </li>
 
                 <li>
@@ -68,46 +143,24 @@
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/Electronic-Arts-Logo.svg.png">
                     </div>
-                    <span>Steam</span>
+                    <span>EA</span>
                 </li>
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/Ubisoft-Symbol.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Ubisoft</span>
                 </li>
 
                 <li>
                     <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
+                        <img src="../Images_Btl/Sidebar/thumbsup.png">
                     </div>
-                    <span>Steam</span>
+                    <span>Thích</span>
                 </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-
-                <li>
-                    <div>
-                        <img src="../Images_Btl/Sidebar/Steam_icon_logo.svg.png">
-                    </div>
-                    <span>Steam</span>
-                </li>
-                
             </ul>
         </div>
 
@@ -226,10 +279,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/bloodloop-1f75t.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Blood Loop</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -240,10 +293,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/death-noodle-delivery-1rfxa.jpg" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Death Noodle Delivery</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -254,10 +307,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/dungeon-keeper-gold-6wcen.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Dungeon Keeper: Gold</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -268,10 +321,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/EGST_StorePortrait_1200x1600_1200x1600-15ecfb7d9222b6b7686a6176ddd0a532.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Monopoly</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -282,10 +335,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/EGST_StorePortrait_1200x1600_1200x1600-e6f41420c20529e7380243a6f6b7a38f.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Star wars: Outlaws</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -296,10 +349,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/escape-from-mystwood-mansion-1o1nr.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Escape from Mystwood mansion</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -310,10 +363,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/goat-simulator-remastered-1fl86.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Goat Simular Remastered</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -324,10 +377,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/line-time-bbvjj.webp" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Line Time</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -338,10 +391,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/lost-artifacts-6-mysterious-book-collectors-edition-inu4j.webp" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Lost Artifacts Mysterious Book</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -352,10 +405,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/lost-lullabies--the-orphanage-chronicles-1do8p.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Lost Lullabies - The orphanage chronicles</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -366,10 +419,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/marble-puzzle-blast-1f24m.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Marble Puzzle Blast</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -380,10 +433,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/phoots-and-the-pineapple-throne-17uad.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Phoots and The Pineapple Throne</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -394,10 +447,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/populous-1dbtm.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Populous</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -408,10 +461,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/project-kinesis-174ad.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Project Kinesis</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -422,10 +475,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/retro-racers-12ni0.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Retro Racers</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -436,10 +489,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/simcity-3000-unlimited-1bcci.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Sim city-3000: Unlimited</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -450,10 +503,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/tiny-witch-oxlq9.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Tiny witch</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -464,10 +517,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/universe-millionaire-the-new-era-of-energy-6gr06.avif" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Universe Millionaire</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -478,10 +531,10 @@
 
             <div class="gameItem">
                 <div class="img">
-                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                    <img src="../Images_Btl/Games_Catalogue/werewolf-the-apocalypse--purgatory-nfivh.webp" alt="">
                 </div>
                 <div class="infor">
-                    <h1 class="name">Horticular</h1>
+                    <h1 class="name">Werewolf Purgatory</h1>
                     <div>
                         <span class="sale">-40%</span>
                         <span class="price">đ209,000</span>
@@ -496,6 +549,16 @@
             </div>
         </div>
     </div>
-
+    <footer>
+        <div class="socialmedia">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a class="contact" href="mailto:AtomicBearStudio@gmail.com">Liên hệ chúng tôi</a>
+        </div>
+        <div>
+            <span lang="en">Copyright &copy 2024 Nuclear Bear Studio </span>
+        </div>
+    </footer>
 </body>
 </html>

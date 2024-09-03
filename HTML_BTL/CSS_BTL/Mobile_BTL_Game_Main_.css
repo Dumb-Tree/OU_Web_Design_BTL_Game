@@ -14,7 +14,7 @@ body {
 .main{
     width:100%;
 }
-/* Css cho phần nav */
+/* Responsive CSS cho: phần nav */
 nav{
     margin:0;
     padding:0;
@@ -82,7 +82,7 @@ nav>ul>li>a>p {
     object-fit: cover;
 }
 
-/* Css cho nav user */
+/* Responsive CSS cho: nav user */
 .user {
     align-items: center;
     display: flex;
@@ -111,8 +111,123 @@ nav>ul>li>a>p {
     height: 100%;
     object-fit: cover;
 }
-
-/* Css cho phần new */
+/*Responsive `CSS cho: cài đặt người dùng*/
+.playerMenuContainer{
+    position:relative;
+    width:100%; 
+}
+.playermenu{
+    display:none;
+    position:absolute;
+    right:0;
+    background:rgba(36,36,36, 1);
+    border: 2px solid rgb(113, 187, 230);
+    z-index:9999;
+}
+.menu{
+    list-style-type: none;
+    padding:0;
+    
+}
+.menu>li{
+    padding-top:0.5rem;
+    padding:0.4rem;
+    width:95%;
+}
+.menu>li>a{
+    text-decoration: none;
+    color:white;
+}
+.menu>li:hover{
+    background-color:rgb(39, 105, 175);
+}
+.show{
+    display:block;
+}
+.userIMG{
+    cursor:pointer;
+}
+.userPic{
+    margin-top:1rem;
+    background-color:rgb(26,27,32);
+    padding-bottom:0.4rem;
+}
+.userPic>img{
+    width:50%;
+    border-radius: 30px;
+    margin-left:25%;
+    padding:1rem;
+    padding-bottom:0.2rem;
+    box-sizing: border-box;
+}
+.username{
+    width:70%;
+    text-align: center;
+    margin:0;
+    margin-bottom:0.5rem;
+    margin-left:15%;
+    background-color:rgba(10, 11, 13,.7);
+    border-radius: 25px;
+}
+/*Responsive CSS cho: bạn bè*/
+.friendlist-container{
+    position:relative;
+    width:100%;
+}
+.friendList{
+    opacity:0;
+    transition: opacity 0.5s;
+    position:absolute;
+    top:11%;
+    left:65%;
+    width:40%;
+    margin:0;
+    background:rgb(42, 45, 53);
+    animation:friendlisthide 0.5s linear;
+    z-index:99;
+}
+.friendlist-container{
+    opacity:1 !important;
+    transition: opacity 0.5s;
+    animation:friendlistshow 0.5s ease-out !important;
+}
+.friends{
+    padding:0;
+    list-style-type: none;
+    text-decoration: none;
+    background-color:#202328;
+}
+.friendList>h1{
+    text-align:center;
+}
+.friends>li>img{
+    width:5.5rem;
+    padding-right:1rem;
+    padding-left:0.5rem;
+    border-radius:50%;
+}
+.friends>li{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    border-bottom: 1px solid #3c403f;
+}
+.friends>li:hover{
+    background-color:rgb(64, 81, 111);
+}
+.friends>li>span{
+    margin-top:1rem;
+}
+.friends>li>span>i{
+    padding:0.4rem;
+}
+.friends>li>span>i:hover{
+    color:rgb(79, 181, 221);
+    cursor:pointer;
+}
+.friends>li:last-child{
+    border:none;
+}
+/* Responsive CSS cho: phần new */
 .New {
     width: 80%;
     margin: 0 auto;
@@ -220,7 +335,7 @@ nav>ul>li>a>p {
     color: red;
 }
 
-/* Css cho phần banner */
+/* Responsive CSS cho: phần banner */
 .slideshow {
     margin-top: 2rem;
     margin-left:4rem;
@@ -405,7 +520,7 @@ div.Den{
       font-size:1.5rem;
       color:white;
   }
-/* CSS cho mục game*/
+/* Responsive CSS cho: mục game*/
 div.Games>ul{
     list-style-type:none;
     padding:0;
@@ -435,15 +550,14 @@ div.Games>ul>li:first-child{
         transform:rotateX(30deg)
     }
 }
-/* CSS cho phan footer*/
+/* Repsonsive CSS cho: footer*/
 footer {
     margin-top: 2rem;
-    padding:0;
+    width: 250%;
+    max-width:235vw;
     align-items: center;
     text-align: center;
     background-color: #252730;
-    position:absolute;    
-    width: 210vw;
 }
 
 .socialmedia {
@@ -458,9 +572,19 @@ footer {
     text-decoration: none;
     color: #6b6b6f;
 }
+
+.socialmedia>a:hover {
+    color: white;
+}
+
 .socialmedia>a.contact {
-    font-size: 1.5rem;
+    position:absolute;
+    width:5rem;
+    font-size: 1rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+    text-align:center;
+    right:0;
 }
 
 .hotgames {

@@ -3,12 +3,12 @@
         }
         body{
             background-color: #191b20;
-            width:220vw;
+            width:225vw;
             color:white;
             margin:0;
             padding:0;
         }
-        /* Css cho phần nav */        
+        /* Responsive CSS cho: phần nav */        
 nav{
     margin:0;
     padding:0;
@@ -77,7 +77,7 @@ nav>ul>li>a>p {
     object-fit: cover;
 }
 
-/* Css cho nav user */
+/* Responsive CSS cho: nav user */
 .user {
     align-items: center;
     display: flex;
@@ -107,7 +107,7 @@ nav>ul>li>a>p {
     object-fit: cover;
 }
 
-/* CSS cho cài đặt người dùng*/
+/* Responsive CSS cho: cài đặt người dùng*/
 .playerMenuContainer{
     position:relative;
     width:100%; 
@@ -165,6 +165,7 @@ nav>ul>li>a>p {
     background-color:rgba(10, 11, 13,.7);
     border-radius: 25px;
 }
+/* Responsive CSS cho: bảng xếp hạng*/
 .leaderboard{
     animation:leaderboardmove 1s ease-out;
     position:absolute;
@@ -215,7 +216,81 @@ ul.boardList>li{
 .details{
     width:75%;
 }
-/* CSS cho game*/
+/*Responsive CSS cho: bạn bè*/
+.friendlist-container{
+    position:relative;
+    width:100%;
+}
+.friendList{
+    opacity:0;
+    transition: opacity 0.5s;
+    position:absolute;
+    top:11%;
+    left:65%;
+    width:40%;
+    margin:0;
+    background:rgb(42, 45, 53);
+    animation:friendlisthide 0.5s linear;
+    z-index:99;
+}
+.friendlist-container{
+    opacity:1 !important;
+    transition: opacity 0.5s;
+    animation:friendlistshow 0.5s ease-out !important;
+}
+.friends{
+    padding:0;
+    list-style-type: none;
+    text-decoration: none;
+    background-color:#202328;
+}
+.friendList>h1{
+    text-align:center;
+}
+.friends>li>img{
+    width:5.5rem;
+    padding-right:1rem;
+    padding-left:0.5rem;
+    border-radius:50%;
+}
+.friends>li{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    border-bottom: 1px solid #3c403f;
+}
+.friends>li:hover{
+    background-color:rgb(64, 81, 111);
+}
+.friends>li>span{
+    margin-top:1rem;
+}
+.friends>li>span>i{
+    padding:0.4rem;
+}
+.friends>li>span>i:hover{
+    color:rgb(79, 181, 221);
+    cursor:pointer;
+}
+.friends>li:last-child{
+    border:none;
+}
+@keyframes friendlistshow{
+    from{
+        top:0;
+    }
+    to{
+        top:11%;
+    }
+}
+@keyframes friendlisthide{
+    from{
+        top:11%;
+    }
+    to{
+        top:5%;
+    }
+}
+/* Responsive CSS cho: game*/
 
 .header{
     width:15%;
@@ -304,7 +379,7 @@ button{
 .rating{
     width:75%;
 }
-/* CSS cho phân phối khu vực dưới game*/
+/* Responsive CSS cho: phân phối khu vực dưới game*/
 .gameContainer{
     width:100%;
     margin-left:5%;
@@ -338,7 +413,7 @@ section{
     font-size:1.5rem;
     padding:0.5rem;
 }
-/* CSS cho mục game đề nghị*/
+/* Responsive CSS cho: mục game đề nghị*/
 .suggestGames{
     width:70%;
     margin-left:5%;
@@ -366,7 +441,7 @@ section{
     transition: opacity 0.5s;
     opacity:0.6;
 }
-/* CSS cho phan footer*/
+/* Responsive CSS cho: footer*/
 footer {
     margin-top: 2rem;
     width: 250%;
@@ -378,6 +453,7 @@ footer {
 
 .socialmedia {
     padding: 1rem;
+    position:relative;
 }
 
 .socialmedia>a {
@@ -401,4 +477,5 @@ footer {
     text-decoration: none;
     text-align:center;
     right:0;
+    bottom:0;
 }

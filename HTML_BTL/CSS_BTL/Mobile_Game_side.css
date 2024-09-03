@@ -1,191 +1,188 @@
-.side{
-    display: flex;
+.flex{
+    display:flex;
 }
-
 body{
     background-color: #191b20;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-}
-
-/* Css cho phần nav */
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-nav>ul {
-    padding: 0;
-    margin: 0;
-    align-items: center;
-    background-color: #252730;
-}
-
-nav>ul>li {
-    list-style-type: none;
-}
-
-nav>ul>li:nth-child(3)
-{
-    background-color: #191b20;
-    border-bottom: 1px solid #8791fb    ;
-}
-nav>ul>li:nth-child(4) {
-    margin-left: auto;
-    margin-right: 1rem;
-}
-
-nav>ul>li>a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    text-decoration: none;
-    color: white;
-}
-
-nav>ul>li>a>p {
-    margin: 0;
-}
-
-.logo {
-    width: 10rem;
-}
-
-.logo>img {
-    width: 100%;
-}
-
-.user {
-    align-items: center;
-}
-
-.userInfor>p {
-    margin: 0;
-    color: #b1b1b5;
-}
-
-.userIMG {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 3rem;
-    height: 3rem;
-    padding: 0;
-    overflow: hidden;
-}
-
-.userIMG>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* Css cho nav user */
-.user {
-    align-items: center;
-    display: flex;
-
-}
-
-.userInfor>p {
-    margin: 0;
-    color: #b1b1b5;
-    font-size: 1.3rem;
-}
-
-.userIMG {
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 3rem;
-    height: 3rem;
-    /* Đặt chiều cao tương ứng với chiều rộng */
-    padding: 0;
-    /* Đảm bảo không có padding */
-    overflow: hidden;
-}
-
-.userIMG>img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-
-/* CSS cho cài đặt người dùng*/
-.playermenu{
-    display:none;
-    position:absolute;
-    background:rgba(36,36,36, 1);
-    border: 2px solid rgb(113, 187, 230);
-    right:5rem;
-    z-index:9999;
-}
-.menu{
-    list-style-type: none;
-    padding:0;
-    
-}
-.menu>li{
-    padding-top:0.5rem;
-    padding:0.4rem;
-    width:95%;
-}
-.menu>li>a{
-    text-decoration: none;
+    width:225vw;
     color:white;
-}
-.menu>li:hover{
-    background-color:rgb(39, 105, 175);
-}
-.show{
-    display:block;
-}
-.userIMG{
-    cursor:pointer;
-}
-.userPic{
-    margin-top:1rem;
-    background-color:rgb(26,27,32);
-    padding-bottom:0.4rem;
-}
-.userPic>img{
-    width:50%;
-    border-radius: 30px;
-    margin-left:25%;
-    padding:1rem;
-    padding-bottom:0.2rem;
-    box-sizing: border-box;
-}
-.username{
-    color:white;
-    width:70%;
-    text-align: center;
     margin:0;
-    margin-bottom:0.5rem;
-    margin-left:15%;
-    background-color:rgba(10, 11, 13,.7);
-    border-radius: 25px;
+    padding:0;
 }
-.friendbtn{
-    cursor:pointer;
-    padding:0.5rem;
+       /* Responsive CSS cho: phần nav */        
+       nav{
+        margin:0;
+        padding:0;
+        width:215%;
+        max-width:235vw;
+    }
+    nav>ul {
+        padding: 0;
+        margin: 0;
+        align-items: center;
+        background-color: #252730;
+    }
+    
+    nav>ul>li {
+        list-style-type: none;
+    }
+    
+    nav>ul>li:nth-child(4) {
+        margin-left: auto;
+        margin-right:0;
+    
+    }
+    
+    nav>ul>li>a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-decoration: none;
+        color: white;
+    }
+    
+    nav>ul>li>a>p {
+        margin: 0;
+    }
+    
+    .logo {
+        width: 10rem;
+    }
+    
+    .logo>img {
+        width: 100%;
+    }
+    
+    .user {
+        align-items: center;
+    }
+    
+    .userInfor>p {
+        margin: 0;
+        color: #b1b1b5;
+    }
+    
+    .userIMG {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        overflow: hidden;
+    }
+    
+    .userIMG>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Responsive CSS cho: nav user */
+    .user {
+        align-items: center;
+        display: flex;
+    
+    }
+    
+    .userInfor>p {
+        margin: 0;
+        color: #b1b1b5;
+        font-size: 1.3rem;
+    }
+    
+    .userIMG {
+        border: 1px solid black;
+        border-radius: 10px;
+        width: 3rem;
+        height: 3rem;
+        /* Đặt chiều cao tương ứng với chiều rộng */
+        padding: 0;
+        /* Đảm bảo không có padding */
+        overflow: hidden;
+    }
+    
+    .userIMG>img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    /* Responsive CSS cho: cài đặt người dùng*/
+    .playerMenuContainer{
+        position:relative;
+        width:100%; 
+    }
+    .playermenu{
+        display:none;
+        position:absolute;
+        right:0;
+        background:rgba(36,36,36, 1);
+        border: 2px solid rgb(113, 187, 230);
+        z-index:9999;
+    }
+    .menu{
+        list-style-type: none;
+        padding:0;
+        
+    }
+    .menu>li{
+        padding-top:0.5rem;
+        padding:0.4rem;
+        width:95%;
+    }
+    .menu>li>a{
+        text-decoration: none;
+        color:white;
+    }
+    .menu>li:hover{
+        background-color:rgb(39, 105, 175);
+    }
+    .show{
+        display:block;
+    }
+    .userIMG{
+        cursor:pointer;
+    }
+    .userPic{
+        margin-top:1rem;
+        background-color:rgb(26,27,32);
+        padding-bottom:0.4rem;
+    }
+    .userPic>img{
+        width:50%;
+        border-radius: 30px;
+        margin-left:25%;
+        padding:1rem;
+        padding-bottom:0.2rem;
+        box-sizing: border-box;
+    }
+    .username{
+        width:70%;
+        text-align: center;
+        margin:0;
+        margin-bottom:0.5rem;
+        margin-left:15%;
+        background-color:rgba(10, 11, 13,.7);
+        border-radius: 25px;
+    }
+/*Responsive CSS cho: bạn bè*/
+.friendlist-container{
+    position:relative;
+    width:100%;
 }
 .friendList{
     opacity:0;
     transition: opacity 0.5s;
     position:absolute;
-    right:0;
     top:11%;
-    width:25%;
+    left:65%;
+    width:40%;
     margin:0;
     background:rgb(42, 45, 53);
-    color:white;
     animation:friendlisthide 0.5s linear;
     z-index:9999;
 }
-.showfriend{
+.friendlist-container{
     opacity:1 !important;
     transition: opacity 0.5s;
     animation:friendlistshow 0.5s ease-out !important;
@@ -195,9 +192,6 @@ nav>ul>li>a>p {
     list-style-type: none;
     text-decoration: none;
     background-color:#202328;
-}
-.friend{
-    color:white;
 }
 .friendList>h1{
     text-align:center;
@@ -246,23 +240,28 @@ nav>ul>li>a>p {
     }
 }
 /* Carousel */
+.carousel{
+    width:150%;
+}
 .side {
     position: relative;
-    width: 100vw;
+    width: 220vw;
     /* Chiều rộng 80% của viewport width */
-    height: 80vh;
+    height: 60vh;
     /* Chiều cao 80% của viewport height */
-    margin: 2rem 0.7rem 2rem auto;
+    bottom:0vh;
+    right:5rem;
+    margin:0;
 }
 
 .side>.carousel {
-    width: 93vw;
+    width: 180vw;
     position: absolute;
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
     right: 0;
-    top: 0;
+    top: 1vh;
 }
 
 .carousel>.item {
@@ -298,7 +297,7 @@ nav>ul>li>a>p {
     box-sizing: border-box;
     width: 40%;
     height: 100%;
-    top: 20%;
+    top: 0%;
     color: white;
     mix-blend-mode: hard-light;
     text-shadow: 1px 4px 3px black;
@@ -457,15 +456,16 @@ nav>ul>li>a>p {
 
 /* Css cho phần sideBar */
 .sideBar{
-    width: 5vw;
+    width: 15vw;
     position: fixed;
-    top: 15%;
+    top: 5%;
     left: 1%;
 }
 .sideBar > ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+    width:20vw;
 }
 .sideBar > ul > li{
     background-color: #252730;
@@ -474,7 +474,7 @@ nav>ul>li>a>p {
     align-items: center;
     border-radius: 10px;
     margin-bottom: 13%;
-    padding-bottom:5px;
+    padding-bottom:5vh;
     width:100%;
     height:9vh;
 }
@@ -497,22 +497,23 @@ nav>ul>li>a>p {
 
 /* Css cho phần gameShow */
 .gameShow{
-    width: 92vw;
+    width: 200vw;
     height: auto;
-    margin-top: 5rem    ;
-    margin-left: auto;
+    margin:0;
+    margin-top: 5rem;
     display: flex;
 }
     /* Css cho phần game */
 .gameShow > .game{
-    width: 80%;
+    width: 200%;
     display: flex;
     flex-wrap: wrap;
 }
 .gameShow > .game >.gameItem{
-    width: 22%;
-    height: 32rem;
+    width: 18%;
+    height: 50vh;
     margin:0 1rem;
+    padding-bottom:5vh;
     color: white;
 }
 .gameShow > .game >.gameItem > .img > img{
@@ -537,7 +538,7 @@ nav>ul>li>a>p {
 }
 
 
-    /* Css cno phần sale */
+    /* Css cho phần sale */
 .gameItem.sale >.infor > div >.sale,
 .gameItem.sale >.infor > div >.pirceSale{
     display: initial;
@@ -556,19 +557,18 @@ nav>ul>li>a>p {
     width: 20%;
 }
 .gameShow >.ads>div{
-    width: 100%;
+    width: 200%;
     position: -webkit-sticky;
     position:sticky;
     top:0;
     z-index: 100;
     bottom: 30%;
-    right: 1%;
+    left:20vw;
 
 }
 .gameShow >.ads>div>img{
     width: 100%;
 }
-/* CSS cho phan footer*/
 footer {
     margin-top: 2rem;
     width: 100%;
