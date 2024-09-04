@@ -14,14 +14,28 @@ nav{
     width:215%;
     max-width:235vw;
 }
+.playerMenuContainer{
+    position:relative;
+    width:100%; 
+}
+.playermenu{
+    display:none;
+    position:absolute;
+    right:0;
+    background:rgba(36,36,36, 1);
+    border: 2px solid rgb(113, 187, 230);
+    z-index:9999;
+}
+.show{
+    display:block;
+}
 /*Responsive CSS cho: bạn bè*/
 .friendlist-container{
     position:relative;
     width:100%;
 }
 .friendList{
-    opacity:0;
-    transition: opacity 0.5s;
+
     position:absolute;
     top:11%;
     left:65%;
@@ -30,63 +44,6 @@ nav{
     background:rgb(42, 45, 53);
     animation:friendlisthide 0.5s linear;
     z-index:9999;
-}
-.friendlist-container{
-    opacity:1 !important;
-    transition: opacity 0.5s;
-    animation:friendlistshow 0.5s ease-out !important;
-}
-.friends{
-    padding:0;
-    list-style-type: none;
-    text-decoration: none;
-    background-color:#202328;
-}
-.friendList>h1{
-    text-align:center;
-}
-.friends>li>img{
-    width:5.5rem;
-    padding-right:1rem;
-    padding-left:0.5rem;
-    border-radius:50%;
-}
-.friends>li{
-    padding-bottom:1rem;
-    padding-top:1rem;
-    border-bottom: 1px solid #3c403f;
-}
-.friends>li:hover{
-    background-color:rgb(64, 81, 111);
-}
-.friends>li>span{
-    margin-top:1rem;
-}
-.friends>li>span>i{
-    padding:0.4rem;
-}
-.friends>li>span>i:hover{
-    color:rgb(79, 181, 221);
-    cursor:pointer;
-}
-.friends>li:last-child{
-    border:none;
-}
-@keyframes friendlistshow{
-    from{
-        top:0;
-    }
-    to{
-        top:11%;
-    }
-}
-@keyframes friendlisthide{
-    from{
-        top:11%;
-    }
-    to{
-        top:5%;
-    }
 }
 /* Carousel */
 .carousel{
@@ -307,8 +264,8 @@ nav{
 .sideBar{
     width: 15vw;
     position: fixed;
-    top:19%;
-    left:80%;
+    top:48%;
+    left:85%;
 }
 .sideBar > ul{
     display:flex;
@@ -407,56 +364,51 @@ nav{
     /* Css cho phần ads */
 .gameShow >.ads{
     display:none;
-    width: 20%;
 }
-.gameShow >.ads>div{
-    width: 200%;
-    position: -webkit-sticky;
-    position:sticky;
-    top:0;
-    z-index: 100;
-    bottom: 30%;
-    left:20vw;
-
+/*CSS cho thanh search*/
+input[type="text"] {
+    width:45%;
+    margin-left:2rem;
+    margin-top:0.1vh;
+    height:6vh;
+    border:none;
+    background-color: #3d3f4c;
+    color:white;
+    font-size:1rem;
+    padding-left:0.5rem;
 }
-.gameShow >.ads>div>img{
-    width: 100%;
+input:focus{
+    outline:none;
 }
+.search>i{
+    color:white;
+    cursor:pointer;
+    margin-top:0.01rem;
+    padding: 0.9rem;
+    margin-left:1rem;
+    background-color:#3d3f4c
+}
+/* Responsive CSS cho: footer*/
 footer {
     margin-top: 2rem;
-    width: 100%;
+    width: 250%;
+    max-width:235vw;
     align-items: center;
     text-align: center;
     background-color: #252730;
-    color:white;
 }
 
 .socialmedia {
     padding: 1rem;
+    position:relative;
 }
-
-.socialmedia>a {
-    padding: 1.5rem;
-    font-size: 1.5rem;
-    width: 2%;
-    text-align: center;
-    text-decoration: none;
-    color: #6b6b6f;
-}
-.socialmedia>a:last-child {
-    margin-top:2.5rem;
-    padding:0;
-}
-
-.socialmedia>a:hover {
-    color: white;
-}
-
 .socialmedia>a.contact {
-    width:10rem;
+    position:absolute;
+    width:5rem;
     font-size: 1rem;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-decoration: none;
-    position:absolute;
-    right:0rem;
+    text-align:center;
+    right:0;
+    bottom:0;
 }

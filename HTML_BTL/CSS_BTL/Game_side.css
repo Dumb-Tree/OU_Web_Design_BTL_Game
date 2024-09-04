@@ -603,7 +603,14 @@ input:focus{
     text-decoration: line-through;
     color: grey;
 }
+.playbtn{
+    background-color:rgb(75, 184, 75);
+    padding-right:0.5rem;
+    padding-left:0.5rem;
+    cursor:pointer;
+    border-radius:10px;
 
+}
     /* Css cho phần ads */
 .gameShow >.ads{
     width: 20%;

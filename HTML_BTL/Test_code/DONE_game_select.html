@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex{
+            display:flex;
+        }
+        body{
+            background-color:#191b20;
+        }
+           /* Css cho phần nav */
+           nav>ul {
+            padding: 0;
+            margin: 0;
+            align-items: center;
+            background-color: #252730;
+        }
+
+        nav>ul>li {
+            list-style-type: none;
+        }
+
+        nav>ul>li:nth-child(4) {
+            margin-left: auto;
+            margin-right: 1rem;
+
+        }
+
+        nav>ul>li>a {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
+            text-decoration: none;
+            color: white;
+        }
+
+        nav>ul>li>a>p {
+            margin: 0;
+        }
+
+        .logo {
+            width: 10rem;
+        }
+
+        .logo>img {
+            width: 100%;
+        }
+
+        .user {
+            align-items: center;
+        }
+
+        .userInfor>p {
+            margin: 0;
+            color: #b1b1b5;
+        }
+
+        .userIMG {
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 3rem;
+            height: 3rem;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .userIMG>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Css cho nav user */
+        .user {
+            align-items: center;
+            display: flex;
+
+        }
+
+        .userInfor>p {
+            margin: 0;
+            color: #b1b1b5;
+            font-size: 1.3rem;
+        }
+
+        .userIMG {
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 3rem;
+            height: 3rem;
+            /* Đặt chiều cao tương ứng với chiều rộng */
+            padding: 0;
+            /* Đảm bảo không có padding */
+            overflow: hidden;
+        }
+
+        .userIMG>img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }    
+    @font-face {
+        font-family: "H7GBK-Heavy";
+        src: url('https://hw-media-cdn-mingchao.kurogame.com/font/H7GBK-Heavy.ttf');
+    }
+
+    body {
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        position: relative;
+        width: 90%;
+        height: 80%;
+        border-radius: 10px;
+        background: #f5f5f5;
+        overflow: hidden;
+        margin:auto;
+    }
+
+    .item {
+        width: 165px;
+        height: 250px;
+        position: absolute;
+        top: 50%;
+        transform: translate(250%, -50%);
+        border-radius: 20px;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-color: #151212;
+        display: inline-block;
+        transition: 0.5s;
+    }
+
+    .item:nth-child(1),
+    .item:nth-child(2) {
+        top: 0;
+        left: 0;
+        transform: translate(0, 0);
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .item:nth-child(3) {
+        left: 70%;
+    }
+
+    .item:nth-child(4) {
+        left: calc(70% + 210px);
+    }
+
+    .item:nth-child(5) {
+        left: calc(80% + 430px);
+    }
+
+    .item:nth-child(n + 6) {
+        left: calc(80% + 650px);
+        opacity: 0;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 60px;
+        width: 300px;
+        text-align: left;
+        color: #eee;
+        transform: translate(0, -50%);
+        font-family: "H7GBK-Heavy";
+        display: none;
+    }
+
+    .item:nth-child(2) .content {
+        display: block;
+    }
+
+    .content .name {
+        font-size: 45px;
+        font-weight: 400;
+        opacity: 0;
+        animation: animate 1s ease-in-out 1 forwards;
+    }
+
+    .content .des {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 100;
+        opacity: 0;
+        animation: animate 1s ease-in-out 0.3s 1 forwards;
+    }
+
+    @keyframes animate {
+        from {
+            opacity: 0;
+            transform: translate(0, 100px);
+            filter: blur(33px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translate(0);
+            filter: blur(0);
+        }
+    }
+
+    .buttons {
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        bottom: 60px;
+    }
+
+    button {
+        width: 50px;
+        height: 40px;
+        border-radius: 8px;
+        border: none;
+        background-image: url('https://codetheworld.io/wp-content/uploads/2024/05/prev.png');
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size: contain;
+        margin-inline: 20px;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .next {
+        background-image: url('https://codetheworld.io/wp-content/uploads/2024/05/next.png');
+    }
+</style>
+<script>
+    window.onload = function () {
+        const nextButton = document.querySelector('.next');
+        const prevButton = document.querySelector('.prev');
+
+        nextButton.addEventListener('click',function(){
+                const items = document.querySelectorAll('.item');
+                document.querySelector('.slide').appendChild(items[0]);
+            });
+
+        prevButton.addEventListener('click',function(){
+                const items = document.querySelectorAll('.item');
+                document.querySelector('.slide').prepend(items[items.length - 1]);
+            });
+    }
+</script>
+</head>
+<body>
+    <nav>
+        <ul class="flex">
+            <li>
+                <div class="logo">
+                    <img src="Images_Btl/revoltglogo.png" alt="">
+                </div>
+            </li>
+            <li>
+                <a href=""><img src="Images_Btl/house-32.png" alt="">
+                    <p>Trang chủ</p>
+                </a>
+            </li>
+            <li>
+                <a href=""><img src="Images_Btl/joystick-32.png" alt="">
+                    <p>Trò chơi</p>
+                </a>
+            </li>
+            <li class="user flex">
+                <div class="userIMG">
+                    <img src="Images_Btl/Untitled.png" alt="Avt">
+                </div>
+                <div class="userInfor">
+                    <p id="Username"></p>
+                    <p>Thành viên</p>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <img src="Images_Btl/group-32.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="slide">
+            <div class="item"
+                style="background-image: url(https://assets.nintendo.com/image/upload/c_fill,w_1200/q_auto:best/f_auto/dpr_2.0/ncom/software/switch/70010000057819/723dccab7246841a9fa0a6fbcd30a81f1c357c9f68ad2086e6fd9c5f729293f7);">
+                <div class="content">
+                    <div class="name">FNAF: Security Breach</div>
+                    <div class="des">
+                        Lingyang is a sincere, compassionate foreign visitor of the human community.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item"
+                style="background-image: url(https://wutheringwaves.kurogames.com/website-preface/assets/super_weilinai-fb41e537.png);">
+                <div class="content">
+                    <div class="name">Verina</div>
+                    <div class="des">
+                        Formerly a member of a Pioneer Association expedition team from the New Federation, Verina is a
+                        humble and determined plant breeder.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item"
+                style="background-image: url(https://wutheringwaves.kurogames.com/website-preface/assets/super_jianxin-7ae51570.png);">
+                <div class="content">
+                    <div class="name">Jianxin</div>
+                    <div class="des">
+                        Born in the wilderness and raised in a Taoist sect, Jianxin has been imparted the martial arts
+                        of Fengyiquan.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item"
+                style="background-image: url(https://wutheringwaves.kurogames.com/website-preface/assets/super_anke-968ed264.png);">
+                <div class="content">
+                    <div class="name">Encore</div>
+                    <div class="des">
+                        She always has two Woolies with her, who are Encore's best friends and protectors.
+                    </div>
+                </div>
+            </div>
+
+            <div class="item"
+                style="background-image: url( https://wutheringwaves.kurogames.com/website-preface/assets/super_kakaluo-19b02a23.png);">
+                <div class="content">
+                    <div class="name">Calcharo</div>
+                    <div class="des">
+                        Leader of the "Ghost Hounds", an international mercenary group. Ruthless, vengeful, unforgiving.
+                        A potential client must be mindful of the price to pay before making him an offer.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="buttons">
+            <button class="prev"></button>
+            <button class="next"></button>
+        </div>
+    </div>
+    <div></div>
+</body>
+
+</html>
