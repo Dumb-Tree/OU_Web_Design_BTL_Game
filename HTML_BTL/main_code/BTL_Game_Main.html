@@ -25,22 +25,6 @@
             }
             x[slideIndex[no] - 1].style.display = "block";
         }
-            //Submenu
-            document.addEventListener("DOMContentLoaded", function(){ //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
-                let menu = document.querySelector(".playermenu");
-                let userInfor = document.querySelector(".userIMG");
-                userInfor.addEventListener("click", function(){
-                    menu.classList.toggle("show");
-                });
-            });
-            //friendlist
-            document.addEventListener("DOMContentLoaded", e => { 
-                const friendbtn = document.querySelector(".friendbtn");
-                const friendlist = document.querySelector(".friendList");
-                friendbtn.addEventListener("click", e=>{
-                    friendlist.classList.toggle("showfriend");
-                });
-            });
     </script>
     <title>Menu</title>
 </head>

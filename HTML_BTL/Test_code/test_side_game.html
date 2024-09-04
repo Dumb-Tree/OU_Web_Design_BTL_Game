@@ -1,270 +1,283 @@
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-            .gameShow > .game{
-                width: 80%;
-                display: flex;
-                flex-wrap: wrap;
-            }
-            .gameShow > .game >.gameItem{
-                width: 22%;
-                height: 32rem;
-                margin:0 1rem;
-                color: white;
-            }
-            .gameShow > .game >.gameItem > .img > img{
-                width: 100%;
-            }
-            
-            .gameItem > .infor > div{
-                display: flex;
-                font-size: 1.4rem;
-                justify-content: space-between;
-            }
-            .gameItem >.infor > .name{
-                font-size: 1.7rem;
-                margin-bottom: 0;
-                height: 4rem; /* Chiều cao tối đa dựa trên kích thước của .gameItem */
-                overflow: hidden; /* Ẩn nội dung vượt quá */
-                text-overflow: ellipsis; /* Thêm dấu "..." nếu nội dung bị cắt */
-            }
-            .gameItem > .infor > div > .sale,
-            .gameItem > .infor > div > .priceSale{
-                display: none;
-            }
-            
-            
-                /* Css cno phần sale */
-            .gameItem.sale >.infor > div >.sale,
-            .gameItem.sale >.infor > div >.priceSale{
-                display: initial;
-            }
-            .gameItem.sale >.infor >div >.sale{
-                background-color: #26bbff;
-                border-radius: 10px;
-            }
-            .gameItem.sale > .infor >div >.price{
-                text-decoration: line-through;
-                color: grey;
-            }
-            body{
-                background-color:#191b20;
-            }
-        </style>
-        <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                // Lấy mọi nút thêm vào mục yêu thích
-                const addToCartButtons = document.querySelectorAll(".addFav");
-            
-                // Tạo array để chứa thông tin
-                let gameDataArray = JSON.parse(localStorage.getItem("gameItemsList")) || [];
-            
-                // Loop qua mỗi nút và cho nó sự kiện click chuột để lưu
-                addToCartButtons.forEach((button) => {
-                button.addEventListener("click", function() {
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .gameShow>.game {
+            width: 80%;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .gameShow>.game>.gameItem {
+            width: 22%;
+            height: 32rem;
+            margin: 0 1rem;
+            color: white;
+        }
+
+        .gameShow>.game>.gameItem>.img>img {
+            width: 100%;
+        }
+
+        .gameItem>.infor>div {
+            display: flex;
+            font-size: 1.4rem;
+            justify-content: space-between;
+        }
+
+        .gameItem>.infor>.name {
+            font-size: 1.7rem;
+            margin-bottom: 0;
+            height: 4rem;
+            /* Chiều cao tối đa dựa trên kích thước của .gameItem */
+            overflow: hidden;
+            /* Ẩn nội dung vượt quá */
+            text-overflow: ellipsis;
+            /* Thêm dấu "..." nếu nội dung bị cắt */
+        }
+
+        .gameItem>.infor>div>.sale,
+        .gameItem>.infor>div>.priceSale {
+            display: none;
+        }
+
+
+        /* Css cno phần sale */
+        .gameItem.sale>.infor>div>.sale,
+        .gameItem.sale>.infor>div>.priceSale {
+            display: initial;
+        }
+
+        .gameItem.sale>.infor>div>.sale {
+            background-color: #26bbff;
+            border-radius: 10px;
+        }
+
+        .gameItem.sale>.infor>div>.price {
+            text-decoration: line-through;
+            color: grey;
+        }
+
+        body {
+            background-color: #191b20;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Lấy mọi nút thêm vào mục yêu thích
+            const addToCartButtons = document.querySelectorAll(".addFav");
+
+            // Tạo array để chứa thông tin
+            let gameDataArray = JSON.parse(localStorage.getItem("gameItemsList")) || [];
+
+            // Loop qua mỗi nút và cho nó sự kiện click chuột để lưu
+            addToCartButtons.forEach((button) => {
+                button.addEventListener("click", function () {
                     // Lấy game gần nhất với button (game mình muốn lưu vào yêu thích)
                     const gameItem = button.closest('.gameItem');
-            
+
                     // Lấy ảnh và tên của game
                     const imgSrc = gameItem.querySelector("img").src;
                     const gameName = gameItem.querySelector(".name").innerText;
-            
+
                     // Biến dữ liệu thành 1 phần tử để bỏ array (na ná struct nhưng để lưu vào array)
                     const gameData = {
-                    imageUrl: imgSrc,
-                    name: gameName,
+                        imageUrl: imgSrc,
+                        name: gameName,
                     };
-            
+
                     // kiểm nếu danh sách đã có game đó
                     const existingItem = gameDataArray.find(item => item.name === gameName);
-            
+
                     // Nếu danh sách chưa có thì bỏ vào array
                     if (!existingItem) {
-                    gameDataArray.push(gameData);
-            
-                    // cập nhật dữ liệu vào array
-                    localStorage.setItem("gameItemsList", JSON.stringify(gameDataArray));
-            
-                    // Phản hồi kết quả cho người dùng
-                    alert("Đã thêm vào mục yêu thích!");
+                        gameDataArray.push(gameData);
+
+                        // cập nhật dữ liệu vào array
+                        localStorage.setItem("gameItemsList", JSON.stringify(gameDataArray));
+
+                        // Phản hồi kết quả cho người dùng
+                        alert("Đã thêm vào mục yêu thích!");
                     } else {
-                    alert("Bạn đã bỏ game này vào mục yêu thích rồi mà!");
+                        alert("Bạn đã bỏ game này vào mục yêu thích rồi mà!");
                     }
                 });
-                });
             });
-            //đưa ra danh sách các tên và ảnh game đã lưu vào trong danh sách game trong giỏ hàng (cho)
-            const storedGameData = JSON.parse(localStorage.getItem("gameItemsList")) || [];
-    console.log(storedGameData);
-        </script>
-    </head>
-    <body>
-        <div class="gameShow">
-            <div class="game">
+        });
+        //đưa ra danh sách các tên và ảnh game đã lưu vào trong danh sách game trong giỏ hàng (cho)
+        const storedGameData = JSON.parse(localStorage.getItem("gameItemsList")) || [];
+        console.log(storedGameData);
+    </script>
+</head>
 
-                <div class="gameItem sale">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
-                    </div>
-                </div>
+<body>
+    <div class="gameShow">
+        <div class="game">
 
-                <div class="gameItem">
-                    <div class="img">
-                        <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
-                    </div>
-                    <button class="addCart"> add to cart</button>
+            <div class="gameItem sale">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/Game_Images/List2_2/Morenatsu.jpg" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Morenatsu</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
-                    </div>
-                    <button class="addCart"> add to cart</button>
-                </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/Game_Images/Baldur's_Gate_3/BG3.png" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Baldur's Gates</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
-                    </div>
-                    <button class="addCart"> add to cart</button>
-                </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+            </div>
+
+            <div class="gameItem">
+                <div class="img">
+                    <img src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+                <button class="addCart"> add to cart</button>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/Game_Images/List2_2/Morenatsu.jpg" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Morenatsu</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+                <button class="addCart"> add to cart</button>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/Game_Images/Baldur's_Gate_3/BG3.png" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Baldur's Gates</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+                <button class="addCart"> add to cart</button>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-                <div class="gameItem">
-                    <div class="img">
-                        <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
-                    </div>
-                    <div class="infor">
-                        <h1 class="name">Horticular</h1>
-                        <div>
-                            <span class="sale">-40%</span>
-                            <span class="price">đ209,000</span>
-                            <span class="priceSale">đ200,300</span>
-                        </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
                     </div>
                 </div>
-    </body>
-    </html>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
+                    </div>
+                </div>
+            </div>
+            <div class="gameItem">
+                <div class="img">
+                    <img class="imgPath" src="../Images_Btl/gameShowinGameSide/horticular-nib8a.avif" alt="">
+                </div>
+                <div class="infor">
+                    <h1 class="name">Horticular</h1>
+                    <div>
+                        <span class="sale">-40%</span>
+                        <span class="price">đ209,000</span>
+                        <span class="priceSale">đ200,300</span>
+                    </div>
+                </div>
+            </div>
+</body>
+
+</html>
