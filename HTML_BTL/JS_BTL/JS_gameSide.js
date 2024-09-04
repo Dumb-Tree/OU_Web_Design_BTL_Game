@@ -47,6 +47,7 @@ function previous() {
     thumbnail.insertBefore(itemLastThumbnail, listItemThumbnail[0]);
 }
 
+
 document.addEventListener("DOMContentLoaded", function() {
     // Lấy mọi nút thêm vào mục yêu thích
     const addToFavBtn = document.querySelectorAll(".addFav");
