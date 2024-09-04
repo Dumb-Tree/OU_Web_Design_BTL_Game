@@ -473,26 +473,31 @@ div.Den{
     }
   }
 /* CSS cho phần cài đặt người dùng*/
-  .playermenu{
+.playermenu{
     display:none;
     position:absolute;
     background:rgba(36,36,36, 1);
     border: 2px solid rgb(113, 187, 230);
     right:5rem;
-    z-index:10000;
+    z-index:999999;
 }
 .menu{
     list-style-type: none;
     padding:0;
-    
+    border-top: 1px solid white;
+    margin-top: 0;
+}
+.menu > ul{
+    margin-top: 0;
 }
 .menu>li{
     padding-top:0.5rem;
-    padding:0.4rem;
-    width:95%;
+    width:100%;
 }
 .menu>li>a{
     text-decoration: none;
+    display: block;
+    padding:0.4rem;
     color:white;
 }
 .menu>li:hover{
@@ -518,12 +523,13 @@ div.Den{
     box-sizing: border-box;
 }
 .username{
+    color:white;
     width:70%;
     text-align: center;
     margin:0;
     margin-bottom:0.5rem;
     margin-left:15%;
-    background-color:rgba(10, 11, 13,.7);
+    background-color:grey;
     border-radius: 25px;
 }
 .friendbtn{

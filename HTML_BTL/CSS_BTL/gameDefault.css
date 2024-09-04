@@ -102,117 +102,142 @@ nav>ul>li>a>p {
     height: 100%;
     object-fit: cover;
 }
-
-/* Css cho phần new */
-.New {
-    width: 80%;
-    margin: 0 auto;
+/*CSS cho cài đặt người dùng*/
+.playermenu{
+    display:none;
+    position:absolute;
+    background:rgba(36,36,36, 1);
+    border: 2px solid rgb(113, 187, 230);
+    right:5rem;
+    z-index:999999;
 }
-
-.New>h1 {
-    color: white;
-    margin: 1rem;
+.menu{
+    list-style-type: none;
+    padding:0;
+    border-top: 1px solid white;
+    margin-top: 0;
 }
-
-.largeNew {
-    width: 47%;
+.menu > ul{
+    margin-top: 0;
+}
+.menu>li{
+    padding-top:0.5rem;
+    width:100%;
+}
+.menu>li>a{
+    text-decoration: none;
+    display: block;
+    padding:0.4rem;
+    color:white;
+}
+.menu>li:hover{
+    background-color:rgb(39, 105, 175);
+}
+.show{
+    display:block;
+}
+.userIMG{
+    cursor:pointer;
+}
+.userPic{
+    margin-top:1rem;
+    background-color:rgb(26,27,32);
+    padding-bottom:0.4rem;
+}
+.userPic>img{
+    width:50%;
+    border-radius: 30px;
+    margin-left:25%;
+    padding:1rem;
+    padding-bottom:0.2rem;
     box-sizing: border-box;
-    margin: 0.1%;
 }
-
-.largeNews {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 2rem;
-    border-bottom: 1px solid white;
-    padding-bottom: 2rem;
+.username{
+    color:white;
+    width:70%;
+    text-align: center;
+    margin:0;
+    margin-bottom:0.5rem;
+    margin-left:15%;
+    background-color:grey;
+    border-radius: 25px;
 }
-
-.largeNewImg>img {
-    width: 100%;
+.friendbtn{
+    cursor:pointer;
+    padding:0.5rem;
 }
-
-.largeNewImg>img {
-    border-radius: 10px;
+.friendList{
+    opacity:0;
+    transition: opacity 0.5s;
+    position:absolute;
+    right:0;
+    top:11%;
+    width:25%;
+    margin:0;
+    background:rgb(42, 45, 53);
+    animation:friendlisthide 0.5s linear;
+    z-index:999;
 }
-
-.largeNew>p {
-    color: white;
+.showfriend{
+    opacity:1 !important;
+    transition: opacity 0.5s;
+    animation:friendlistshow 0.5s ease-out !important;
 }
-
-.largeNew>a {
-    color: red;
+.friends{
+    padding:0;
+    list-style-type: none;
+    text-decoration: none;
+    background-color:#202328;
 }
-
-/* Tạo khung dữ liệu cho phần title */
-.largeNew>.largeNewTitle {
-    width: 35rem;
-    height: 6.5rem;
-    overflow: hidden;
-    padding-left: 0.5rem;
+.friend{
+    color:white;
 }
-
-.largeNew>.largeNewTitle>h2 {
-    color: white;
-    font-weight: bold;
-    text-wrap: wrap;
+.friendList>h1{
+    text-align:center;
 }
-
-/* Tạo khung dữ liêu cho phần p */
-.largeNew>.largeNewP {
-    width: 35.5rem;
-    height: 5.5rem;
-    overflow: hidden;
+.friends>li>img{
+    width:5.5rem;
+    padding-right:1rem;
+    padding-left:0.5rem;
+    border-radius:50%;
 }
-
-.largeNew>.largeNewP>p {
-    color: white;
-    font-weight: lighter;
-    text-wrap: wrap;
+.friends>li{
+    padding-bottom:1rem;
+    padding-top:1rem;
+    border-bottom: 1px solid #3c403f;
 }
-
-/* Tạo khung dữ liệu cho tilte small new */
-.smallNew>.smallNewTitle {
-    width: 16rem;
-    height: 13rem;
-    overflow: hidden;
+.friends>li:hover{
+    background-color:rgb(64, 81, 111);
 }
-
-.smallNew>.smallNewTitle>h2 {
-    color: white;
-    text-wrap: wrap;
+.friends>li>span{
+    margin-top:1rem;
 }
-
-.smallNews {
-    display: flex;
-    justify-content: space-around;
+.friends>li>span>i{
+    padding:0.4rem;
 }
-
-.smallNewImg>img {
-    width: 100%;
+.friends>li>span>i:hover{
+    color:rgb(79, 181, 221);
+    cursor:pointer;
 }
-
-.smallNew>p {
-    color: white;
+.friends>li:last-child{
+    border:none;
 }
-
-.smallNew {
-    border-radius: 10px;
-    width: 22%;
-    margin: 0.1%;
+@keyframes friendlistshow{
+    from{
+        top:0;
+    }
+    to{
+        top:11%;
+    }
 }
-
-.smallNew>h2 {
-    color: white;
-    text-wrap: wrap;
-    font-weight: bold;
+@keyframes friendlisthide{
+    from{
+        top:11%;
+    }
+    to{
+        top:5%;
+    }
 }
-
-.smallNew>a {
-
-    color: red;
-}
-
 /* Css cho phần game default */
 .gameDefault {
     width: 90%;

@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", e => {
     });
 });
 window.onload = function () {
-
+    
     // Lưu tên game vào localStorage cho trang gameDefault
     // name | img name | price | trailer link
 
