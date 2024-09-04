@@ -20,10 +20,11 @@ window.onload = function () {
     var tenGameMoi = document.querySelector(".trailer > h1");
     var priceMoi = document.querySelector(".gameInfor > div > span");
     var trailerMoi = document.querySelector(".trailerVideo >.bannerList > iframe");
-    
+
     tenGameMoi.innerText = tenGame;
     priceMoi.innerText = `đ${price}`;
-    trailerMoi.setAttribute("src",trailer);
+    trailerMoi.setAttribute("src", trailer);
+
 
     // Đổi ảnh lớn bằng ảnh thumbnail
     var imgs = document.querySelectorAll(".trailer >.thumbnail > div");
@@ -37,6 +38,23 @@ window.onload = function () {
         }
     }
 
+
+    // Thay đổi ảnh thumbnail
+    var thumbnails = document.querySelectorAll(".thumbnail>div>img");
+    thumbnails[0].src = `../Images_Btl/gameDefault/${rel}/video.avif`
+    for (var i = 1; i < thumbnails.length; i++) {
+        thumbnails[i].src = `../Images_Btl/gameDefault/${rel}/anh${i}.png`
+    }
+
+    // Thay đổi ảnh trong trailerScreen
+    var trailerScreens = document.querySelectorAll(".bannerList>div>img")
+    for (var i = 0; i < trailerScreens.length; i++) {
+        trailerScreens[i].src = `../Images_Btl/gameDefault/${rel}/anh${i + 1}.png`;
+    }
+
+    // Thay đổi ảnh logo
+    var anhNen = document.querySelector(".gameInfor>.logo>img")
+    anhNen.src = `../Images_Btl/gameDefault/${rel}/logo.avif` 
 
     // Hiện popup
     var popUp = document.querySelector(".gameDefault > .popUp");
