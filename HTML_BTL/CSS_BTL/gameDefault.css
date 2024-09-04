@@ -254,7 +254,7 @@ nav>ul>li>a>p {
     height: 33.6rem;
     flex-shrink: 0;
     overflow: hidden;
-    display:none;
+    display:block;
 }
 
 .gameDefault>.trailer>.trailerVideo>.bannerList {
