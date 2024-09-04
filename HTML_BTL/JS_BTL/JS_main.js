@@ -21,7 +21,7 @@ window.onload = function () {
 
     let dragon = ["Dragon Chronicles: Black Tears", "dragon", "599,000", "https://www.youtube.com/embed/LZxq6VG3G7g"];
     let deathbound = ["Deathbound", "deathbound", "320,000", "https://www.youtube.com/embed/SbW3exPtr7k"];
-    let awayout = ["A Way Out", "awayout", "690,000", "https://www.youtube.com/embed/SbW3exPtr7k"];
+    let awayout = ["A Way Out", "awayout", "690,000", "https://www.youtube.com/embed/yGZGSdgJVPM"];
     let returnalive = ["Return Alive", "returnalive", "Free", "https://www.youtube.com/embed/3tKWoH3VjJA"];
     let thewatch = ["The Watch", "thewatch", "299,000", "https://www.youtube.com/embed/pj0cAPsvzNI"];
 
