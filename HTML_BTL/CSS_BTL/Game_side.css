@@ -146,15 +146,20 @@ input:focus{
 .menu{
     list-style-type: none;
     padding:0;
-    
+    border-top: 1px solid white;
+    margin-top: 0;
+}
+.menu > ul{
+    margin-top: 0;
 }
 .menu>li{
     padding-top:0.5rem;
-    padding:0.4rem;
-    width:95%;
+    width:100%;
 }
 .menu>li>a{
     text-decoration: none;
+    display: block;
+    padding:0.4rem;
     color:white;
 }
 .menu>li:hover{
@@ -186,7 +191,7 @@ input:focus{
     margin:0;
     margin-bottom:0.5rem;
     margin-left:15%;
-    background-color:rgba(10, 11, 13,.7);
+    background-color:grey;
     border-radius: 25px;
 }
 .friendbtn{
@@ -266,6 +271,9 @@ input:focus{
         top:5%;
     }
 }
+
+
+
 /* Carousel */
 .side {
     position: relative;
@@ -544,6 +552,10 @@ input:focus{
     margin:0 1rem;
     color: white;
 }
+.gameShow >.game >.gameItem:hover .img{
+    filter: brightness(0.5);
+    cursor: pointer;
+}
 .gameShow > .game >.gameItem > .img > img{
     width: 100%;
 }
@@ -572,6 +584,7 @@ input:focus{
     cursor:pointer;
     color:white;
     font-size:1.5rem;
+    margin: 1rem 0;
 }
 .addFav:hover{
     border-radius:10px;
