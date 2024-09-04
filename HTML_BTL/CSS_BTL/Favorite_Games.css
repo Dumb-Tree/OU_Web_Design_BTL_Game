@@ -320,8 +320,11 @@ footer {
     text-overflow: ellipsis; /* Thêm dấu "..." nếu nội dung bị cắt */
 }
 .removeFav{ /*Nút xóa game*/
+    padding:0.3rem;
     width:50%;
     background-color: #26bbff;
+    border-radius: 10px;
+    cursor:pointer;
 }
 .emptyFav{ /*Trống rỗng*/
     font-size:4rem;
