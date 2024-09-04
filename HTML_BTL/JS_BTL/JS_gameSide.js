@@ -78,47 +78,48 @@ function previous() {
   thumbnail.insertBefore(itemLastThumbnail, listItemThumbnail[0]);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Lấy mọi nút thêm vào mục yêu thích
-  const addToFavBtn = document.querySelectorAll(".addFav");
 
-  // Tạo array để chứa thông tin
-  let gameDataArray = JSON.parse(localStorage.getItem("gameItemsList")) || [];
-
-  // Loop qua mỗi nút và cho nó sự kiện click chuột để lưu
-  addToFavBtn.forEach((button) => {
-    button.addEventListener("click", function () {
-      // Lấy game gần nhất với button (game mình muốn lưu vào yêu thích)
-      const gameItem = button.closest('.gameItem');
-
-      // Lấy ảnh và tên của game
-      const imgSrc = gameItem.querySelector("img").src;
-      const gameName = gameItem.querySelector(".name").innerText;
-
-      // Biến dữ liệu thành 1 phần tử để bỏ array (na ná struct nhưng để lưu vào array)
-      const gameData = {
-        imageUrl: imgSrc,
-        name: gameName,
-      };
-
-      // kiểm nếu danh sách đã có game đó
-      const existingItem = gameDataArray.find(item => item.name === gameName);
-
-      // Nếu danh sách chưa có thì bỏ vào array
-      if (!existingItem) {
-        gameDataArray.push(gameData);
-
-        // cập nhật dữ liệu vào array
-        localStorage.setItem("gameItemsList", JSON.stringify(gameDataArray));
-
-        // Phản hồi kết quả cho người dùng
-        alert("Đã thêm vào mục yêu thích!");
-      } else {
-        alert("Bạn đã bỏ game này vào mục yêu thích rồi mà!");
-      }
+document.addEventListener("DOMContentLoaded", function() {
+    // Lấy mọi nút thêm vào mục yêu thích
+    const addToFavBtn = document.querySelectorAll(".addFav");
+  
+    // Tạo array để chứa thông tin
+    let gameDataArray = JSON.parse(localStorage.getItem("gameItemsList")) || [];
+  
+    // Loop qua mỗi nút và cho nó sự kiện click chuột để lưu
+    addToFavBtn.forEach((button) => {
+      button.addEventListener("click", function() {
+        // Lấy game gần nhất với button (game mình muốn lưu vào yêu thích)
+        const gameItem = button.closest('.gameItem');
+  
+        // Lấy ảnh và tên của game
+        const imgSrc = gameItem.querySelector("img").src;
+        const gameName = gameItem.querySelector(".name").innerText;
+  
+        // Biến dữ liệu thành 1 phần tử để bỏ array (na ná struct nhưng để lưu vào array)
+        const gameData = {
+          imageUrl: imgSrc,
+          name: gameName,
+        };
+  
+        // kiểm nếu danh sách đã có game đó
+        const existingItem = gameDataArray.find(item => item.name === gameName);
+  
+        // Nếu danh sách chưa có thì bỏ vào array
+        if (!existingItem) {
+          gameDataArray.push(gameData);
+  
+          // cập nhật dữ liệu vào array
+          localStorage.setItem("gameItemsList", JSON.stringify(gameDataArray));
+  
+          // Phản hồi kết quả cho người dùng
+          alert("Đã thêm vào mục yêu thích!");
+        } else {
+          alert("Bạn đã bỏ game này vào mục yêu thích rồi mà!");
+        }
+      });
     });
   });
-});
 //đưa ra danh sách các tên và ảnh game đã lưu vào trong danh sách game trong giỏ hàng
 const storedGameData = JSON.parse(localStorage.getItem("gameItemsList")) || [];
 console.log(storedGameData);
