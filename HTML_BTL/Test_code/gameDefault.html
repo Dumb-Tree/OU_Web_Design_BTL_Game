@@ -13,9 +13,49 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
     <title>Document</title>
+    <script>
+        window.onload = function () {
+            // Đổi ảnh lớn bằng ảnh thumbnail
+            var imgs = document.querySelectorAll(".trailer >.thumbnail > div");
+            var bannerList = document.querySelector(".gameDefault>.trailer>.trailerVideo>.bannerList");
+            var temp
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].onclick = function () {
+                    temp = i;
+                    donVi = (i) * 100;
+                    bannerList.style.transform = `translateX(-${donVi}%)`
+                }
+            }
+            
+
+            // Hiện popup
+            var popUp = document.querySelector(".gameDefault > .popUp");
+            var popUpImg = popUp.querySelector("div > img");
+            var overlay = document.querySelector(".overlay");
+
+            var turnOnButton
+            var trailerScreen = document.querySelector(".trailerVideo");
+            trailerScreen.onclick = function () {
+                var trailerScreenImg = trailerScreen.querySelector(`.bannerList>.img:nth-child(${temp+1})>img`).src;
+                popUpImg.src = trailerScreenImg
+                popUp.classList.add("show");
+                overlay.classList.add("show");
+            }
+
+            // tắt popup
+            var closeButton = document.querySelector(".popUp > button");
+            closeButton.onclick = function () {
+                popUp.classList.remove("show");
+                overlay.classList.remove("show");
+            }
+        }
+
+    </script>
 </head>
 
 <body>
+    <!-- Lớp phủ cho popup -->
+    <div class="overlay"></div>
     <nav>
         <ul class="flex">
             <li>
@@ -52,8 +92,14 @@
 
     <section class="gameDefault">
 
-        <div class="trailer">
+        <div class="popUp">
+            <div>
+                <img src="" alt="">
+            </div>
+            <button>X</button>
+        </div>
 
+        <div class="trailer">
             <h1 class="trailerGameName">Black Myth Wukong</h1>
             <div class="starRating">
                 <span class="fa fa-star checked"></span>
@@ -61,19 +107,23 @@
                 <span class="fa fa-star checked"></span>
                 <span class="fa fa-star"></span>
                 <span class="fa fa-star"></span>
-                <span class="type"><img src="https://cdn2.epicgames.com/static/fonts/joypixel/1f3a8.svg" alt=""> Inclusive Character Customization</span>
-                <span class="type"><img src="https://cdn2.epicgames.com/static/fonts/joypixel/1f996.svg" alt="">Great Boss Battles</span>
+                <span class="type"><img src="https://cdn2.epicgames.com/static/fonts/joypixel/1f3a8.svg" alt="">
+                    Inclusive Character Customization</span>
+                <span class="type"><img src="https://cdn2.epicgames.com/static/fonts/joypixel/1f996.svg" alt="">Great
+                    Boss Battles</span>
             </div>
             <div class="trailerVideo">
-                <iframe width="956" height="538" src="https://www.youtube.com/embed/_mAnlVXtDD8?controls=0"
-                    title="Black Myth: Wukong - Official Final Trailer" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                <div><img src="../Images_Btl/gameDefault/wukong/anh1.png" alt=""></div>
-                <div><img src="../Images_Btl/gameDefault/wukong/anh2.png" alt=""></div>
-                <div><img src="../Images_Btl/gameDefault/wukong/anh3.png" alt=""></div>
-                <div><img src="../Images_Btl/gameDefault/wukong/anh4.png" alt=""></div>
-                <div><img src="../Images_Btl/gameDefault/wukong/anh5.png" alt=""></div>
+                <div class="bannerList">
+                    <iframe width="956" height="538" src="https://www.youtube.com/embed/_mAnlVXtDD8?controls=0"
+                        title="Black Myth: Wukong - Official Final Trailer" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="img"><img src="../Images_Btl/gameDefault/wukong/anh1.png" alt=""></div>
+                    <div class="img"><img src="../Images_Btl/gameDefault/wukong/anh2.png" alt=""></div>
+                    <div class="img"><img src="../Images_Btl/gameDefault/wukong/anh3.png" alt=""></div>
+                    <div class="img"><img src="../Images_Btl/gameDefault/wukong/anh4.png" alt=""></div>
+                    <div class="img"><img src="../Images_Btl/gameDefault/wukong/anh5.png" alt=""></div>
+                </div>
             </div>
 
             <div class="thumbnail">
@@ -90,11 +140,9 @@
             <div class="logo">
                 <img src="../Images_Btl/gameDefault/wukong/logo.avif" alt="">
             </div>
-            <h2>Base Game</h2>
+            <span>Base Game</span>
             <div>
-                <span class="sale">-40%</span>
-                <span class="price">đ209,000</span>
-                <span class="pirceSale">đ200,300</span>
+                <span class="price">đ1,299,000</span>
             </div>
             <button>Get</button>
             <button>Add to Wishlist</button>
@@ -124,15 +172,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        Platform
-                    </td>
-                    <td>
-                        <i class="fa-brands fa-windows"></i>
-                    </td>
+                    <td>Platform</td>
+                    <td><i class="fa-brands fa-windows"></i></td>
                 </tr>
-
-
             </table>
         </div>
     </section>
