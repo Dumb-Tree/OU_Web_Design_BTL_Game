@@ -63,16 +63,16 @@ window.onload = function () {
     var count = 0;
     //Set
     setInterval(function () { // sau mỗi 16 giây, thanh trượt về vị trí ban đầu 
-        d.style.top = 8.46 + 'rem';
+        d.style.top = 7.9 + 'rem';
         count = 0;
     }, 15997)
     setInterval(function () {// sau mỗi 4 giây, thanh trượt di chuyển xuống
         count = ++count;
         console.log(count);
         if (count < 2)
-            d.style.top = count * 8.9 + 8.4 + 'rem';
+            d.style.top = count * 7.9 + 9 + 'rem';
         else
-            d.style.top = count * 8.9 + 8.31 + 'rem';
+            d.style.top = count * 8.9 + 8 + 'rem';
     }, 3999);
     /*JS cho game list*/
     let slideIndex = [1, 1];
