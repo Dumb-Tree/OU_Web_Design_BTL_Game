@@ -1,3 +1,35 @@
+document.addEventListener("DOMContentLoaded", e => { 
+    let likebtn = document.getElementById("green");
+    let dislikebtn = document.getElementById("red");
+    likebtn.addEventListener("click", e=>{
+        if(dislikebtn.classList.contains("red")){
+            dislikebtn.classList.toggle("red");
+        }
+        likebtn.classList.toggle("green");
+    });
+    dislikebtn.addEventListener("click", e=>{
+        if(likebtn.classList.contains("green")){
+            likebtn.classList.toggle("green");
+        }
+        dislikebtn.classList.toggle("red");
+    });
+});
+     //submenu
+     document.addEventListener("DOMContentLoaded", e => { //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
+        let menu = document.querySelector(".playermenu");
+        let userInfor = document.querySelector(".userIMG");
+        userInfor.addEventListener("click", e=>{
+            menu.classList.toggle("show");
+        });
+    });
+        //friendlist
+    document.addEventListener("DOMContentLoaded", e => { 
+        const friendbtn = document.querySelector(".friendbtn");
+        const friendlist = document.querySelector(".friendList");
+        friendbtn.addEventListener("click", e=>{
+            friendlist.classList.toggle("showfriend");
+        });
+    });
 window.onload = function(){
 var character = document.getElementById("character");
 var game = document.getElementById("game");

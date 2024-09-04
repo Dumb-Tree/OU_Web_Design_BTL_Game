@@ -57,47 +57,47 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
-            // Select all game item buttons
-            const addToCartButtons = document.querySelectorAll(".addCart");
+            // Lấy mọi nút thêm vào mục yêu thích
+            const addToCartButtons = document.querySelectorAll(".addFav");
           
-            // Array to hold all game data
+            // Tạo array để chứa thông tin
             let gameDataArray = JSON.parse(localStorage.getItem("gameItemsList")) || [];
           
-            // Loop through each button and add a click event listener
+            // Loop qua mỗi nút và cho nó sự kiện click chuột để lưu
             addToCartButtons.forEach((button) => {
               button.addEventListener("click", function() {
-                // Retrieve the closest game item element
+                // Lấy game gần nhất với button (game mình muốn lưu vào yêu thích)
                 const gameItem = button.closest('.gameItem');
           
-                // Retrieve the image source and game name from the clicked item's context
+                // Lấy ảnh và tên của game
                 const imgSrc = gameItem.querySelector("img").src;
                 const gameName = gameItem.querySelector(".name").innerText;
           
-                // Create an object to store game data
+                // Biến dữ liệu thành 1 phần tử để bỏ array (na ná struct nhưng để lưu vào array)
                 const gameData = {
                   imageUrl: imgSrc,
                   name: gameName,
                 };
           
-                // Check if the game data already exists in the array
+                // kiểm nếu danh sách đã có game đó
                 const existingItem = gameDataArray.find(item => item.name === gameName);
           
-                // If it doesn't exist, add it to the array
+                // Nếu danh sách chưa có thì bỏ vào array
                 if (!existingItem) {
                   gameDataArray.push(gameData);
           
-                  // Store the updated array in local storage
+                  // cập nhật dữ liệu vào array
                   localStorage.setItem("gameItemsList", JSON.stringify(gameDataArray));
           
-                  // Optionally, provide feedback to the user
-                  alert("Added to cart!");
+                  // Phản hồi kết quả cho người dùng
+                  alert("Đã thêm vào mục yêu thích!");
                 } else {
-                  alert("Item already in cart!");
+                  alert("Bạn đã bỏ game này vào mục yêu thích rồi mà!");
                 }
               });
             });
           });
-          //đưa ra danh sách các tên và ảnh game đã lưu vào trong danh sách game trong giỏ hàng
+          //đưa ra danh sách các tên và ảnh game đã lưu vào trong danh sách game trong giỏ hàng (cho dev)
           const storedGameData = JSON.parse(localStorage.getItem("gameItemsList")) || [];
 console.log(storedGameData);
     </script>

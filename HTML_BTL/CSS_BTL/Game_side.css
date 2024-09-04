@@ -489,6 +489,14 @@ nav>ul>li>a>p {
 .sideBar > ul > li > span{
     color: white;
 }
+.sideBar > ul > li > div >a>img{
+    width: 50%;
+    margin-left:25%;
+    padding-top:3px;
+}
+.sideBar > ul > li >a> span{
+    color: white;
+}
 
 .sideBar > ul >li:hover{
     background-color: #2d3959;

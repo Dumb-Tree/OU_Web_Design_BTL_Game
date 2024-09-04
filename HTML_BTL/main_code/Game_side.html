@@ -16,24 +16,6 @@
     <title>Trò chơi</title>
     <script src="../JS_BTL/JS_gameSide.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <script>
-        //Submenu
-        document.addEventListener("DOMContentLoaded", function(){ //Đợi đến khi web đã load hết mọi thứ rồi mới chạy để đảm bảo không bị lỗi null
-            let menu = document.querySelector(".playermenu");
-            let userInfor = document.querySelector(".userIMG");
-            userInfor.addEventListener("click", function(){
-                menu.classList.toggle("show");
-            });
-        });
-        //friendlist
-        document.addEventListener("DOMContentLoaded", e => { 
-            const friendbtn = document.querySelector(".friendbtn");
-            const friendlist = document.querySelector(".friendList");
-            friendbtn.addEventListener("click", e=>{
-                friendlist.classList.toggle("showfriend");
-            });
-        });
-    </script>
 </head>
 <body>
     <nav>
@@ -157,7 +139,9 @@
 
                 <li>
                     <div>
+                        <a href="../main_code/Favorite_Games.html">
                         <img src="../Images_Btl/Sidebar/thumbsup.png">
+                        </a>
                     </div>
                     <span>Thích</span>
                 </li>
@@ -275,6 +259,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -289,6 +274,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -303,6 +289,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -317,6 +304,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -331,6 +319,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -345,6 +334,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -359,6 +349,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -373,6 +364,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -387,6 +379,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -401,6 +394,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -415,6 +409,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -429,6 +424,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -443,6 +439,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -457,6 +454,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -471,6 +469,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -485,6 +484,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -499,6 +499,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -513,6 +514,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -527,6 +529,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
 
             <div class="gameItem">
@@ -541,6 +544,7 @@
                         <span class="pirceSale">đ200,300</span>
                     </div>
                 </div>
+                <button class="addFav"> add to favorite</button>
             </div>
         </div>
         <div class="ads">
