@@ -595,7 +595,6 @@ footer {
     margin-top: 2.5rem;
     margin-bottom: 5rem;
   }
-
   .hotgame {
     flex: 1;
     box-sizing: border-box;
@@ -605,6 +604,9 @@ footer {
     perspective: 2500px;
     position: relative;
 
+  }
+  .hotgame:hover{
+    cursor: pointer;
   }
   .hotgame img {
     width: 100%;
