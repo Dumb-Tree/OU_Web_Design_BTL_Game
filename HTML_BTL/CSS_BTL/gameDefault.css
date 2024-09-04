@@ -221,7 +221,7 @@ nav>ul>li>a>p {
 }
 
 .gameDefault>.trailer {
-    width: 120%;
+    width: 60%;
     height: 50vh;
 }
 
@@ -286,7 +286,6 @@ nav>ul>li>a>p {
 /* CSS cho phần popup */
 .gameDefault {
     position: relative;
-    width:100%;
 }
 
 .overlay {
@@ -375,7 +374,7 @@ nav>ul>li>a>p {
 }
 
 .gameDefault>.gameInfor>.logo {
-    width: 100%;
+    width: 70%;
     height: auto;
 }
 
